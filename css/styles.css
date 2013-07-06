@@ -74,10 +74,23 @@ body {
 #menu ul li {
 	display:inline;
 	margin:0 20px;
+	padding-left:30px;
 	cursor:pointer;
 }
 #menu ul li i {
 	height:22px;
+}
+#menu-map{
+	background:url("../img/menu.png") no-repeat scroll 0 0 transparent;
+}
+#menu-chart{
+	background:url("../img/menu.png") no-repeat scroll 0 -40px transparent;
+}
+#menu-faq{
+	background:url("../img/menu.png") no-repeat scroll 0 -80px transparent;
+}
+#menu-contact{
+	background:url("../img/menu.png") no-repeat scroll 0 -120px transparent;
 }
 #content-head {
 	border-bottom:1px solid #ff8800;
