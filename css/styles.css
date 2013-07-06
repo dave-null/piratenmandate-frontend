@@ -1,0 +1,120 @@
+@import url(http://fonts.googleapis.com/css?family=Convergence);
+
+body {
+	background-color:#E6E6E6;
+	margin:0;
+}
+.container {
+	margin:auto;
+	padding:0 10px;
+	background-color: white;
+	margin:auto;
+	-moz-box-shadow: 0 0 5px #999;
+    -webkit-box-shadow: 0 0 5px #999;
+    box-shadow: 0 0 5px #999;
+}
+#content {
+	padding:0 0 10px 0;
+}
+#header {
+	height:150px;
+}
+
+.rectangle {
+	background:#ff8800;
+	float:left;
+	box-shadow:0px 0px 4px rgba(0, 0, 0, 0.55);
+	z-index:100;
+	margin:0 0 20px 0px;
+	padding:0 30px;
+}
+.left_cor {
+  	border-color: transparent #d26900 transparent transparent;
+  	border-style: solid;
+  	border-width: 30px;
+  	height: 0px;
+  	width: 0px;
+  	position: relative;
+  	left: -60px;
+  	z-index: -1;
+}
+
+#menu .left_cor {
+	top:10px;
+}
+#footer .left_cor {
+	top:-50px;
+}
+#menu.rectangle {
+	height:40px;
+}
+#footer.rectangle {
+	height:20px;
+	text-align: right;
+}
+#footer p {
+	margin:0;
+	font-family: 'Convergence', sans-serif;
+}
+#menu {
+	text-align: center;
+	font-family: 'Convergence', sans-serif;
+	color:#333;
+	font-size:22px;
+	line-height: 40px;
+	font-weight:bold;
+	text-shadow: 0 -1px 1px #999, 0 1px 1px #FFFFFF;
+}
+#menu ul {
+	list-style: none outside none;
+	display:table;
+	margin:0;
+	padding:0;
+}
+#menu ul li {
+	display:inline;
+	margin:0 20px;
+	cursor:pointer;
+}
+#menu ul li i {
+	height:22px;
+}
+#content-head {
+	border-bottom:1px solid #ff8800;
+	border-left:10px solid #ff8800;
+	color:#333;
+	vertical-align: bottom;
+	font-family: 'Convergence', sans-serif;
+	margin-bottom: 10px;
+	line-height: 30px;
+	padding-left:5px;
+}
+#content-head h2 {
+	display:inline;
+	margin:0;
+}
+#content-head-mandate {
+	float:right;
+}
+.nav-tile {
+	border-bottom:1px dotted #666;
+	padding-left:30px;
+	cursor:pointer;
+	background:url("../img/toggles.png") no-repeat scroll 0 -30px #EEE;
+	height:30px;
+}
+.nav-tile a {
+	line-height: 30px;
+	text-decoration: none;
+	color:#666;
+	font-family: 'Convergence', sans-serif;
+}
+.pan-content {
+	display:none;
+}
+.pan-active {
+	display:block;
+}
+.title-open {
+	background:url("../img/toggles.png") no-repeat scroll 0 0 #EEE;
+}
