@@ -1,8 +1,30 @@
-@import url(http://fonts.googleapis.com/css?family=Convergence);
+@font-face {
+    font-family: 'Convergence';
+    src: url('/fonts/Convergence-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'AwesomeWebfont';
+    src: url('/fonts/fontawesome-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'faunaOne';
+    src: url('/fonts/FaunaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* "Font Awesome (c) by Dave Gandy - http://fontawesome.io */
+/* "Font FaunaOne (c) by Eduardo Tunni - http://www.tipo.net.ar */
+/* "Font Convergence (c) by José Nicolás Silva Schwarzenberg, John Vargas Beltrán */
 
 body {
 	background-color:#E6E6E6;
 	margin:0;
+	font-family:"faunaOne", sans-serif;
 }
 .container {
 	margin:auto;
@@ -77,20 +99,11 @@ body {
 	padding-left:30px;
 	cursor:pointer;
 }
-#menu ul li i {
-	height:22px;
+#menu ul li span{
+	font-family: 'AwesomeWebfont';
 }
-#menu-map{
-	background:url("../img/menu.png") no-repeat scroll 0 0 transparent;
-}
-#menu-chart{
-	background:url("../img/menu.png") no-repeat scroll 0 -40px transparent;
-}
-#menu-faq{
-	background:url("../img/menu.png") no-repeat scroll 0 -80px transparent;
-}
-#menu-contact{
-	background:url("../img/menu.png") no-repeat scroll 0 -120px transparent;
+#menu ul li:hover {
+	color:#666;
 }
 #content-head {
 	border-bottom:1px solid #ff8800;
