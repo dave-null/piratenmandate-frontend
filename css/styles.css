@@ -67,15 +67,18 @@ body {
 #footer .left_cor {
 	top:-50px;
 }
+.pull-right {
+	float:right;
+}
 #menu.rectangle {
 	height:40px;
 }
 #footer.rectangle {
 	height:20px;
-	text-align: right;
 }
 #footer p {
 	margin:0;
+	display: inline;
 	font-family: 'Convergence', sans-serif;
 }
 #menu {
@@ -105,7 +108,7 @@ body {
 #menu ul li:hover {
 	color:#666;
 }
-#content-head {
+.content-head {
 	border-bottom:1px solid #ff8800;
 	border-left:10px solid #ff8800;
 	color:#333;
