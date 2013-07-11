@@ -169,22 +169,19 @@ body {
 #map ul li {
 	display:inline;
 	padding:0 10px 0 10px;
-	vertical-align: middle;
+	border-right:1px solid #999;
+	line-height:25px;
 }
 #mapNavFirst {
 	display: inline-block;
 	z-index: 50;
 }
-#mapNavFirst:after {
-	content:"//";
-}
-#mapNavSecond {
-	left:-20px;
-	padding-left: 30px !important;
-}
 #mapMenu {
 	background-color: #AAA;
 	min-height: 0 !important;
 	height:25px;
-	background-color: #FF8800;
+	background-color: #F4F4F4;
+	border:1px solid #999;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
