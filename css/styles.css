@@ -86,7 +86,6 @@ body {
 }
 #menu {
 	text-align: center;
-	font-family: 'Convergence', sans-serif;
 	color:#333;
 	font-size:22px;
 	line-height: 40px;
@@ -94,6 +93,8 @@ body {
 	text-shadow: 0 -1px 1px #999, 0 1px 1px #FFFFFF;
 }
 #menu ul {
+	font-family: 'AwesomeWebfont';
+	font-weight: normal;
 	list-style: none outside none;
 	display:table;
 	margin:0;
@@ -103,14 +104,20 @@ body {
 	display:inline;
 	margin:0 20px;
 	padding-left:30px;
-	cursor:pointer;
 }
-#menu ul li span{
-	font-family: 'AwesomeWebfont';
+#menu ul li a {
+	font-family: 'Convergence', sans-serif;
+        color: #000;
+        text-decoration: none;
 }
-#menu ul li:hover {
-	color:#666;
+#menu ul li a:hover {
+        color:#666;
 }
+#menu ul #karte:before { content: '\00f0ac\0000a0\0000a0'; }
+#menu ul #stats:before { content: '\00f080\0000a0\0000a0'; }
+#menu ul #about:before { content: '\00f059\0000a0\0000a0'; }
+#menu ul #contact:before { content: '\00f0e0\0000a0\0000a0'; }
+
 .content-head {
 	border-bottom:1px solid #ff8800;
 	border-left:10px solid #ff8800;
