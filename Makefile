@@ -3,9 +3,10 @@ outdir=_out
 index=karte
 sections=statistik about kontakt
 
-jsrequired=accordeon.js jquery.min.js
+jsrequired=accordeon.js jquery.min.js jqPlot
 
-all: javascript headfoot styles
+#ausgruenden darf ein target nicht wie ein existierendes verzeichnis heissen!
+all: javascript headfoot styles datadir
 
 headfoot:
 	cat header.html $(index).part.html footer.html > $(outdir)/index.html
@@ -17,6 +18,9 @@ styles:
 javascript:
 	mkdir -p $(outdir)/js/
 	$(foreach script,$(jsrequired), cp -r js/$(script) $(outdir)/js/;)
+
+datadir:
+	cp -r data $(outdir)
 
 clean:
 	rm -rf ./$(outdir)/*
