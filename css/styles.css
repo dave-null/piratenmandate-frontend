@@ -174,14 +174,31 @@ body {
 	height:25px;
 }
 #map ul li {
-	display:inline;
-	padding:0 10px 0 10px;
+	display:inline-block;
+	padding:0;
 	border-right:1px solid #999;
-	line-height:25px;
+	line-height:24px;
+	float:left;
 }
-#mapNavFirst {
-	display: inline-block;
-	z-index: 50;
+#map ul li:first-child a {
+	-moz-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+}
+#map ul li a {
+	padding:0 10px;
+	display:inline-block;
+	line-height:23px;
+	text-decoration:none;
+	color:#333;
+	vertical-align:top;
+}
+#map ul li a:hover {
+	background-color: #CCC;
+}
+#map ul li:nth-child(1) {
+
 }
 #mapMenu {
 	background-color: #AAA;
