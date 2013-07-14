@@ -1,9 +1,10 @@
 outdir=_out
+jsrequired=accordeon.js jquery.min.js jqPlot
 
 index=karte
 sections=statistik about kontakt
 
-jsrequired=accordeon.js jquery.min.js jqPlot
+datenfiles=jqplot-data.js
 
 #ausgruenden darf ein target nicht wie ein existierendes verzeichnis heissen!
 all: javascript headfoot styles datadir
@@ -20,6 +21,7 @@ javascript:
 	$(foreach script,$(jsrequired), cp -r js/$(script) $(outdir)/js/;)
 
 datadir:
+	$(foreach template,$(datenfiles),xsltproc $(template).xsl piratenmandate.xml > data/$(template);)
 	cp -r data $(outdir)
 
 clean:
