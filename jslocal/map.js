@@ -1,6 +1,6 @@
 // Leaflet-Karte einrichten – Werte aus mapSettings definiert in styles.js
 //
-map = new L.Map('map',{zoomControl:false});
+map = new L.Map('leafletContainer',{zoomControl:false});
 map.addControl(L.control.zoom({position:mapSettings.zoomPosition}));
 map.attributionControl.setPrefix(mapSettings.credits);
 tileLayer = map.addLayer(new L.TileLayer(mapSettings.tiles, mapSettings.zoomLimits));

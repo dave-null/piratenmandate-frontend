@@ -1,16 +1,16 @@
 outdir=_out
 
-jsrequired=accordeon.js jquery.min.js jqPlot
+jsrequired=accordeon.js jquery.min.js jqPlot leaflet leaflet.label.js leaflet.label.css
 
 index=karte
 sections=statistik about kontakt
 
 datadir=data
-datenfiles=jqplot-data.js
+datenfiles=jqplot-data.js gebietsdata.js
 mDate=$(shell date -d"$(shell stat -c %y piratenmandate.xml)" +%d.%m.%Y)
 
 #ausgruenden darf ein target nicht wie ein existierendes verzeichnis heissen!
-all: javascript headfoot styles datadir
+all: javascript headfoot styles datadir json
 
 headfoot:
 	cat header.html $(index).part.html footer.html > $(outdir)/index.html
@@ -29,6 +29,9 @@ datadir:
 	echo "var mDate = '$(mDate)';" > $(datadir)/date.js
 	cat date.part.js >> $(datadir)/date.js
 	cp -r jslocal $(datadir) $(outdir)
+
+json:
+	cp -r geojson $(outdir)
 
 clean:
 	rm -rf ./$(outdir)/*
