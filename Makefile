@@ -22,6 +22,7 @@ javascript:
 
 datadir:
 	$(foreach template,$(datenfiles),xsltproc $(template).xsl piratenmandate.xml > data/$(template);)
+	date -d"$(shell stat -c %y piratenmandate.xml)" +%d.%m.%Y > data/xml_moddate
 	cp -r data $(outdir)
 
 clean:

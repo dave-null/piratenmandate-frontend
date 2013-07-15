@@ -1,5 +1,6 @@
 			<div id="footer" class="rectangle span12">
-				<p>Stand: 01.01.1970</p><p class="pull-right">Foooooter</p>
+				<p>Letzte Änderung der Mandatsdaten: <span id="moddate"></span></p><p class="pull-right">Foooooter</p>
+				<script type="text/javascript">$.get('data/xml_moddate', function(d){$('#moddate').html(d);})</script>
 				<div class="left_cor"></div> 
 			</div>
 		</div>
