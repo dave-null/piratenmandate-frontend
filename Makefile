@@ -6,8 +6,7 @@ index=karte
 sections=statistik about kontakt
 
 datadir=data
-datenfiles=jqplot-data.js gebietsdata.js
-mDate=$(shell date -d"$(shell stat -c %y piratenmandate.xml)" +%d.%m.%Y)
+datenfiles=statistik.data.html gebietsdata.js
 
 #ausgruenden darf ein target nicht wie ein existierendes verzeichnis heissen!
 all: javascript headfoot styles datadir json
@@ -26,8 +25,7 @@ javascript:
 datadir:
 	mkdir -p $(datadir)
 	$(foreach template,$(datenfiles),xsltproc $(template).xsl piratenmandate.xml > $(datadir)/$(template);)
-	echo "var mDate = '$(mDate)';" > $(datadir)/date.js
-	cat date.part.js >> $(datadir)/date.js
+	echo $(shell date -d"$(shell stat -c %y piratenmandate.xml)" +%d.%m.%Y) > $(datadir)/date
 	cp -r jslocal $(datadir) $(outdir)
 
 json:

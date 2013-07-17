@@ -1,29 +1,13 @@
 
 			<!-- CONTENT -->
-			<div class="span12">
-				<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.</p>
-					<h2 class="content-head">Übertritte</h2>
-					<div class="row-fluid statistikRow">
-						<div class="span5 statistik">
-							<div id="uebertritte" style="height:290px; width:450px;"></div>
-						</div>
-						<div class="span7">
-							The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-						</div>
-					</div>
-					<h2 class="content-head">Fraktionspartner</h2>
-					<div class="row-fluid statistikRow">
-						<div class="span5 statistik">
-							<div id="fraktionspartner" style="height:290px; width:450px;"></div>
-						</div>
-						<div class="span7">
-							The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-						</div>
-					</div>
-			</div>
 			<link rel="stylesheet" type="text/css" href="js/jqPlot/jquery.jqplot.min.css" media="screen" />
-                        <link rel="stylesheet" type="text/css" href="csslocal/jqplot-styles.css" media="screen" />
+			<link rel="stylesheet" type="text/css" href="csslocal/jqplot-styles.css" media="screen" />
 			<script type="text/javascript" src="js/jqPlot/jquery.jqplot.min.js"></script>
 			<script type="text/javascript" src="js/jqPlot/plugins/jqplot.pieRenderer.min.js"></script>
-			<script type="text/javascript" src="data/jqplot-data.js"></script>
-			<script type="text/javascript" src="jslocal/jqplot-setup.js"></script>
+			<div class="span12">
+				<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.</p>
+				<div id="graphchapters"></div>
+				<script type="text/javascript">
+					$('#graphchapters').load('data/statistik.data.html');
+				</script>
+			</div>

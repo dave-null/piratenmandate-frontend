@@ -1,3 +1,5 @@
+// Karten
+//
 var mapSettings = {
   credits: '<a href="http://www.openstreetmap.org">OpenStreetMap</a> und <a href="http://www.bkg.bund.de/">GeoBasis-DE/BKG</a>, 2013 (Daten verändert)<br>Kartengrafiken: <a href="http://maps.stamen.com">Stamen</a> (Theme: Watercolor) | Framework: <a href="http://www.leafletjs.com">Leaflet</a>'
   ,tiles: 'http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg'
@@ -19,7 +21,20 @@ var specialBounds = { // Gebiete mit fernen Inseln sollten auf das Hauptgebiet z
   ,"Bremen":    [[], []]
 }
 
-var Pc = { //colors for parteien
+// Statistik
+// 
+jqPlotDefaults = {
+  renderer: null,
+  rendererOptions: {
+    showDataLabels: true,
+    dataLabels: 'value',
+    startAngle: 180,
+    sliceMargin: 5,
+    dataLabelPositionFactor: 0.65
+}}
+jqPlotLegendDefaults = { show:true, location: 'e' }
+
+var Pc = {
    'LINKE':'#a00'
   ,'CDU/CSU':'#000'
   ,'Wählergemeinschaft':'#09f'
