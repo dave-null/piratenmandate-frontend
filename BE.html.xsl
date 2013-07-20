@@ -13,7 +13,7 @@
       <p>lorem ispum dolor sit amet</p>
       <p>lorem ispum dolor sit amet</p>
   </div>
-  <div id="#accordeon">
+  <div id="accordeon">
     <xsl:apply-templates select="//bundesland[@gs='11000000']/gebiet" />
   </div>
 </xsl:template>
