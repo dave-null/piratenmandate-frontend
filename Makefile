@@ -1,12 +1,12 @@
 outdir=_out
 
-jsrequired=accordeon.js jquery.min.js jqPlot leaflet leaflet.label.js leaflet.label.css
+jsrequired=jquery.min.js jqPlot leaflet leaflet.label.js leaflet.label.css
 
 index=karte
 sections=statistik about kontakt
 
 datadir=data
-datenfiles=statistik.data.html gebietsdata.js
+datenfiles=statistik.data.html gebietsdata.js BE.html
 
 #ausgruenden darf ein target nicht wie ein existierendes verzeichnis heissen!
 all: javascript headfoot styles datadir json
@@ -21,12 +21,13 @@ styles:
 javascript:
 	mkdir -p $(outdir)/js/
 	$(foreach script,$(jsrequired), cp -r js/$(script) $(outdir)/js/;)
+	cp -r jslocal $(outdir)
 
 datadir:
 	mkdir -p $(datadir)
 	$(foreach template,$(datenfiles),xsltproc $(template).xsl piratenmandate.xml > $(datadir)/$(template);)
 	echo $(shell date -d"$(shell stat -c %y piratenmandate.xml)" +%d.%m.%Y) > $(datadir)/date
-	cp -r jslocal $(datadir) $(outdir)
+	cp -r $(datadir) $(outdir)
 
 json:
 	cp -r geojson $(outdir)

@@ -1,10 +1,10 @@
-
 			<!-- CONTENT -->
 			<script type="text/javascript" src="js/leaflet/leaflet.js"></script>
 			<script type="text/javascript" src="js/leaflet.label.js"></script>
 			<link rel="stylesheet" href="js/leaflet/leaflet.css">
 			<link rel="stylesheet" href="js/leaflet.label.css">
 			<link rel="stylesheet" href="csslocal/leaflet-buttons.css">
+			<script type="text/javascript" src="jslocal/accordeon.js"></script>
 			<script type="text/javascript" src="data/gebietsdata.js"></script>
 			<div class="span12">
 				<div id="content" class="row-fluid">
@@ -26,43 +26,8 @@
 						</div>
 					</div>
 					<!-- content Box -->
-					<div class="span5">
-						<div class="row-fluid">
-							<div id="content-head" class="content-head span12">
-								<h2>$Stadtname</h2>
-								<span id="content-head-mandate">
-									insg. $N Mandate
-								</span>
-							</div>
-						</div>
-
-						<!-- Accordeon -->
-						<div id="#accordeon">
-							<div id="pan1" class="nav-tile title-open">
-								<a href="javascript:void(0);">dings</a>
-							</div>
-							<div id="pan1-content" class="pan-content pan-active">
-								content
-							</div>
-							<div id="pan2" class="nav-tile">
-								<a href="javascript:void(0);">dings 2</a>
-							</div>
-							<div id="pan2-content" class="pan-content">
-								content
-							</div>
-							<div id="pan3" class="nav-tile">
-								<a href="javascript:void(0);">dings 3</a>
-							</div>
-							<div id="pan3-content" class="pan-content">
-								content
-							</div>
-							<div id="pan4" class="nav-tile">
-								<a href="javascript:void(0);">dings 4</a>
-							</div>
-							<div id="pan4-content" class="pan-content">
-								content
-							</div>
-						</div>
+					<div class="span5" id="contentbox">
+						<script type="text/javascript">$('#contentbox').load('data/BE.html',accordeonInit)</script>
 					</div>
 				</div>
-			</div>	
+			</div>

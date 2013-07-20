@@ -99,10 +99,10 @@ function printNav(set,id) {
 
 function labelClick(feature,layer) {
   layer.bindLabel(feature.properties.name).on('click',function(e){
-    if (cL.depth < 2) {
+    if (cL.depth == 0) {
       engageLayer(Laender,feature.properties.key.substring(0,2));
     } else {
-      map.fitBounds(e.target.getBounds());
+      if (feature.properties.key in gc) {map.fitBounds(e.target.getBounds());}
     }
 })}
 
