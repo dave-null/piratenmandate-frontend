@@ -164,6 +164,14 @@ body {
 	text-align: center;
 }
 
+ul.commas { display: inline; list-style: none; margin: 0; padding: 0; }
+ul.commas li { display: inline; }
+ul.commas li:first-child:before { content:""; }
+ul.commas li:before { content: ", "; white-space: pre;}
+ul.commas li:last-child:before { content:" und "; white-space: pre;}
+ul.commas li:last-child:after { content: "."; }
+/* ul.commas li:only-child:before { content:"tag "; } */
+
 /* Kartennavi */
 #mapMenu ul {
 	position:relative;
