@@ -165,7 +165,7 @@ body {
 }
 
 /* Kartennavi */
-#map ul {
+#mapMenu ul {
 	position:relative;
 	display:inline-block;
 	list-style: none outside none;
@@ -173,20 +173,19 @@ body {
 	padding:0;
 	height:25px;
 }
-#map ul li {
+#mapMenu ul li {
 	display:inline-block;
 	padding:0;
-	border-right:1px solid #999;
 	line-height:24px;
 	float:left;
 }
-#map ul li:first-child a {
+#mapMenu ul li:first-child a {
 	-moz-border-bottom-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	-moz-border-top-left-radius: 5px;
 	border-top-left-radius: 5px;
 }
-#map ul li a {
+#mapMenu ul li a {
 	padding:0 10px;
 	display:inline-block;
 	line-height:23px;
@@ -194,11 +193,8 @@ body {
 	color:#333;
 	vertical-align:top;
 }
-#map ul li a:hover {
+#mapMenu ul li a:hover {
 	background-color: #CCC;
-}
-#map ul li:nth-child(1) {
-
 }
 #mapMenu {
 	background-color: #AAA;
@@ -208,4 +204,27 @@ body {
 	border:1px solid #999;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	-moz-box-shadow: 0 0 5px #999;
+    -webkit-box-shadow: 0 0 5px #999;
+    box-shadow: 0 0 5px #999;
+}
+#mapMenu li a {
+	font-weight: bold;
+}
+#mapMenu ul li span {
+	padding:0 10px;
+}
+#leafletContainer {
+	margin-left:5px;
+}
+#mapMenu ul li a:after {
+	content:'»';
+	margin-left:20px;
+}
+#mapMenu ul li:last-child a:after {
+	content:'';
+	margin-left:10px;
+}
+#mapMenu ul li:last-child {
+	border-right:2px solid #999;
 }
