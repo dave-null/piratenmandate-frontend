@@ -32,10 +32,10 @@ body {
 	background-color: white;
 	margin:auto;
 	-moz-box-shadow: 0 0 5px #999;
-    -webkit-box-shadow: 0 0 5px #999;
-    box-shadow: 0 0 5px #999;
+	-webkit-box-shadow: 0 0 5px #999;
+	box-shadow: 0 0 5px #999;
 }
-#content {
+#main {
 	padding:0 0 10px 0;
 }
 #header {
