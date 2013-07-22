@@ -118,22 +118,20 @@ body {
 #menu ul #about:before { content: '\00f059\0000a0\0000a0'; }
 #menu ul #contact:before { content: '\00f0e0\0000a0\0000a0'; }
 
-.content-head {
+h1 {
 	border-bottom:1px solid #ff8800;
 	border-left:10px solid #ff8800;
 	color:#333;
-	vertical-align: bottom;
 	font-family: 'Convergence', sans-serif;
-	margin-bottom: 10px;
-	line-height: 30px;
+	font-size:1.5em;
+	margin: 0 0 10px;
 	padding-left:5px;
 }
-#content-head h2 {
-	display:inline;
-	margin:0;
-}
-#content-head-mandate {
+h1 .info {
 	float:right;
+	font-size:0.7em;
+	font-weight:normal;
+	padding:0.25em 0.5em 0 0;
 }
 .nav-tile {
 	border-bottom:1px dotted #666;
@@ -170,7 +168,6 @@ ul.commas li:first-child:before { content:""; }
 ul.commas li:before { content: ", "; white-space: pre;}
 ul.commas li:last-child:before { content:" und "; white-space: pre;}
 ul.commas li:last-child:after { content: "."; }
-/* ul.commas li:only-child:before { content:"tag "; } */
 
 /* Kartennavi */
 #mapMenu ul {

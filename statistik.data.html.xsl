@@ -12,7 +12,7 @@
   <xsl:text>jqPlotDefaults.renderer = jQuery.jqplot.PieRenderer;</xsl:text>
   </script>
 
-  <h2>Übertritte</h2>
+  <h1>Übertritte</h1>
   <div class="row-fluid statistikRow">
     <div class="span5 statistik">
       <div id="transfers" class="jqplotContainer"></div>
@@ -44,7 +44,7 @@
   </xsl:text>
   </script>
 
-  <h2>Fraktionspartner</h2>
+  <h1>Fraktionspartner</h1>
   <div class="row-fluid statistikRow">
     <div class="span5 statistik">
       <div id="frkpartner" class="jqplotContainer"></div>
