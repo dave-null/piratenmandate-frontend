@@ -9,8 +9,15 @@
   </xsl:otherwise></xsl:choose>
 </xsl:template>
 
+<xsl:template match="gebiet" mode="localpirates">
+	<a class="localpirateslink">
+		<xsl:attribute name="href"><xsl:value-of select="ancestor-or-self::*[@localpirates][1]/@localpirates"/></xsl:attribute>
+		<xsl:text>Piratenpartei vor Ort</xsl:text>
+	</a>
+</xsl:template>
+
 <xsl:template match="parlament" mode="mandatsliste">
-  <ul class="commas">
+  <ul class="prose">
     <xsl:for-each select="mandat">
       <li><xsl:value-of select="." /></li>
     </xsl:for-each>
@@ -19,7 +26,7 @@
 
 <xsl:template match="parlament" mode="rislink">
   <a class="rislink"><xsl:attribute name="href"><xsl:value-of select="./ris" /></xsl:attribute>
-    <xsl:text>Link zum Ratsinformationssystem</xsl:text>
+    <xsl:text>Ratsinformationssystem</xsl:text>
   </a>
 </xsl:template>
 

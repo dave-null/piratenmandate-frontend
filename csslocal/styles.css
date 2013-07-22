@@ -133,6 +133,7 @@ h1 .info {
 	font-weight:normal;
 	padding:0.25em 0.5em 0 0;
 }
+
 .nav-tile {
 	border-bottom:1px dotted #666;
 	padding-left:30px;
@@ -162,12 +163,12 @@ h1 .info {
 	text-align: center;
 }
 
-ul.commas { display: inline; list-style: none; margin: 0; padding: 0; }
-ul.commas li { display: inline; }
-ul.commas li:first-child:before { content:""; }
-ul.commas li:before { content: ", "; white-space: pre;}
-ul.commas li:last-child:before { content:" und "; white-space: pre;}
-ul.commas li:last-child:after { content: "."; }
+ul.prose { display: inline; list-style: none; margin: 0; padding: 0; }
+ul.prose li { display: inline; }
+ul.prose li:first-child:before { content:""; }
+ul.prose li:before { content: ", "; white-space: pre;}
+ul.prose li:last-child:before { content:" und "; white-space: pre;}
+ul.prose li:last-child:after { content: "."; }
 
 /* Kartennavi */
 #mapMenu ul {
