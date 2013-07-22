@@ -104,9 +104,7 @@ function labelClick(feature,layer) {
     } else {
       if (feature.properties.key in gc) {map.fitBounds(e.target.getBounds());}
     }
-    $('#accordeon .nav-tile').removeClass('title-open');
-    $('#accordeon .pan-content').css('display','none');
-    $('#'+feature.properties.key).trigger('click');
+    $('#'+feature.properties.key+' h2').trigger('click');
 })}
 
 function gebietStyle(feature) {

@@ -16,20 +16,19 @@
 </xsl:template>
 
 <xsl:template match="gebiet">
-	<div class="nav-tile"><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
-		<a href="javascript:void(0);"><xsl:value-of select="@name" /></a>
-	</div>
-	<div class="pan-content"><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" />-content</xsl:attribute>
-		<xsl:apply-templates select="./parlament" mode="rislink" /><br />
-		<xsl:apply-templates select="." mode="localpirates" />
-		<h4>Mandatsträger (<xsl:apply-templates select="./parlament" mode="seats" />)</h4>
-			<xsl:apply-templates select="./parlament" mode="mandatsliste" />
-		<xsl:apply-templates select="./parlament/story" />
+	<div class="gebiet"><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
+		<h2><xsl:value-of select="@name" /></h2>
+		<div class="content">
+			<xsl:apply-templates select="./parlament" mode="rislink" /><br />
+			<xsl:apply-templates select="." mode="localpirates" />
+			<h3>Mandatsträger (<xsl:apply-templates select="./parlament" mode="seats" />)</h3>
+				<xsl:apply-templates select="./parlament" mode="mandatsliste" />
+			<xsl:apply-templates select="./parlament/story" />
+		</div>
 	</div>
 </xsl:template>
 
 <xsl:template match="story">
-	<h4>Story</h4>
 	<p><xsl:value-of select="." /></p>
 </xsl:template>
 

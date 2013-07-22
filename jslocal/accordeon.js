@@ -1,6 +1,6 @@
 function accordeonInit() {
-	$(".nav-tile").click(function(){
-		$("#"+$(this).attr("id")+"-content").slideToggle(250);	
-		$(this).toggleClass("title-open");
+	$(".gebiet h2").click(function(){
+		$("#"+$(this).parent().attr("id")+' .content').slideToggle(250);
+		$(this).parent().toggleClass("open");
 	});
 }

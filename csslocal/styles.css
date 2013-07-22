@@ -134,28 +134,25 @@ h1 .info {
 	padding:0.25em 0.5em 0 0;
 }
 
-.nav-tile {
+.gebiet h2 {
 	border-bottom:1px dotted #666;
 	padding-left:30px;
+	margin:0;
 	cursor:pointer;
 	background:url("../img/toggles.png") no-repeat scroll 0 -30px #EEE;
-	height:30px;
-}
-.nav-tile a {
 	line-height: 30px;
-	text-decoration: none;
 	color:#666;
 	font-family: 'Convergence', sans-serif;
+	font-size:1em;
+	font-weight:normal;
 }
-.pan-content {
+.gebiet .content {
 	display:none;
 }
-.pan-active {
-	display:block;
-}
-.title-open {
+.open h2 {
 	background:url("../img/toggles.png") no-repeat scroll 0 0 #EEE;
 }
+
 .statistikRow {
 	padding:10px 0;
 }
