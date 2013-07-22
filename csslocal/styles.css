@@ -26,6 +26,9 @@ body {
 	margin:0;
 	font-family:"faunaOne", sans-serif;
 }
+a {
+	text-decoration:none;
+}
 .container {
 	margin:auto;
 	padding:0 10px;
@@ -107,8 +110,7 @@ body {
 }
 #menu ul li a {
 	font-family: 'Convergence', sans-serif;
-        color: #000;
-        text-decoration: none;
+	color: #000;
 }
 #menu ul li a:hover {
         color:#666;
@@ -134,7 +136,13 @@ h1 .info {
 	padding:0.25em 0.5em 0 0;
 }
 
-.gebiet h2 {
+#contentbox {
+	font-size:0.8em;
+}
+#contentbox h1 {
+	font-size:1.875em;
+}
+#contentbox .gebiet h2 {
 	border-bottom:1px dotted #666;
 	padding-left:30px;
 	margin:0;
@@ -143,15 +151,54 @@ h1 .info {
 	line-height: 30px;
 	color:#666;
 	font-family: 'Convergence', sans-serif;
-	font-size:1em;
+	font-size:1.25em;
 	font-weight:normal;
 }
-.gebiet .content {
+#contentbox .gebiet .content {
 	display:none;
+	padding:0.3em 0;
 }
-.open h2 {
+#contentbox .open h2 {
 	background:url("../img/toggles.png") no-repeat scroll 0 0 #EEE;
 }
+#contentbox .gebiet h3 {
+	display:block;
+	text-align:center;
+	margin:0.5em 0 0 1em;
+	font-size:1.2em;
+}
+#contenbox .gebiet rislink {
+	float:right;
+	font-size:0.6em;
+}
+#contentbox .gebiet h4 {
+	display:inline;
+	font-size:1em;
+}
+#contentbox .gebiet h4:after {
+	content: ': ';
+	white-space: pre;
+}
+#contentbox .gebiet .content div {
+	margin:0.5em 0;
+}
+#contentbox .gebiet .content a {
+	font-size: 0.8em;
+	vertical-align:top;
+	padding: 0 0.2em;
+	margin: 0 0 0 0.5em;
+	background-color: #F4F4F4;
+	color:#555;
+	border:1px solid #999;
+	border-radius: 2px;
+}
+#contentbox .gebiet .content a:before {
+	content:"⇢\00a0"
+}
+#contentbox .gebiet .content a:hover {
+	color:#000;
+}
+
 
 .statistikRow {
 	padding:10px 0;
@@ -192,7 +239,6 @@ ul.prose li:last-child:after { content: "."; }
 	padding:0 10px;
 	display:inline-block;
 	line-height:23px;
-	text-decoration:none;
 	color:#333;
 	vertical-align:top;
 }
@@ -200,7 +246,6 @@ ul.prose li:last-child:after { content: "."; }
 	background-color: #CCC;
 }
 #mapMenu {
-	background-color: #AAA;
 	min-height: 0 !important;
 	height:25px;
 	background-color: #F4F4F4;
