@@ -96,7 +96,6 @@ a {
 	text-shadow: 0 -1px 1px #999, 0 1px 1px #FFFFFF;
 }
 #menu ul {
-	font-family: 'AwesomeWebfont';
 	font-weight: normal;
 	list-style: none outside none;
 	display:table;
@@ -115,10 +114,10 @@ a {
 #menu ul li a:hover {
         color:#666;
 }
-#menu ul #karte:before { content: '\00f0ac\0000a0\0000a0'; }
-#menu ul #stats:before { content: '\00f080\0000a0\0000a0'; }
-#menu ul #about:before { content: '\00f059\0000a0\0000a0'; }
-#menu ul #contact:before { content: '\00f0e0\0000a0\0000a0'; }
+#menu ul #karte a:before { content: '\00f0ac\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
+#menu ul #stats a:before { content: '\00f080\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
+#menu ul #about a:before { content: '\00f059\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
+#menu ul #contact a:before { content: '\00f0e0\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
 
 h1 {
 	border-bottom:1px solid #ff8800;
