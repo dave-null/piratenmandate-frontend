@@ -179,6 +179,9 @@ h1 .info {
 	content: ': ';
 	white-space: pre;
 }
+.gebiet .content {
+	display:none;
+}
 .content div {
 	margin:0.5em 0;
 }
@@ -277,13 +280,14 @@ ul.prose li:last-child:after { content: "."; }
 	border-right:2px solid #999;
 }
 #accordeon {
-	width: 30px;
-	overflow: hidden;
 	white-space: nowrap;
+}
+.accordeonClosed {
+	overflow: hidden;
 	float:left;
 }
 #mapInfo {
-	display:block;
+	display:none;
 	padding:5px 10px;
 	border:1px dotted #666;
 	margin-left: 30px;
