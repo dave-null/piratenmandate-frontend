@@ -43,8 +43,8 @@ a {
 }
 #header {
 	height:150px;
+	background:url("../img/logo.png") no-repeat scroll left center transparent; 
 }
-
 .rectangle {
 	background:#ff8800;
 	float:left;
@@ -291,4 +291,14 @@ ul.prose li:last-child:after { content: "."; }
 	padding:5px 10px;
 	border:1px dotted #666;
 	margin-left: 30px;
+}
+.well {
+	min-height: 20px;
+	padding: 19px;
+	background-color: rgb(245, 245, 245);
+	border: 1px solid rgb(227, 227, 227);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+	float:right;
+	margin:20px 20px;
 }
