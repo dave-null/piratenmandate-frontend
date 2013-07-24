@@ -37,7 +37,7 @@
 			<xsl:otherwise>unbekannt</xsl:otherwise>
 		</xsl:choose>
 		<xsl:if test="./fraktion/@url">
-			<a class="rimlink"><xsl:attribute name="href"><xsl:value-of select="./fraktion/@url"/></xsl:attribute>Homepage</a>
+			<a class="rimlink"><xsl:attribute name="href"><xsl:value-of select="./fraktion/@url"/></xsl:attribute>Fraktionshomepage</a>
 		</xsl:if>
 	</div>
 </xsl:template>
@@ -46,7 +46,7 @@
 	<div>
 		<xsl:value-of select="." />
 		<xsl:if test="@source">
-			<a class="rimlink"><xsl:attribute name="href"><xsl:value-of select="@source"/></xsl:attribute>Quelle</a>
+			<a><xsl:attribute name="href"><xsl:value-of select="@source"/></xsl:attribute>Quelle</a>
 		</xsl:if>
 	</div>
 </xsl:template>
@@ -56,7 +56,7 @@
 		<xsl:attribute name="href"><xsl:value-of select="@ris" /></xsl:attribute>
 		<xsl:attribute name="class">rimlink</xsl:attribute>
 		<xsl:attribute name="title">Zum Ratsinformationssystem</xsl:attribute>
-		<xsl:text>Ratsinfo</xsl:text>
+		<xsl:text>Ratsinformation</xsl:text>
 	</a>
 </xsl:template>
 
