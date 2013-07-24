@@ -167,15 +167,15 @@ h1 .info {
 	margin:0.5em 0 0 1em;
 	font-size:1.2em;
 }
-.gebiet rislink {
+.rimlink {
 	float:right;
-	font-size:0.6em;
+	font-size:0.8em;
 }
-.gebiet h4 {
+#contentbox h4 {
 	display:inline;
 	font-size:1em;
 }
-.gebiet h4:after {
+#contentbox h4:after {
 	content: ': ';
 	white-space: pre;
 }
