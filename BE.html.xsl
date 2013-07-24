@@ -13,6 +13,9 @@
 	<div id="accordeon">
 		<xsl:apply-templates select="//bundesland[@gs='11000000']/gebiet" />
 	</div>
+	<div id="mapInfo" class="content">
+		<div><h3>Bezirksverordnetenversammlung<a class="rislink" href="" title="Zum Ratsinformationssystem">RIS</a></h3></div><div><h4>Mandatsträger (4 von 55 Sitzen)</h4><ul class="prose"><li>Tobias Kriesel</li><li>Christopher Lang</li><li>David Kirchner</li><li>Alexander Freitag</li></ul></div><div><h4>Fraktion</h4>PIRATEN-Fraktion<a href="https://bvvmitte.pyxis.uberspace.de/wordpress/">Homepage</a></div><div>Von 6 gewonnenen Sitzen konnten nur 5 besetzt werden, da ein Teil der Listenkandidaten gleichzeitig ins Abgeordnetenhaus gewählt wurde. Im August 2012 legte außerdem eine Bezirksverordnete ihr Amt nieder, ohne dass es Nachrücker gab. Somit sind zwei Sitze in der Versammlung unbesetzt.</div><div><a class="localpirateslink" href="http://www.piraten-mitte.de/" title="Zur lokalen Gliederung der Piratenpartei">Piraten vor Ort</a></div>
+	</div>
 </xsl:template>
 
 <xsl:template match="gebiet">

@@ -167,22 +167,22 @@ h1 .info {
 	margin:0.5em 0 0 1em;
 	font-size:1.2em;
 }
-#contenbox .gebiet rislink {
+.gebiet rislink {
 	float:right;
 	font-size:0.6em;
 }
-#contentbox .gebiet h4 {
+.gebiet h4 {
 	display:inline;
 	font-size:1em;
 }
-#contentbox .gebiet h4:after {
+.gebiet h4:after {
 	content: ': ';
 	white-space: pre;
 }
-#contentbox .gebiet .content div {
+.content div {
 	margin:0.5em 0;
 }
-#contentbox .gebiet .content a {
+.content a {
 	font-size: 0.8em;
 	vertical-align:top;
 	padding: 0 0.2em;
@@ -192,10 +192,10 @@ h1 .info {
 	border:1px solid #999;
 	border-radius: 2px;
 }
-#contentbox .gebiet .content a:before {
+.content a:before {
 	content:"⇢\00a0"
 }
-#contentbox .gebiet .content a:hover {
+.content a:hover {
 	color:#000;
 }
 
@@ -275,4 +275,16 @@ ul.prose li:last-child:after { content: "."; }
 }
 #mapMenu ul li:last-child {
 	border-right:2px solid #999;
+}
+#accordeon {
+	width: 30px;
+	overflow: hidden;
+	white-space: nowrap;
+	float:left;
+}
+#mapInfo {
+	display:block;
+	padding:5px 10px;
+	border:1px dotted #666;
+	margin-left: 30px;
 }
