@@ -161,6 +161,13 @@ h1 .info {
 #contentbox .open h2 {
 	background:url("../img/toggles.png") no-repeat scroll 0 0 #EEE;
 }
+#abstract h2 {
+	background:url("../img/togglesarrow.png") no-repeat scroll 0 -30px #EEE;
+}
+#abstract h2.closed {
+	background:url("../img/togglesarrow.png") no-repeat scroll 0 0 #EEE;
+	margin-bottom: 10px;
+}
 #contentbox .gebiet h3 {
 	display:block;
 	text-align:center;

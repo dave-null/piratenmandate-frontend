@@ -30,4 +30,9 @@ function accordeonInit() {
 			$(this).parent().toggleClass("open");
 		}
 	});
+
+	$("#abstract h2").click(function() {
+		$(this).parent().children("p").slideToggle();
+		$(this).toggleClass("closed");
+	});
 }
