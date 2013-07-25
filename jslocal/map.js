@@ -11,6 +11,7 @@ function upButton() {
 function expandButton() {
 	map.fitBounds(cL.getBounds());
 	abstractCtl(1);
+	$('.open h2').trigger('click');
 }
 
 L.Control.Command = L.Control.extend({
@@ -105,9 +106,13 @@ function labelClick(feature,layer) {
     if (cL.depth == 0) {
       engageLayer(Laender,feature.properties.key.substring(0,2));
     } else {
-      if (feature.properties.key in gc) {map.fitBounds(e.target.getBounds());}
+      if (feature.properties.key in gc) {
+				map.fitBounds(e.target.getBounds());
+				abstractCtl(0);
+			}
     }
-    $('#'+feature.properties.key+' h2').trigger('click');
+    if (!($('#'+feature.properties.key).hasClass('open'))) {
+			$('#'+feature.properties.key+' h2').trigger('click');}
 })}
 
 function gebietStyle(feature) {
