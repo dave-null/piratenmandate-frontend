@@ -160,16 +160,24 @@ h1 .info {
 #contentbox .open h2 {
 	background:url("../img/toggles.png") no-repeat scroll 0 0 #EEE;
 }
+#abstract {
+	border-left:0.3em solid #eee;
+	margin-bottom:1em;
+}
+#abstract p {
+	margin:0.5em 0 0 0.5em;
+}
 #abstract h2 {
 	background:url("../img/togglesarrow.png") no-repeat scroll 0 -30px #EEE;
 }
 #abstract h2.closed {
 	background:url("../img/togglesarrow.png") no-repeat scroll 0 0 #EEE;
-	margin-bottom: 10px;
 }
 #contentbox h3 {
 	margin:0 0 1em;
 	font-size:1.2em;
+	border-left:0.3em solid #666;
+	padding-left:0.3em;
 }
 #contentbox h4 {
 	display:inline;
@@ -292,7 +300,7 @@ ul.prose li:last-child:before { content:" und "; white-space: pre;}
 #mapInfo {
 	display:none;
 	padding:5px 10px;
-	border:3px solid #EEE;
+	border-top:3px solid #EEE;
 	margin-left: 30px;
 }
 .well {
