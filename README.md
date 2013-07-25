@@ -1,13 +1,26 @@
 Frontend für piratenmandate
 ===========================
-Dieses Repository enthält ein Frontend für das von Michael Büker (emtiu) geführten XML Dateien aller Piratenmandate.
+Dies ist eine Aufbereitung der XML-Daten der kommunalen Piratenmandate aus [diesem Repository](https://github.com/emtiu/piratenmandate) als Webseite.
 
-Testen funktioniert auf zwei Wegen: Mit make (Seite wird im Verzeichnis _out erzeugt), oder mithilfe der index.php.
+9. JavaScript-Pakete im Verzeichnis `js/` ablegen:
+  * [jQuery](http://jquery.com/)
+  * [jqPlot](http://www.jqplot.com/)
+  * [leaflet](http://leafletjs.com/)
+  * [leaflet.label](https://github.com/Leaflet/Leaflet.label)
+9. [Bootstrap](http://twitter.github.io/bootstrap/) in `css/` ablegen
+9. `piratenmandate.xml` und `piratenmandate.dtd` aus [dem `piratenmandate`-Repository](https://github.com/emtiu/piratenmandate) im Haupverzeichnis ablegen
+9. `make` ausführen
 
-Erforderlich:
--------------
-- jqPlot (nach js/)
-- leaflet (nach js/)
-- piratenmandate.xml und piratenmandate.dtd aus https://github.com/emtiu/piratenmandate
+Die Dateien im Verzeichnis `_out` sollten dann den auf [kommunalpiraten.de](http://www.kommunalpiraten.de) gehosteten entsprechen.
 
-Link zu den Piratenmandaten: https://github.com/emtiu/piratenmandate
+Struktur
+--------
+* `js/`, `css/`: Externe Pakete
+* `jslocal/`, `csslocal/`: Eigener Code und Styles
+* `fonts/`, `img/`: Fonts, Bilder, Sprites
+* `geojson/`: Geoinformationen, selbst angepasst aus Daten vom [BKG](http://www.bkg.bund.de/) und [OpenStreetMap](http://www.openstreetmap.org/)
+* `*.xsl` Stylesheets zum automatischen Generieren von Inhalten aus der `piratenmandate.xml`
+
+Troubleshooting
+---------------
+* Das Makefile verwendet `xsltproc` zum Anwenden der XSL-Stylesheets. Das Programm muss vorhanden sein, kann aber theoretisch durch einen kompatiblen XSLT 1.0-Prozessor ersetzt werden.
