@@ -8,7 +8,10 @@ tileLayer = map.addLayer(new L.TileLayer(mapSettings.tiles, mapSettings.zoomLimi
 function upButton() {
   if (!(cL == Bund.layers[0] || cL == Bund.layers[1])) { engageLayer(Bund,0); }
 }
-function expandButton() {map.fitBounds(cL.getBounds());}
+function expandButton() {
+	map.fitBounds(cL.getBounds());
+	abstractCtl(1);
+}
 
 L.Control.Command = L.Control.extend({
     options: {position: mapSettings.extraButtonPosition,}
