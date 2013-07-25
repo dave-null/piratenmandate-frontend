@@ -29,6 +29,9 @@ body {
 a {
 	text-decoration:none;
 }
+.leaflet-label {
+	font-family:"faunaOne", sans-serif !important;
+}
 .container {
 	margin:auto;
 	padding:0 10px;
@@ -149,9 +152,12 @@ h1 .info {
 	background:url("../img/toggles.png") no-repeat scroll 0 -30px #EEE;
 	line-height: 30px;
 	color:#666;
-	font-family: 'Convergence', sans-serif;
-	font-size:1.25em;
-	font-weight:normal;
+	font-size:1.2em;
+	font-weight:bold;
+}
+#contentbox .leaflet-label {
+	background-color:#eee;
+	display:none;
 }
 #contentbox .gebiet .content {
 	display:none;
@@ -297,6 +303,7 @@ ul.prose li:last-child:before { content:" und "; white-space: pre;}
 	overflow: hidden;
 	float:left;
 }
+
 #mapInfo {
 	display:none;
 	padding:5px 10px;

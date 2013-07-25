@@ -15,6 +15,13 @@ function abstractCtl(s) {
 function accordeonInit() {
 	$(abstractID).click(function(){abstractCtl(2);});
 
+	$('#accordeon h2').hover(
+		function(){
+			if ($('#accordeon').hasClass('accordeonClosed') && !$(this).parent().hasClass('open')) {
+				$(this).children('.leaflet-label').fadeIn('fast');}}
+		,function(){
+			$(this).children('.leaflet-label').fadeOut('fast');})
+
 	var block = false;
 	$(".gebiet h2").click(function(){
 		if(!block) {

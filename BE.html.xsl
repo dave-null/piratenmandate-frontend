@@ -21,7 +21,10 @@
 
 <xsl:template match="gebiet">
 	<div class="gebiet"><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
-		<h2><xsl:value-of select="@type" /><xsl:text> </xsl:text><xsl:value-of select="@name" /></h2>
+		<h2>
+			<div class="leaflet-label"><xsl:value-of select="@name" /></div>
+			<xsl:value-of select="@type" /><xsl:text> </xsl:text><xsl:value-of select="@name" />
+		</h2>
 		<div class="content">
 			<h3>
 				<xsl:value-of select="parlament/@name"/>
