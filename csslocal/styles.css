@@ -167,15 +167,9 @@ h1 .info {
 	background:url("../img/togglesarrow.png") no-repeat scroll 0 0 #EEE;
 	margin-bottom: 10px;
 }
-#contentbox .gebiet h3 {
-	display:block;
-	text-align:center;
-	margin:0.5em 0 0 1em;
+#contentbox h3 {
+	margin:0 0 1em;
 	font-size:1.2em;
-}
-.rimlink {
-	float:right;
-	font-size:0.8em;
 }
 #contentbox h4 {
 	display:inline;
@@ -189,17 +183,7 @@ h1 .info {
 	display:none;
 }
 .content div {
-	margin:0.5em 0;
-}
-.content a {
-	font-size: 0.8em;
-	vertical-align:top;
-	padding: 0 0.2em;
-	margin: 0 0 0 0.5em;
-	background-color: #F4F4F4;
-	color:#555;
-	border:1px solid #999;
-	border-radius: 2px;
+	margin:0 0 0.8em;
 }
 .content a:before {
 	content:"⇢\00a0"
@@ -207,7 +191,21 @@ h1 .info {
 .content a:hover {
 	color:#000;
 }
-
+.content a {
+	padding: 0.1em 0.2em;
+	margin: 0 0 0.5em;
+	background-color: #F4F4F4;
+	color:#666;
+	border:1px solid #999;
+	border-radius: 3px;
+}
+.content a.small {
+	padding: 0 0.2em;
+	margin: 0;
+	font-size: 0.8em;
+	vertical-align:top;
+	border-radius: 2px;
+}
 
 .statistikRow {
 	padding:10px 0;
@@ -221,7 +219,6 @@ ul.prose li { display: inline; }
 ul.prose li:first-child:before { content:""; }
 ul.prose li:before { content: ", "; white-space: pre;}
 ul.prose li:last-child:before { content:" und "; white-space: pre;}
-ul.prose li:last-child:after { content: "."; }
 
 /* Kartennavi */
 #mapMenu ul {
@@ -295,7 +292,7 @@ ul.prose li:last-child:after { content: "."; }
 #mapInfo {
 	display:none;
 	padding:5px 10px;
-	border:1px dotted #666;
+	border:3px solid #EEE;
 	margin-left: 30px;
 }
 .well {

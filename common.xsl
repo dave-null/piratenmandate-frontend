@@ -9,36 +9,26 @@
   </xsl:otherwise></xsl:choose>
 </xsl:template>
 
-<xsl:template match="gebiet" mode="localpirates">
-	<a class="rimlink">
-		<xsl:attribute name="href"><xsl:value-of select="ancestor-or-self::*[@localpirates][1]/@localpirates"/></xsl:attribute>
-		<xsl:attribute name="title">Zur lokalen Gliederung der Piratenpartei</xsl:attribute>
-		<xsl:text>Piraten vor Ort</xsl:text>
-	</a>
-</xsl:template>
-
 <xsl:template match="parlament" mode="mandatstraeger">
 	<div>
-		<h4>Mandatsträger (<xsl:value-of select="count(./mandat)"/> von <xsl:value-of select="@seats" /> Sitzen)</h4>
+		<h4>Mandatsträger</h4>
 		<ul class="prose">
 			<xsl:for-each select="mandat">
 				<li><xsl:value-of select="." /></li>
 			</xsl:for-each>
 		</ul>
+		(<xsl:value-of select="count(./mandat)"/> von <xsl:value-of select="@seats" /> Sitzen)
 	</div>
 </xsl:template>
 
-<xsl:template match="parlament" mode="fraktion">
+<xsl:template match="fraktion">
 	<div>
 		<h4>Fraktion</h4>
 		<xsl:choose>
-			<xsl:when test="fraktion/@type = 'piraten'">PIRATEN-Fraktion</xsl:when>
-			<xsl:when test="fraktion/@type = 'none'">keine</xsl:when>
+			<xsl:when test="@type = 'piraten'">PIRATEN-Fraktion</xsl:when>
+			<xsl:when test="@type = 'none'">keine</xsl:when>
 			<xsl:otherwise>unbekannt</xsl:otherwise>
 		</xsl:choose>
-		<xsl:if test="./fraktion/@url">
-			<a class="rimlink"><xsl:attribute name="href"><xsl:value-of select="./fraktion/@url"/></xsl:attribute>Fraktionshomepage</a>
-		</xsl:if>
 	</div>
 </xsl:template>
 
@@ -46,18 +36,34 @@
 	<div>
 		<xsl:value-of select="." />
 		<xsl:if test="@source">
-			<a><xsl:attribute name="href"><xsl:value-of select="@source"/></xsl:attribute>Quelle</a>
+			<xsl:text> </xsl:text><a class="small"><xsl:attribute name="href"><xsl:value-of select="@source"/></xsl:attribute>Quelle</a>
 		</xsl:if>
 	</div>
 </xsl:template>
 
-<xsl:template match="parlament" mode="rislink">
-	<a class="rimlink">
-		<xsl:attribute name="href"><xsl:value-of select="@ris" /></xsl:attribute>
-		<xsl:attribute name="class">rimlink</xsl:attribute>
-		<xsl:attribute name="title">Zum Ratsinformationssystem</xsl:attribute>
-		<xsl:text>Ratsinformation</xsl:text>
-	</a>
+<xsl:template match="gebiet" mode="localpirates">
+	<p><a>
+		<xsl:attribute name="href"><xsl:value-of select="ancestor-or-self::*[@localpirates][1]/@localpirates"/></xsl:attribute>
+		<xsl:attribute name="title">Zur lokalen Gliederung der Piratenpartei</xsl:attribute>
+		<xsl:text>Piratenpartei vor Ort</xsl:text>
+	</a></p>
 </xsl:template>
+
+<xsl:template match="parlament" mode="rislink">
+	<p><a>
+		<xsl:attribute name="href"><xsl:value-of select="@ris" /></xsl:attribute>
+		<xsl:attribute name="title">Zum Ratsinformationssystem der Vertretung</xsl:attribute>
+		<xsl:text>Ratsinformationssystem</xsl:text>
+	</a></p>
+</xsl:template>
+
+<xsl:template match="fraktion[@url]" mode="fraktionslink">
+	<p><a>
+		<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
+		<xsl:attribute name="title">Zur Homepage der Fraktion</xsl:attribute>
+		<xsl:text>Fraktionshomepage</xsl:text>
+	</a></p>
+</xsl:template>
+
 
 </xsl:transform>
