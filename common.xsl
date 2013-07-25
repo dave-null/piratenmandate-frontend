@@ -17,7 +17,9 @@
 				<li><xsl:value-of select="." /></li>
 			</xsl:for-each>
 		</ul>
-		(<xsl:value-of select="count(./mandat)"/> von <xsl:value-of select="@seats" /> Sitzen)
+		<xsl:text>(</xsl:text>
+			<xsl:value-of select="count(./mandat)"/><xsl:text> von </xsl:text><xsl:value-of select="@seats" />
+		<xsl:text> Sitzen)</xsl:text>
 	</div>
 </xsl:template>
 
