@@ -149,7 +149,7 @@ h1 .info {
 	padding-left:30px;
 	margin:0;
 	cursor:pointer;
-	background:url("../img/toggles.png") no-repeat scroll 0 -30px #EEE;
+	background:url("../img/toggles-plus.png") no-repeat scroll 0 0 #EEE;
 	line-height: 30px;
 	color:#666;
 	font-size:1.2em;
@@ -164,7 +164,7 @@ h1 .info {
 	padding:0.3em 0;
 }
 #contentbox .open h2 {
-	background:url("../img/toggles.png") no-repeat scroll 0 0 #EEE;
+	background:url("../img/toggles-minus.png") no-repeat scroll 0 0 #EEE;
 }
 #abstract {
 	border-left:0.3em solid #eee;
