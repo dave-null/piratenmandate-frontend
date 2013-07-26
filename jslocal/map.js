@@ -47,6 +47,7 @@ L.Control.Command = L.Control.extend({
 //
 var Bund = {'data':{}, 'layers':{}};
 var Laender = {'data':{}, 'layers':{}};
+var Features = {};
 var cL = null;
 
 laenderNames = {'01':'Schleswig-Holstein','02':'Hamburg','03':'Niedersachsen','04':'Bremen','05':'Nordrhein-Westfalen','06':'Hessen','07':'Rheinland-Pfalz','08':'Baden-Württemberg','09':'Bayern','10':'Saarland','11':'Berlin','12':'Brandenburg','13':'Mecklenburg-Vorpommern','14':'Sachsen','15':'Sachsen-Anhalt','16':'Thüringen'};
@@ -70,7 +71,7 @@ function engageLayer(set, id) {
   if (cL) {map.removeLayer(cL);}
   if (set == Bund) {$('#up-button').addClass('up-inactive');} else {$('#up-button').removeClass('up-inactive')}
   if (!(id in set.layers)) {
-    set.layers[id] = L.geoJson(set.data[id],{style:gebietStyle,onEachFeature:labelClick}).addTo(map);
+    set.layers[id] = L.geoJson(set.data[id],{style:gebietStyle,onEachFeature:featureSetup}).addTo(map);
     set.layers[id].depth = set.data[id].depth;
     set.layers[id].name = set.data[id].name;
   } else {
@@ -101,7 +102,9 @@ function printNav(set,id) {
   $('#mapnav').html(outS);
 }
 
-function labelClick(feature,layer) {
+function featureSetup(feature,layer) {
+	Features[feature.properties.key] = feature;
+
   layer.bindLabel(feature.properties.name).on('click',function(e){
     if (cL.depth == 0) {
       engageLayer(Laender,feature.properties.key.substring(0,2));

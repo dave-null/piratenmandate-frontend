@@ -1,13 +1,13 @@
 var abstractID = "#abstract h2";
 
 function abstractCtl(s) {
-	if (s==0) {
+	if (s==0) { // close
 			$(abstractID).parent().children("p").slideUp();
 			$(abstractID).addClass("closed"); }
-	else if (s==1) {
+	else if (s==1) { // open
 			$(abstractID).parent().children("p").slideDown();
 			$(abstractID).removeClass("closed"); }
-	else if (s==2) {
+	else if (s==2) { // toggle
 			$(abstractID).parent().children("p").slideToggle();
 			$(abstractID).toggleClass("closed"); }
 }
@@ -51,6 +51,8 @@ function accordeonInit() {
 				});
 			}
 			$(this).parent().toggleClass("open");
+			//LEAFLET MAGIC HERE
+			map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
 		}
 	});
 }
