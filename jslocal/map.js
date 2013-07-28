@@ -6,10 +6,14 @@ map.attributionControl.setPrefix(mapSettings.credits);
 tileLayer = map.addLayer(new L.TileLayer(mapSettings.tiles, mapSettings.zoomLimits));
 
 function expandButtonFct() {
-	map.fitBounds(cL.getBounds());
-	$('.open h2').trigger('click');
+	if (cL.depth == 0) {
+		map.fitBounds(cL.getBounds());
+		$('.open h2').trigger('click');
+	} else {
+		engageLayer(Bund,0);
+	}
 }
-expandButtonOpt = {'text':"","onClick":expandButtonFct};
+expandButtonOpt = {'text':"Ganz Deutschland anzeigen","onClick":expandButtonFct};
 var expandButtonCtl = new L.Control.Button(expandButtonOpt).addTo(map);
 
 var Bund = {'data':{}, 'layers':{}};
@@ -30,7 +34,7 @@ $.getJSON('geojson/kreise.json',function(data){
       if (!(id in Laender.data)) { Laender.data[id] = {'type':'FeatureCollection','features':[],'depth':2,'name':laenderNames[id]}; }
       Laender.data[id].features.push(feature);
 }})});
-$.getJSON('geojson/laender.json',function(data){ Bund.data[1] = data; Bund.data[1].depth = 0; Bund.data[1].name = null; });
+$.getJSON('geojson/laender.json',function(data){ Bund.data[1] = data; Bund.data[1].depth = 0; Bund.data[1].name = "Deutschland"; });
 $.each(['02','04','11'],function(I,id){
   $.getJSON('geojson/'+laenderNames[id]+'.json',function(data){ Laender.data[id] = data; Laender.data[id].depth = 2; Laender.data[id].name = laenderNames[id]; });
 });
@@ -45,30 +49,29 @@ function engageLayer(set, id) {
     set.layers[id].addTo(map); }
   cL = set.layers[id];
   printNav(set,id);
-	expandButtonOpt.text ="Ganz "+cL.name+" anzeigen";
-	expandButtonCtl.setButton(expandButtonOpt);
+// 	expandButtonOpt.text ="Ganz "+cL.name+" anzeigen";
+// 	expandButtonCtl.setButton(expandButtonOpt);
   map.fitBounds(cL.getBounds());
 }
 
 function printNav(set,id) {
   depth = set.data[id].depth;
   name = set.data[id].name;
+	var outPrefix = "<ul><li>Kartendarstellung:</li></ul>";
   var outS = '';
   var outL = {'Land':''};
-  var nBund = {'mitLink':'<a href="javascript:engageLayer(Bund,0)">Bundesrepublik</a>', 'ohneLink':'Bundesrepublik'};
-  var nKreise = {'mitLink':'<a href="javascript:engageLayer(Bund,0)">Kreise</a>', 'ohneLink':'Kreise'};
-  var nLaender = {'mitLink':'<a href="javascript:engageLayer(Bund,1)">Länder</a>', 'ohneLink':'Länder'};
+  var nKreise = {'mitLink':'<a href="javascript:engageLayer(Bund,0)">Alle Kreise</a>', 'ohneLink':'Alle Kreise'};
+  var nLaender = {'mitLink':'<a href="javascript:engageLayer(Bund,1)">Alle Länder</a>', 'ohneLink':'Alle Länder'};
   if (depth == 0) {
-    outL.Bund = nBund.ohneLink
     if (id == 0) { outL.Kreise = nKreise.ohneLink; outL.Laender = nLaender.mitLink }
     else if (id == 1) { outL.Kreise = nKreise.mitLink; outL.Laender = nLaender.ohneLink }
   }
   else if (depth > 0) {
-    outL.Bund = nBund.mitLink; outL.Kreise = nKreise.mitLink; outL.Laender = nLaender.mitLink;
-    outL.Land = ' | '+name;
+    outL.Kreise = nKreise.mitLink; outL.Laender = nLaender.mitLink;
+    outL.Land = '<ul><li>'+name+'</li></ul>';
   }
-  outS = outL.Bund+' ('+outL.Kreise+', '+outL.Laender+')'+outL.Land
-  $('#mapnav').html(outS);
+  outS = outPrefix+'<ul><li>'+outL.Laender+'</li><li>'+outL.Kreise+'</li></ul>'+outL.Land
+  $('#mapMenu').html(outS);
 }
 
 function featureSetup(feature,layer) {
@@ -77,8 +80,7 @@ function featureSetup(feature,layer) {
     if (cL.depth == 0) {
       engageLayer(Laender,feature.properties.key.substring(0,2));
     }
-    if (!($('#'+feature.properties.key).hasClass('open'))) {
-			$('#'+feature.properties.key+' h2').trigger('click');}
+		$('#'+feature.properties.key+' h2').trigger('click');
 })}
 
 function gebietStyle(feature) {

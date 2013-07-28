@@ -4,8 +4,8 @@ var mapSettings = {
   credits: '<a href="http://www.openstreetmap.org">OpenStreetMap</a> und <a href="http://www.bkg.bund.de/">GeoBasis-DE/BKG</a>, 2013 (Daten verändert)<br>Kartengrafiken: <a href="http://maps.stamen.com">Stamen</a> (Theme: Watercolor) | Framework: <a href="http://www.leafletjs.com">Leaflet</a>'
   ,tiles: 'http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg'
   ,zoomLimits: {minZoom:5, maxZoom:12}
-  ,zoomPosition: 'topright'
-  ,extraButtonPosition: 'topleft'
+  ,zoomPosition: 'topleft'
+  ,extraButtonPosition: 'topright'
   ,gebietDefaults: {color:'#000', weight:1.3, opacity:0.5}
 }
 
