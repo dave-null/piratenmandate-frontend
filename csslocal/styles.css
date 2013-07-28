@@ -175,6 +175,7 @@ h1 .info {
 }
 #abstract h2 {
 	background:url("../img/togglesarrow.png") no-repeat scroll 0 -30px #EEE;
+	font-family:"Convergence", sans-serif;
 }
 #abstract h2.closed {
 	background:url("../img/togglesarrow.png") no-repeat scroll 0 0 #EEE;

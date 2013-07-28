@@ -5,46 +5,13 @@ map.addControl(L.control.zoom({position:mapSettings.zoomPosition}));
 map.attributionControl.setPrefix(mapSettings.credits);
 tileLayer = map.addLayer(new L.TileLayer(mapSettings.tiles, mapSettings.zoomLimits));
 
-function upButton() {
-  if (!(cL == Bund.layers[0] || cL == Bund.layers[1])) { engageLayer(Bund,0); }
-}
-function expandButton() {
+function expandButtonFct() {
 	map.fitBounds(cL.getBounds());
-	abstractCtl(1);
 	$('.open h2').trigger('click');
 }
+expandButtonOpt = {'text':"","onClick":expandButtonFct};
+var expandButtonCtl = new L.Control.Button(expandButtonOpt).addTo(map);
 
-L.Control.Command = L.Control.extend({
-    options: {position: mapSettings.extraButtonPosition,}
-  ,onAdd: function() {
-    var controlDiv = L.DomUtil.create('div', 'leaflet-control-up');
-    L.DomEvent
-      .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
-      .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
-      .addListener(controlDiv, 'click', function () { upButton(); });
-    var controlUI = L.DomUtil.create('a', 'leaflet-control-up-interior', controlDiv);
-    controlUI.id = "up-button";
-    controlUI.href = "#";
-    controlUI.title = 'Übergeordnetes Gebiet zeigen';
-    return controlDiv;
-}}); map.addControl(new L.Control.Command({}));
-L.Control.Command = L.Control.extend({
-    options: {position: mapSettings.extraButtonPosition,}
-  ,onAdd: function() {
-    var controlDiv = L.DomUtil.create('div', 'leaflet-control-expand');
-    L.DomEvent
-      .addListener(controlDiv, 'click', L.DomEvent.stopPropagation)
-      .addListener(controlDiv, 'click', L.DomEvent.preventDefault)
-      .addListener(controlDiv, 'click', function () { expandButton(); });
-    var controlUI = L.DomUtil.create('a', 'leaflet-control-expand-interior', controlDiv);
-    controlUI.id = "expand-button";
-    controlUI.href = "#";
-    controlUI.title = 'Ganzes Gebiet zeigen';
-    return controlDiv;
-}}); map.addControl(new L.Control.Command({}));
-
-// 
-//
 var Bund = {'data':{}, 'layers':{}};
 var Laender = {'data':{}, 'layers':{}};
 var Features = {};
@@ -54,7 +21,7 @@ laenderNames = {'01':'Schleswig-Holstein','02':'Hamburg','03':'Niedersachsen','0
 $.getJSON('geojson/kreise.json',function(data){
   Bund.data[0] = data;
   Bund.data[0].depth = 0;
-  Bund.data[0].name = null;
+  Bund.data[0].name = "Deutschland";
   engageLayer(Bund,0);
   $.each(data.features, function(I,feature){
     id = feature.properties.key.substring(0,2);
@@ -69,7 +36,6 @@ $.each(['02','04','11'],function(I,id){
 
 function engageLayer(set, id) {
   if (cL) {map.removeLayer(cL);}
-  if (set == Bund) {$('#up-button').addClass('up-inactive');} else {$('#up-button').removeClass('up-inactive')}
   if (!(id in set.layers)) {
     set.layers[id] = L.geoJson(set.data[id],{style:gebietStyle,onEachFeature:featureSetup}).addTo(map);
     set.layers[id].depth = set.data[id].depth;
@@ -78,6 +44,8 @@ function engageLayer(set, id) {
     set.layers[id].addTo(map); }
   cL = set.layers[id];
   printNav(set,id);
+	expandButtonOpt.text ="Ganz "+cL.name+" anzeigen";
+	expandButtonCtl.setButton(expandButtonOpt);
   map.fitBounds(cL.getBounds());
 }
 
@@ -104,14 +72,12 @@ function printNav(set,id) {
 
 function featureSetup(feature,layer) {
 	Features[feature.properties.key] = feature;
-
   layer.bindLabel(feature.properties.name).on('click',function(e){
     if (cL.depth == 0) {
       engageLayer(Laender,feature.properties.key.substring(0,2));
     } else {
       if (feature.properties.key in gc) {
 				map.fitBounds(e.target.getBounds());
-				abstractCtl(0);
 			}
     }
     if (!($('#'+feature.properties.key).hasClass('open'))) {

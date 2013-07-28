@@ -30,6 +30,8 @@ function accordeonInit() {
 			var self = $(this)
 			if(!$(this).parent().hasClass("open")) {
 				$('.open').removeClass("open");
+				abstractCtl(0);
+				map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
 				$("#accordeon").animate({
 					width:'30px'
 				}, 450, function() {
@@ -40,6 +42,7 @@ function accordeonInit() {
 					});
 				});
 			} else {
+				abstractCtl(1);
 				$("#mapInfo").fadeOut(250, function() {
 					$(this).html("");
 					$("#accordeon").removeClass("accordeonClosed");
@@ -51,8 +54,6 @@ function accordeonInit() {
 				});
 			}
 			$(this).parent().toggleClass("open");
-			//LEAFLET MAGIC HERE
-			map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
 		}
 	});
 }

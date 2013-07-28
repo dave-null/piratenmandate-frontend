@@ -5,7 +5,7 @@ var mapSettings = {
   ,tiles: 'http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg'
   ,zoomLimits: {minZoom:5, maxZoom:12}
   ,zoomPosition: 'topright'
-  ,extraButtonPosition: 'topright'
+  ,extraButtonPosition: 'topleft'
   ,gebietDefaults: {color:'#000', weight:1.3}
 }
 
