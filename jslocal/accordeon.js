@@ -30,8 +30,8 @@ function accordeonInit() {
 			var self = $(this)
 			if(!$(this).parent().hasClass("open")) {
 				$('.open').removeClass("open");
-				abstractCtl(0);
 				map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
+				abstractCtl(0);
 				$("#accordeon").animate({
 					width:'30px'
 				}, 450, function() {

@@ -75,10 +75,6 @@ function featureSetup(feature,layer) {
   layer.bindLabel(feature.properties.name).on('click',function(e){
     if (cL.depth == 0) {
       engageLayer(Laender,feature.properties.key.substring(0,2));
-    } else {
-      if (feature.properties.key in gc) {
-				map.fitBounds(e.target.getBounds());
-			}
     }
     if (!($('#'+feature.properties.key).hasClass('open'))) {
 			$('#'+feature.properties.key+' h2').trigger('click');}
