@@ -9,6 +9,10 @@
   </xsl:otherwise></xsl:choose>
 </xsl:template>
 
+<xsl:template match="/" mode="abtractheader"> <!-- Yes, this is abusing XSL. Sorry. -->
+	<h2>Hintergrund<span class="sidenote">(ausklappen)</span></h2>
+</xsl:template>
+
 <xsl:template match="parlament" mode="mandatstraeger">
 	<div>
 		<h4>Mandatsträger</h4>

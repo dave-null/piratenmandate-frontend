@@ -6,7 +6,7 @@ var mapSettings = {
   ,zoomLimits: {minZoom:5, maxZoom:12}
   ,zoomPosition: 'topright'
   ,extraButtonPosition: 'topleft'
-  ,gebietDefaults: {color:'#000', weight:1.3}
+  ,gebietDefaults: {color:'#000', weight:1.3, opacity:0.5}
 }
 
 var Gc = { // Styles for gebiete
@@ -14,6 +14,7 @@ var Gc = { // Styles for gebiete
   ,"P":{fillColor:'#f80', fillOpacity:0.6}  // Piraten
   ,"Ü":{fillColor:'#fb5', fillOpacity:0.5}  // Übertritte
 };
+var highlightStyle = {weight:5, opacity:1}
 
 var specialBounds = { // Gebiete mit fernen Inseln sollten auf das Hauptgebiet zoomen
    "Hamburg":   [[53.32185071096412,9.547119140624998], [53.81119329209967,10.5084228515625]]

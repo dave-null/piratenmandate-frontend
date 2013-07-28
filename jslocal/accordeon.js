@@ -30,6 +30,8 @@ function accordeonInit() {
 			var self = $(this)
 			if(!$(this).parent().hasClass("open")) {
 				map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
+				highlight = $(this).parent().attr('id');
+				cL.setStyle(gebietStyle);
 				abstractCtl(0);
 				$('.open').removeClass("open");
 				$("#accordeon").animate({
@@ -43,6 +45,8 @@ function accordeonInit() {
 				});
 			} else {
 				map.fitBounds(cL.getBounds());
+				highlight = null;
+				cL.setStyle(gebietStyle);
 				abstractCtl(1);
 				$("#mapInfo").fadeOut(250, function() {
 					$(this).html("");

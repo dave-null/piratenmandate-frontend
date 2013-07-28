@@ -180,6 +180,15 @@ h1 .info {
 #abstract h2.closed {
 	background:url("../img/togglesarrow.png") no-repeat scroll 0 0 #EEE;
 }
+.sidenote {
+	float:right;
+	font-size:80%;
+	padding-right:0.5em;
+	display:none;
+}
+.closed .sidenote {
+	display:inline;
+}
 #contentbox h3 {
 	margin:0 0 1em;
 	font-size:1.2em;
