@@ -29,9 +29,9 @@ function accordeonInit() {
 
 			var self = $(this)
 			if(!$(this).parent().hasClass("open")) {
-				$('.open').removeClass("open");
 				map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
 				abstractCtl(0);
+				$('.open').removeClass("open");
 				$("#accordeon").animate({
 					width:'30px'
 				}, 450, function() {
@@ -42,6 +42,7 @@ function accordeonInit() {
 					});
 				});
 			} else {
+				map.fitBounds(cL.getBounds());
 				abstractCtl(1);
 				$("#mapInfo").fadeOut(250, function() {
 					$(this).html("");
