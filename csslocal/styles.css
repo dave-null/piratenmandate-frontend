@@ -195,8 +195,19 @@ h1 .info {
 #contentbox h3 {
 	margin:0 0 1em;
 	font-size:1.2em;
-	border-left:0.3em solid #666;
+	border-left:4px solid #666;
 	padding-left:0.3em;
+}
+#contentbox .level1 {
+	margin-bottom:1.5em;
+}
+#contentbox .level0 > h3 {
+	border:0;
+	padding-left:0;
+}
+#contentbox .level1 > h3 {
+	border-top:0.3em solid #666;
+	padding-top:0.3em;
 }
 #contentbox h4 {
 	display:inline;
@@ -231,6 +242,7 @@ h1 .info {
 	color:#666;
 	border:1px solid #999;
 	border-radius: 3px;
+	white-space:nowrap;
 }
 #mapInfo a.small, .smalllinks a {
 	padding: 0 0.2em;

@@ -5,11 +5,11 @@
 <xsl:include href="common.xsl" />
 
 <xsl:template match="*">
-	<xsl:apply-templates select="//bundesland[@gs='10000000']" mode="flaeche" />
+	<xsl:apply-templates select="//bundesland[@gs='01000000']" mode="flaeche" />
 </xsl:template>
 
 <xsl:template match="bundesland" mode="abstract">
-	<p>saariously!?</p>
+	<p>schläfrig, holstein?</p>
 </xsl:template>
 
 </xsl:transform>

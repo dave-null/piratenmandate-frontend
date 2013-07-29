@@ -22,10 +22,6 @@
 	</xsl:if>
 </xsl:template>
 
-<xsl:template match="piratenmandate|bundesland|gebiet" mode="abtractheader"> <!-- Yes, this is abusing XSL. Sorry. -->
-	<h2>Hintergrund<span class="opennote"></span></h2>
-</xsl:template>
-
 <xsl:template match="parlament" mode="mandatstraeger">
 	<div>
 		<h4>Mandatsträger</h4>
@@ -45,8 +41,8 @@
 		<h4>Fraktion</h4>
 		<xsl:choose>
 			<xsl:when test="@type = 'piraten'">PIRATEN-Fraktion</xsl:when>
-			<xsl:when test="@type = 'none'">keine</xsl:when>
-			<xsl:otherwise>unbekannt</xsl:otherwise>
+			<xsl:when test="@type = 'none'">keine (fraktionslos)</xsl:when>
+			<xsl:when test="@type = 'unknown'"><em>unbekannt</em></xsl:when>
 		</xsl:choose>
 	</div>
 </xsl:template>
@@ -64,7 +60,7 @@
 	<p><a>
 		<xsl:attribute name="href"><xsl:value-of select="ancestor-or-self::*[@localpirates][1]/@localpirates"/></xsl:attribute>
 		<xsl:attribute name="title">Zur lokalen Gliederung der Piratenpartei</xsl:attribute>
-		<xsl:text>Piratenpartei vor Ort</xsl:text>
+		<xsl:text>Piraten vor Ort</xsl:text>
 	</a></p>
 </xsl:template>
 
@@ -84,6 +80,20 @@
 	</a></p>
 </xsl:template>
 
+
+<xsl:template match="bundesland" mode="stadtstaat">
+	<h1><xsl:value-of select="@name" />
+		<span class="info"><xsl:apply-templates select="." mode="mcountlong" /></span>
+	</h1>
+	<div id="abstract">
+		<h2>Hintergrund<span class="opennote"></span></h2>
+		<xsl:apply-templates select="." mode="abstract" />
+	</div>
+	<div id="accordeon">
+		<xsl:apply-templates select="gebiet" mode="stadtstaat" />
+	</div>
+	<div id="mapInfo"></div>
+</xsl:template>
 
 <xsl:template match="gebiet" mode="stadtstaat" >
 	<div class="gebiet"><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
@@ -108,8 +118,23 @@
 	</div>
 </xsl:template>
 
+
+<xsl:template match="bundesland" mode="flaeche">
+	<h1><xsl:value-of select="@name" />
+		<span class="info"><xsl:apply-templates select="." mode="mcountlong" /></span>
+	</h1>
+	<div id="abstract">
+		<h2>Hintergrund<span class="opennote"></span></h2>
+		<xsl:apply-templates select="." mode="abstract" />
+	</div>
+	<div id="accordeon">
+		<xsl:apply-templates select="gebiet" mode="flaechetop" />
+	</div>
+	<div id="mapInfo"></div>
+</xsl:template>
+
 <xsl:template match="gebiet" mode="flaechetop">
-	<div class="gebiet"><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
+	<div class="gebiet" ><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
 		<h2>
 			<div class="leaflet-label"><xsl:value-of select="@name" /></div>
 			<xsl:value-of select="@name" />
@@ -121,12 +146,15 @@
 </xsl:template>
 
 <xsl:template match="gebiet" mode="flaechegebiet">
-	<h3>
-		<xsl:value-of select="@type"/><xsl:text> </xsl:text><xsl:value-of select="@name"/>
-		<xsl:if test="parlament"><br /><xsl:value-of select="parlament/@name" /></xsl:if>
-	</h3>
-	<xsl:apply-templates select="parlament" mode="flaecheparl" />
-	<xsl:apply-templates select="gebiet" mode="flaechegebiet" /> <!-- HOLY COW, HE'S RECURSING! -->
+	<div>
+		<xsl:attribute name="class">level<xsl:value-of select="count(ancestor::gebiet)" /></xsl:attribute>
+		<h3>
+			<xsl:text> </xsl:text><xsl:value-of select="@name"/>
+			<xsl:if test="parlament"><br /><xsl:value-of select="parlament/@name" /></xsl:if>
+		</h3>
+		<xsl:apply-templates select="parlament" mode="flaecheparl" />
+		<xsl:apply-templates select="gebiet" mode="flaechegebiet" /> <!-- HOLY COW, HE'S RECURSING! -->
+	</div>
 </xsl:template>
 
 <xsl:template match="parlament" mode="flaecheparl">

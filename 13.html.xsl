@@ -5,21 +5,11 @@
 <xsl:include href="common.xsl" />
 
 <xsl:template match="*">
-	<xsl:apply-templates select="//bundesland[@gs='13000000']" />
+	<xsl:apply-templates select="//bundesland[@gs='13000000']" mode="flaeche" />
 </xsl:template>
 
-<xsl:template match="bundesland">
-	<h1><xsl:value-of select="@name" />
-		<span class="info"><xsl:apply-templates select="." mode="mcountlong" /></span>
-	</h1>
-	<div id="abstract">
-		<xsl:apply-templates select="." mode="abtractheader" />
-		<p>MV tut gut</p>
-	</div>
-	<div id="accordeon">
-		<xsl:apply-templates select="gebiet" mode="flaechetop" />
-	</div>
-	<div id="mapInfo"></div>
+<xsl:template match="bundesland" mode="abstract">
+	<p>mv tut gut</p>
 </xsl:template>
 
 </xsl:transform>
