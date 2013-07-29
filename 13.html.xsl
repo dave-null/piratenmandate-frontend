@@ -5,7 +5,7 @@
 <xsl:include href="common.xsl" />
 
 <xsl:template match="*">
-	<xsl:apply-templates select="//bundesland[@gs='10000000']" />
+	<xsl:apply-templates select="//bundesland[@gs='13000000']" />
 </xsl:template>
 
 <xsl:template match="bundesland">
@@ -14,7 +14,7 @@
 	</h1>
 	<div id="abstract">
 		<xsl:apply-templates select="." mode="abtractheader" />
-		<p>saariously?</p>
+		<p>MV tut gut</p>
 	</div>
 	<div id="accordeon">
 		<xsl:apply-templates select="gebiet" mode="genericflaeche" />
