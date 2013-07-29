@@ -38,7 +38,7 @@ function accordeonInit() {
 					width:'30px'
 				}, 450, function() {
 					$(this).addClass("accordeonClosed");
-					$('#mapInfo').html(self.parent().children('.content').html());
+					$('#mapInfo').html(self.parent().children('.contentstore').html());
 					$("#mapInfo").fadeIn(250, function() {
 						block = false;
 					});

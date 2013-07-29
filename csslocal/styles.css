@@ -155,13 +155,12 @@ h1 .info {
 	font-size:1.2em;
 	font-weight:bold;
 }
+#contentbox .contentstore {
+	display:none;
+}
 #contentbox .leaflet-label {
 	background-color:#eee;
 	display:none;
-}
-#contentbox .gebiet .content {
-	display:none;
-	padding:0.3em 0;
 }
 #contentbox .open h2 {
 	background:url("../img/toggles-minus.png") no-repeat scroll 0 0 #EEE;
@@ -205,9 +204,6 @@ h1 .info {
 #contentbox h4:after {
 	content: ': ';
 	white-space: pre;
-}
-.gebiet .content {
-	display:none;
 }
 .content div {
 	margin:0 0 0.8em;

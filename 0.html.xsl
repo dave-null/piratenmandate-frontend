@@ -16,7 +16,7 @@
 	<div id="accordeon">
 		<xsl:apply-templates select="//bundesland[@gs='11000000']/gebiet" />
 	</div>
-	<div id="mapInfo" class="content"></div>
+	<div id="mapInfo"></div>
 </xsl:template>
 
 <xsl:template match="gebiet">
@@ -25,7 +25,7 @@
 			<div class="leaflet-label"><xsl:value-of select="@name" /></div>
 			<xsl:value-of select="@type" /><xsl:text> </xsl:text><xsl:value-of select="@name" />
 		</h2>
-		<div class="content">
+		<div class="contentstore">
 			<h3>
 				<xsl:value-of select="parlament/@name"/>
 				<br />
