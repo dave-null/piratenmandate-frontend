@@ -155,7 +155,7 @@ h1 .info {
 	font-size:1.2em;
 	font-weight:bold;
 }
-#contentbox .contentstore {
+#contentbox .gebietstore {
 	display:none;
 }
 #contentbox .leaflet-label {
@@ -205,16 +205,26 @@ h1 .info {
 	content: ': ';
 	white-space: pre;
 }
-.content div {
+.contentstore {
+	display:none;
+}
+#mapInfo {
+	display:none;
+	padding:5px 10px;
+	border-top:3px solid #EEE;
+	margin-left: 30px;
+}
+
+#mapInfo div {
 	margin:0 0 0.8em;
 }
-.content a:before {
+#mapInfo a:before {
 	content:"⇢\00a0"
 }
-.content a:hover {
+#mapInfo a:hover {
 	color:#000;
 }
-.content a {
+#mapInfo a {
 	padding: 0.1em 0.4em 0.1em 0.2em;
 	margin: 0 0 0.5em;
 	background-color: #F4F4F4;
@@ -222,7 +232,7 @@ h1 .info {
 	border:1px solid #999;
 	border-radius: 3px;
 }
-.content a.small {
+#mapInfo a.small {
 	padding: 0 0.2em;
 	margin: 0;
 	font-size: 0.8em;
@@ -297,12 +307,6 @@ ul.prose li:only-child:before { content:""; }
 	float:left;
 }
 
-#mapInfo {
-	display:none;
-	padding:5px 10px;
-	border-top:3px solid #EEE;
-	margin-left: 30px;
-}
 .well {
 	min-height: 20px;
 	padding: 19px;
