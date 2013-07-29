@@ -6,7 +6,7 @@ index=karte
 sections=statistik about kontakt
 
 datadir=data
-datenfiles=statistik.data.html gebietsdata.js BE.html HH.html
+datenfiles=statistik.data.html gebietsdata.js 0.html 02.html 11.html
 
 #ausgruenden darf ein target nicht wie ein existierendes verzeichnis heissen!
 all: javascript headfoot styles datadir json

@@ -48,6 +48,7 @@ function engageLayer(set, id) {
   } else {
     set.layers[id].addTo(map); }
   cL = set.layers[id];
+	$('#contentbox').load('data/'+id+'.html',accordeonInit)
   printNav(set,id);
 // 	expandButtonOpt.text ="Ganz "+cL.name+" anzeigen";
 // 	expandButtonCtl.setButton(expandButtonOpt);

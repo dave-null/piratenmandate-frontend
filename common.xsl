@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:transform version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-<xsl:template match="gebiet|bundesland" mode="key">
+<xsl:template match="bundesland|gebiet" mode="key">
   <xsl:choose><xsl:when test="@gs">
     <xsl:value-of select="@gs"/>
   </xsl:when><xsl:otherwise>
@@ -9,8 +9,19 @@
   </xsl:otherwise></xsl:choose>
 </xsl:template>
 
-<xsl:template match="/" mode="abtractheader"> <!-- Yes, this is abusing XSL. Sorry. -->
-	<h2>Hintergrund<span class="sidenote">(ausklappen)</span></h2>
+<xsl:template match="piratenmandate|bundesland|gebiet" mode="mcountlong">
+	<xsl:value-of select="count(.//mandat)" /><xsl:text> Mandate</xsl:text>
+	<xsl:if test=".//mandat[@type='transfer']">
+		<xsl:choose><xsl:when test="count(//mandat) = count(.//mandat[@type='transfer'])">
+			<xsl:text> durch Übertritt</xsl:text>
+		</xsl:when><xsl:otherwise>
+			<xsl:text> (</xsl:text><xsl:value-of select="count(.//mandat[@type='transfer'])"/><xsl:text> durch Übertritt)</xsl:text>
+		</xsl:otherwise></xsl:choose>
+	</xsl:if>
+</xsl:template>
+
+<xsl:template match="piratenmandate|bundesland|gebiet" mode="abtractheader"> <!-- Yes, this is abusing XSL. Sorry. -->
+	<h2>Hintergrund<span class="opennote"></span></h2>
 </xsl:template>
 
 <xsl:template match="parlament" mode="mandatstraeger">
