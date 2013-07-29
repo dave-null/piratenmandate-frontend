@@ -232,14 +232,17 @@ h1 .info {
 	border:1px solid #999;
 	border-radius: 3px;
 }
-#mapInfo a.small {
+#mapInfo a.small, .smalllinks a {
 	padding: 0 0.2em;
 	margin: 0;
 	font-size: 0.8em;
 	vertical-align:top;
 	border-radius: 2px;
 }
-
+.smalllinks p{
+	display:inline;
+	margin-right:0.3em;
+}
 .statistikRow {
 	padding:10px 0;
 }

@@ -17,7 +17,7 @@
 		<p>saariously?</p>
 	</div>
 	<div id="accordeon">
-		<xsl:apply-templates select="gebiet" mode="genericflaeche" />
+		<xsl:apply-templates select="gebiet" mode="flaechetop" />
 	</div>
 	<div id="mapInfo"></div>
 </xsl:template>

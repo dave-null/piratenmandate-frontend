@@ -76,12 +76,14 @@ function printNav(set,id) {
 }
 
 function featureSetup(feature,layer) {
-	Features[feature.properties.key] = feature;
-  layer.bindLabel(feature.properties.name).on('click',function(e){
-    if (cL.depth == 0) {
-      engageLayer(Laender,feature.properties.key.substring(0,2));
-    }
-		$('#'+feature.properties.key+' h2').trigger('click');
+	if (feature.properties.key in gc) { Features[feature.properties.key] = feature; }
+	layer.bindLabel(feature.properties.name).on('click',function(e){
+		if (cL.depth == 0) {
+			engageLayer(Laender,feature.properties.key.substring(0,2));
+			if (feature.properties.key in gc) { $('#'+feature.properties.key+' h2').trigger('click'); }
+		} else {
+			$('#'+feature.properties.key+' h2').trigger('click');
+		}
 })}
 
 function gebietStyle(feature) {
