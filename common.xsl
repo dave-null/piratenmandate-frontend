@@ -40,7 +40,20 @@
 	<div>
 		<h4>Fraktion</h4>
 		<xsl:choose>
-			<xsl:when test="@type = 'piraten'">PIRATEN-Fraktion</xsl:when>
+			<xsl:when test="@type = 'piraten'"><strong>PIRATEN-Fraktion</strong></xsl:when>
+			<xsl:when test="@type = 'gemeinsam'">
+				Gemeinsame Fraktion <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>, mit 
+					<ul class="prose">
+					<xsl:for-each select="partner">
+						<li>
+							<xsl:value-of select="@partei" /> (<xsl:value-of select="@num" />)
+						</li>
+					</xsl:for-each>
+					</ul>
+			</xsl:when>
+			<xsl:when test="@type = 'fremd'">
+				Mitglied der Fraktion <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>
+			</xsl:when>
 			<xsl:when test="@type = 'none'">keine (fraktionslos)</xsl:when>
 			<xsl:when test="@type = 'unknown'"><em>unbekannt</em></xsl:when>
 		</xsl:choose>
