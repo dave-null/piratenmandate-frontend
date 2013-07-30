@@ -22,6 +22,25 @@
 	</xsl:if>
 </xsl:template>
 
+<xsl:template match="piratenmandate|bundesland|gebiet" mode="mcountshort">
+	<xsl:choose><xsl:when test="count(.//mandat) = count(.//mandat[@type='transfer'])">
+		<xsl:value-of select="count(.//mandat[@type='transfer'])" />
+		<xsl:text> Übertritt</xsl:text>
+		<xsl:if test="count(.//mandat[@type='transfer']) > 1"><xsl:text>e</xsl:text></xsl:if>
+	</xsl:when><xsl:otherwise>
+		<xsl:value-of select="count(.//mandat[@type='pirat'])" />
+		<xsl:text> Mandat</xsl:text>
+		<xsl:if test="count(.//mandat) > 1"><xsl:text>e</xsl:text></xsl:if>
+		<xsl:if test=".//mandat[@type='transfer']">
+			<xsl:text> (+</xsl:text>
+			<xsl:value-of select="count(.//mandat[@type='transfer'])"/>
+			<xsl:text> Übertritt</xsl:text>
+			<xsl:if test="count(.//mandat[@type='transfer']) > 1"><xsl:text>e</xsl:text></xsl:if>
+			<xsl:text>)</xsl:text>
+		</xsl:if>
+	</xsl:otherwise></xsl:choose>
+</xsl:template>
+
 <xsl:template match="parlament" mode="mandatstraeger">
 	<div>
 		<h4>Mandatsträger</h4>
@@ -45,9 +64,7 @@
 				Gemeinsame Fraktion <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>, mit 
 					<ul class="prose">
 					<xsl:for-each select="partner">
-						<li>
-							<xsl:value-of select="@partei" /> (<xsl:value-of select="@num" />)
-						</li>
+						<li><xsl:value-of select="@partei" /> (<xsl:value-of select="@num" />)</li>
 					</xsl:for-each>
 					</ul>
 			</xsl:when>
@@ -162,7 +179,10 @@
 	<div>
 		<xsl:attribute name="class">level<xsl:value-of select="count(ancestor::gebiet)" /></xsl:attribute>
 		<h3>
-			<xsl:text> </xsl:text><xsl:value-of select="@name"/>
+			<xsl:value-of select="@name"/>
+			<xsl:if test="count(ancestor::gebiet) > 0">
+				<xsl:text> (</xsl:text><xsl:value-of select="@type"/><xsl:text>)</xsl:text>
+			</xsl:if>
 			<xsl:if test="parlament"><br /><xsl:value-of select="parlament/@name" /></xsl:if>
 		</h3>
 		<xsl:apply-templates select="parlament" mode="flaecheparl" />

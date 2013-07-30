@@ -12,6 +12,11 @@ function abstractCtl(s) {
 			$(abstractID).toggleClass("closed"); }
 }
 
+function landblockInit() {
+	$(".landblock").click(function(){
+		engageLayer(Laender,$(this).attr('id').substring(0,2));
+})}
+
 function accordeonInit() {
 	$(abstractID).click(function(){abstractCtl(2);});
 
