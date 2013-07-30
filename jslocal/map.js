@@ -46,9 +46,14 @@ function engageLayer(set, id) {
     set.layers[id].depth = set.data[id].depth;
     set.layers[id].name = set.data[id].name;
   } else {
+		set.layers[id].setStyle(gebietStyle);
     set.layers[id].addTo(map); }
   cL = set.layers[id];
-	$('#contentbox').load('data/'+id+'.html',accordeonInit)
+	if (cL.depth == 2) {
+		$('#contentbox').load('data/'+id+'.html',accordeonInit)
+	} else {
+		$('#contentbox').load('data/'+id+'.html')
+	}
   printNav(set,id);
 // 	expandButtonOpt.text ="Ganz "+cL.name+" anzeigen";
 // 	expandButtonCtl.setButton(expandButtonOpt);
@@ -93,6 +98,9 @@ function gebietStyle(feature) {
 	} else {
 		$.extend(S,Gc['D']);
 	}
-	if (feature.properties.key == highlight) { $.extend(S, highlightStyle) }
+	if (feature.properties.key == highlight) {
+		$.extend(S, highlightStyle)
+		highlight = null;
+	}
 	return S;
 }
