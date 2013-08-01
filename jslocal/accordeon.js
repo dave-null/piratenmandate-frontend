@@ -14,7 +14,7 @@ function abstractCtl(s) {
 
 function landblockInit() {
 	$(".landblock").click(function(){
-		engageLayer(Laender,$(this).attr('id').substring(0,2));
+		engageLayer(Laender,$(this).attr('id').substring(1,3));
 })}
 
 function accordeonInit() {

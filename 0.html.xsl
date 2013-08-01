@@ -17,7 +17,7 @@
 
 <xsl:template match="bundesland">
 	<div class="landblock">
-	<xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
+	<xsl:attribute name="id">L<xsl:value-of select="substring(@gs,1,2)" /></xsl:attribute>
 		<h3>
 			<div class="leaflet-label"><xsl:value-of select="@name" /></div>
 			<xsl:value-of select="@type" /><xsl:text> </xsl:text><xsl:value-of select="@name" />

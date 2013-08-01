@@ -22,7 +22,8 @@ var Features = {};
 var cL = null;
 var highlight = null;
 
-laenderNames = {'01':'Schleswig-Holstein','02':'Hamburg','03':'Niedersachsen','04':'Bremen','05':'Nordrhein-Westfalen','06':'Hessen','07':'Rheinland-Pfalz','08':'Baden-Württemberg','09':'Bayern','10':'Saarland','11':'Berlin','12':'Brandenburg','13':'Mecklenburg-Vorpommern','14':'Sachsen','15':'Sachsen-Anhalt','16':'Thüringen'};
+var laenderNames = {'01':'Schleswig-Holstein','02':'Hamburg','03':'Niedersachsen','04':'Bremen','05':'Nordrhein-Westfalen','06':'Hessen','07':'Rheinland-Pfalz','08':'Baden-Württemberg','09':'Bayern','10':'Saarland','11':'Berlin','12':'Brandenburg','13':'Mecklenburg-Vorpommern','14':'Sachsen','15':'Sachsen-Anhalt','16':'Thüringen'};
+var laenderAusnahmen = ['02','04','11']; // Ausnahmen: HH, BE, HB
 $.getJSON('geojson/kreise.json',function(data){
   Bund.data[0] = data;
   Bund.data[0].depth = 0;
@@ -30,12 +31,12 @@ $.getJSON('geojson/kreise.json',function(data){
   engageLayer(Bund,0);
   $.each(data.features, function(I,feature){
     id = feature.properties.key.substring(0,2);
-    if ($.inArray(id,['02','04','11']) == -1) { // Ausnahmen: HH, BE, HB
+    if ($.inArray(id,laenderAusnahmen) == -1) {
       if (!(id in Laender.data)) { Laender.data[id] = {'type':'FeatureCollection','features':[],'depth':2,'name':laenderNames[id]}; }
       Laender.data[id].features.push(feature);
 }})});
 $.getJSON('geojson/laender.json',function(data){ Bund.data[1] = data; Bund.data[1].depth = 0; Bund.data[1].name = "Deutschland"; });
-$.each(['02','04','11'],function(I,id){
+$.each(laenderAusnahmen,function(I,id){
   $.getJSON('geojson/'+laenderNames[id]+'.json',function(data){ Laender.data[id] = data; Laender.data[id].depth = 2; Laender.data[id].name = laenderNames[id]; });
 });
 

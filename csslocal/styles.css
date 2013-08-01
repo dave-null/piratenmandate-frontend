@@ -205,6 +205,15 @@ h1 .info {
 .landblock:hover {
 	background-color:#eee;
 }
+.landblock h3 {
+	margin-bottom:0.4em !important;
+}
+#L13 {
+	width:19.5em;
+}
+#L14 {
+	width:12.5em;
+}
 #contentbox h3 {
 	margin:0 0 1em;
 	font-size:1.2em;
