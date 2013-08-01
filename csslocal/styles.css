@@ -156,6 +156,9 @@ h1 .info {
 	font-size:1.2em;
 	font-weight:bold;
 }
+.toplistdivide {
+	margin-bottom:1em
+}
 #contentbox .gebietstore {
 	display:none;
 }
