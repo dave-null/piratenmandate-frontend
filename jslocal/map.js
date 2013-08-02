@@ -20,6 +20,7 @@ var Bund = {'data':{}, 'layers':{}};
 var Laender = {'data':{}, 'layers':{}};
 var Features = {};
 var cL = null;
+var cLm = null;
 var highlight = null;
 
 var laenderNames = {'01':'Schleswig-Holstein','02':'Hamburg','03':'Niedersachsen','04':'Bremen','05':'Nordrhein-Westfalen','06':'Hessen','07':'Rheinland-Pfalz','08':'Baden-Württemberg','09':'Bayern','10':'Saarland','11':'Berlin','12':'Brandenburg','13':'Mecklenburg-Vorpommern','14':'Sachsen','15':'Sachsen-Anhalt','16':'Thüringen'};
@@ -40,15 +41,27 @@ $.getJSON('geojson/laender.json',function(data){ Bund.data[1] = data; Bund.data[
 $.each(laenderAusnahmen,function(I,id){
   $.getJSON('geojson/'+id+'.json',function(data){ Laender.data[id] = data; Laender.data[id].depth = 2; Laender.data[id].name = laenderNames[id]; });
 });
+$.each(hasMiddle,function(I,id){
+  $.getJSON('geojson/'+id+'m'+'.json',function(data){ Laender.data[id+'m'] = data; });
+});
 
 function engageLayer(set, id) {
   if (cL) {map.removeLayer(cL);}
+  if (cLm) {map.removeLayer(cLm);}
   if (!(id in set.layers)) {
+		if ($.inArray(id,hasMiddle) != -1) {
+			set.layers[id+'m'] = L.geoJson(set.data[id+'m'],
+				{onEachFeature:function(feature){Features[feature.properties.key] = feature;}
+				,style:function(f){return $.extend({},mapSettings.gebietDefaults,middleStyle);}}
+			).addTo(map);
+			cLm = set.layers[id+'m'];
+		}
     set.layers[id] = L.geoJson(set.data[id],{style:gebietStyle,onEachFeature:featureSetup}).addTo(map);
     set.layers[id].depth = set.data[id].depth;
     set.layers[id].name = set.data[id].name;
   } else {
 		set.layers[id].setStyle(gebietStyle);
+		if ($.inArray(id,hasMiddle) != -1) { set.layers[id+'m'].addTo(map); }
     set.layers[id].addTo(map); }
   cL = set.layers[id];
 	if (cL.depth == 2) {

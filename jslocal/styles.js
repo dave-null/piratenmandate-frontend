@@ -15,6 +15,7 @@ var Gc = { // Styles for gebiete
   ,"Ü":{fillColor:'#fb5', fillOpacity:0.5}  // Übertritte
 };
 var highlightStyle = {weight:5, opacity:1}
+var middleStyle = { fillOpacity:0, weight:2.6, opacity:1 }
 
 // Statistik
 // 

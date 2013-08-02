@@ -31,14 +31,15 @@ function accordeonInit() {
 	$(".gebiet h2").click(function(){
 		if(!block) {
 			block = true
-
 			var self = $(this)
 			if(!$(this).parent().hasClass("open")) {
-// 				if ( $.inArray( $(this).parent().attr('id').substring(1,2), ['1','2']) != -1 ) {
-// 				}
-				map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
-				highlight = $(this).parent().attr('id');
-				cL.setStyle(gebietStyle);
+				if ($(this).parent().hasClass("middle")) {
+					map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
+				} else {
+					map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
+					highlight = $(this).parent().attr('id');
+					cL.setStyle(gebietStyle);
+				}
 				abstractCtl(0);
 				$('.open').removeClass("open");
 				$("#accordeon").animate({

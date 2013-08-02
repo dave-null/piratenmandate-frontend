@@ -17,11 +17,30 @@
 			<p>mia san mia</p>
 	</div>
 	<div id="accordeon">
-<!-- 		<xsl:apply-templates select="gebiet[@name='Bremerhaven']" mode="flaechetop" /> -->
-<!-- 		<div class="toplistdivide" /> -->
+		<xsl:apply-templates select="gebiet[./parlament]" mode="bayernbezirke" />
 		<xsl:apply-templates select="//gebiet[@type='Bezirk']/gebiet" mode="flaechetop" />
 	</div>
 	<div id="mapInfo"></div>
+</xsl:template>
+
+<xsl:template match="gebiet" mode="bayernbezirke">
+	<div class="gebiet middle" ><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
+		<h2>
+			<div class="leaflet-label"><xsl:text>Bezirk </xsl:text><xsl:value-of select="@name" /></div>
+			<xsl:text>Bezirk </xsl:text><xsl:value-of select="@name" />
+		</h2>
+		<div class="contentstore">
+			<h3>
+				Bezirk <xsl:value-of select="@name"/>
+				<br />
+				<xsl:value-of select="./parlament/@name" />
+			</h3>
+			<xsl:apply-templates select="./parlament" mode="flaecheparl" />
+		</div>
+	</div>
+	<xsl:if test="position()=last()">
+		<div class="toplistdivide" />
+	</xsl:if>
 </xsl:template>
 
 </xsl:transform>
