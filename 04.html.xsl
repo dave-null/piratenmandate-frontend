@@ -18,7 +18,7 @@
 	</div>
 	<div id="accordeon">
 		<xsl:apply-templates select="gebiet[@name='Bremerhaven']" mode="flaechetop" />
-		<div style="margin-bottom:1em"></div>
+		<div class="toplistdivide" />
 		<xsl:apply-templates select="gebiet[@gs='04011000']/gebiet" mode="bremenstadtteil" />
 	</div>
 	<div id="mapInfo"></div>
@@ -27,8 +27,8 @@
 <xsl:template match="gebiet" mode="bremenstadtteil">
 	<div class="gebiet" ><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
 		<h2>
-			<div class="leaflet-label">Bremen: Stadtteil <xsl:value-of select="@name" /></div>
-			Bremen: Stadtteil <xsl:value-of select="@name" />
+			<div class="leaflet-label"><xsl:text>Bremen: Stadtteil </xsl:text><xsl:value-of select="@name" /></div>
+			<xsl:text>Bremen: Stadtteil </xsl:text><xsl:value-of select="@name" />
 		</h2>
 		<div class="contentstore">
 			<xsl:apply-templates select="." mode="flaechegebiet" />

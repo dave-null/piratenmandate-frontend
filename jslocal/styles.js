@@ -16,12 +16,6 @@ var Gc = { // Styles for gebiete
 };
 var highlightStyle = {weight:5, opacity:1}
 
-var specialBounds = { // Gebiete mit fernen Inseln sollten auf das Hauptgebiet zoomen
-   "Hamburg":   [[53.32185071096412,9.547119140624998], [53.81119329209967,10.5084228515625]]
-  ,"Pinneberg": [[53.48069104263886,9.25323486328125], [53.9682045419455,10.21453857421875]]
-  ,"Bremen":    [[], []]
-}
-
 // Statistik
 // 
 jqPlotDefaults = {

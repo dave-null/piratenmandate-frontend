@@ -34,6 +34,8 @@ function accordeonInit() {
 
 			var self = $(this)
 			if(!$(this).parent().hasClass("open")) {
+// 				if ( $.inArray( $(this).parent().attr('id').substring(1,2), ['1','2']) != -1 ) {
+// 				}
 				map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
 				highlight = $(this).parent().attr('id');
 				cL.setStyle(gebietStyle);
