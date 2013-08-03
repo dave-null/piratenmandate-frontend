@@ -8,7 +8,7 @@ Dies ist eine Aufbereitung der XML-Daten der kommunalen Piratenmandate aus [dies
   * [leaflet](http://leafletjs.com/)
   * [leaflet.label](https://github.com/Leaflet/Leaflet.label)
 9. [Bootstrap](http://twitter.github.io/bootstrap/) in `css/` ablegen
-9. `piratenmandate.xml` und `piratenmandate.dtd` aus [dem `piratenmandate`-Repository](https://github.com/emtiu/piratenmandate) im Haupverzeichnis ablegen
+9. Das [`piratenmandate`-Repository](https://github.com/emtiu/piratenmandate) als Ordner im Haupverzeichnis ablegen
 9. `make` ausführen
 
 Die Dateien im Verzeichnis `_out` sollten dann den auf [kommunalpiraten.de](http://www.kommunalpiraten.de) gehosteten entsprechen.

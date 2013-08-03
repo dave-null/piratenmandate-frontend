@@ -25,8 +25,8 @@ javascript:
 
 datadir:
 	mkdir -p $(datadir)
-	$(foreach template,$(datenfiles),xsltproc $(template).xsl piratenmandate.xml > $(datadir)/$(template);)
-	echo $(shell date -d"$(shell stat -c %y piratenmandate.xml)" +%d.%m.%Y) > $(datadir)/date
+	$(foreach template,$(datenfiles),xsltproc $(template).xsl piratenmandate/piratenmandate.xml > $(datadir)/$(template);)
+	echo $(shell date -d"$(shell stat -c %y piratenmandate/piratenmandate.xml)" +%d.%m.%Y) > $(datadir)/date
 	cp -r $(datadir) $(outdir)
 
 json:

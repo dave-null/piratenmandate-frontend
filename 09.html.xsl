@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<xsl:if test="position()=last()">
-		<div class="toplistdivide" />
+		<div class="divider" />
 	</xsl:if>
 </xsl:template>
 

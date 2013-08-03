@@ -61,7 +61,7 @@
 		<xsl:choose>
 			<xsl:when test="@type = 'piraten'"><strong>PIRATEN-Fraktion</strong></xsl:when>
 			<xsl:when test="@type = 'gemeinsam'">
-				Gemeinsame Fraktion <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>, mit 
+				<xsl:text>Gemeinsame Fraktion </xsl:text><strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong><xsl:text>, mit </xsl:text>
 					<ul class="prose">
 					<xsl:for-each select="partner">
 						<li><xsl:value-of select="@partei" /> (<xsl:value-of select="@num" />)</li>

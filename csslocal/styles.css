@@ -90,6 +90,9 @@ a {
 	display: inline;
 	font-family: 'Convergence', sans-serif;
 }
+#footer a {
+  color:#000;
+}
 #menu {
 	text-align: center;
 	color:#333;
@@ -138,6 +141,10 @@ h1 .info {
 	font-weight:normal;
 	padding:0.25em 0.5em 0 0;
 }
+h4 {
+  display:inline;
+  font-size:1em;
+}
 
 #contentbox {
 	font-size:0.8em;
@@ -156,7 +163,7 @@ h1 .info {
 	font-size:1.2em;
 	font-weight:bold;
 }
-.toplistdivide {
+.divider {
 	margin-bottom:1em
 }
 #contentbox .gebietstore {
@@ -190,7 +197,7 @@ h1 .info {
 	display:none;
 }
 .opennote:before {
-	content:" (ausklappen)"; white-space:pre;
+	content:" (ausklappen)";
 }
 .closed .opennote {
 	display:inline;
@@ -234,13 +241,8 @@ h1 .info {
 	border-top:0.3em solid #666;
 	padding-top:0.3em;
 }
-#contentbox h4 {
-	display:inline;
-	font-size:1em;
-}
 #contentbox h4:after {
 	content: ': ';
-	white-space: pre;
 }
 .contentstore {
 	display:none;
@@ -290,8 +292,8 @@ h1 .info {
 ul.prose { display: inline; list-style: none; margin: 0; padding: 0; }
 ul.prose li { display: inline; }
 ul.prose li:first-child:before { content:""; }
-ul.prose li:before { content: ", "; white-space: pre; }
-ul.prose li:last-child:before { content:" und "; white-space: pre; }
+ul.prose li:before { content: ", "; }
+ul.prose li:last-child:before { content:" und "; }
 ul.prose li:only-child:before { content:""; }
 
 #leafletContainer {
@@ -324,7 +326,7 @@ ul.prose li:only-child:before { content:""; }
 	font-weight: bold;
 }
 #mapMenu li:after{
-	content:' » '; white-space: pre;
+	content:' » ';
 }
 #mapMenu li:last-child:after {
 	content:'';
