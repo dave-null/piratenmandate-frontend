@@ -1,0 +1,97 @@
+<script type="text/javascript">var graphColors = {}; var graphData = {};jqPlotDefaults.renderer = jQuery.jqplot.PieRenderer;</script><h1>Mandatsträger</h1><div class="row-fluid statistikRow"><div class="span5 statistik"><div id="transferovw" class="jqplotContainer"> </div></div><div class="span7"><h2>Gewählte und Übergetretene</h2><p>Im Moment werden <strong>200 Mandate</strong> in direkt gewählten kommunalen Vertretungen von Mitgliedern der Piratenpartei ausgeübt. Da manche Mandatsträger mehr als ein Mandat gleichzeitig innehaben, werden diese von insgesamt <strong>187 Mandatsträgern</strong> ausgeübt.</p><p>Von den 200 Mandaten wurden 155 bei Wahlen gewonnen (145 gewählte Mandatsträger). Weitere 45 Mandate sind durch Übertritte von 42 Mandatsträgern hinzugekommen, die auf anderen Listen gewählt wurden.</p></div></div><script type="text/javascript">
+    var thisName = 'transferovw';
+    graphData[thisName] = [];
+    graphColors[thisName] = [];
+  graphData[thisName].push(['Gewählte Piraten',145]);graphColors[thisName].push('#f80');graphData[thisName].push(['Übergetretene',42]);graphColors[thisName].push('#f40');
+    var plot = jQuery.jqplot (thisName, [graphData[thisName]],{
+      seriesColors: graphColors[thisName],
+      seriesDefaults: jqPlotDefaults,
+      legend: jqPlotLegendDefaults
+    });
+  </script><div class="row-fluid statistikRow"><div class="span5 statistik"><div id="transfers" class="jqplotContainer"> </div></div><div class="span7"><h2>Übertritte nach Parteien</h2><p>Die 42 übergetretenen Mandatsträger teilen sich wie hier gezeigt auf die Parteien auf, auf deren Listen sie gewählt wurden.</p><p>Unter „Wählergemeinschaft“ sind sowohl Gruppen der Freien Wähler als auch andere kommunalpolitische Vereinigungen zusammengefasst, die nicht als Partei auftreten (z.B. „Bürger für Entenhausen“).</p><p>„Einzelbewerber“ sind Personen, die ohne Wahlliste angetreten sind, also direkt und für keine Vereinigung gewählt wurden.</p></div></div><script type="text/javascript">
+    var thisName = 'transfers';
+    graphData[thisName] = [];
+    graphColors[thisName] = [];
+  graphData[thisName].push(['LINKE',13]);
+graphColors[thisName].push(Pc['LINKE']);
+graphData[thisName].push(['CDU/CSU',8]);
+graphColors[thisName].push(Pc['CDU/CSU']);
+graphData[thisName].push(['SPD',5]);
+graphColors[thisName].push(Pc['SPD']);
+graphData[thisName].push(['Wählergemeinschaft',5]);
+graphColors[thisName].push(Pc['Wählergemeinschaft']);
+graphData[thisName].push(['GRÜNE',4]);
+graphColors[thisName].push(Pc['GRÜNE']);
+graphData[thisName].push(['Einzelbewerber',4]);
+graphColors[thisName].push(Pc['Einzelbewerber']);
+graphData[thisName].push(['FDP',3]);
+graphColors[thisName].push(Pc['FDP']);
+
+    var plot = jQuery.jqplot (thisName, [graphData[thisName]],{
+      seriesColors: graphColors[thisName],
+      seriesDefaults: jqPlotDefaults,
+      legend: jqPlotLegendDefaults
+    });
+  </script><h1>Vertretungen</h1><p>Grundsätzlich ist die kommunale Verwaltungsstruktur in (Land)kreise, Städte und Gemeinden aufgeteilt. Es gibt jedoch zahlreihe regionale Unterschiede und Besonderheiten. Entsprechend vielfältig sind die Gebiete, in denen es Vertretungen mit Piraten-Vertretern gibt:</p><ul class="prose"><li>34× Stadt</li><li>25× Landkreis</li><li>17× Kreisfreie Stadt</li><li>14× Bezirk</li><li>13× Ortsteil</li><li>11× Gemeinde</li><li>11× Stadtbezirk</li><li>4× Ortschaft</li><li>3× Samtgemeinde</li><li>1× Kommunalverband besonderer Art</li><li>1× Flecken</li><li>1× Stadtteil</li><li>1× Verbandsgemeinde</li></ul>.
+  <p>Aus den gleichen Gründen haben auch die Vertretungen selbst viele verschiedene Namen:</p><ul class="prose"><li>31× Stadtrat</li><li>25× Kreistag</li><li>12× Gemeinderat</li><li>12× Stadtverordnetenversammlung</li><li>12× Bezirksverordnetenversammlung</li><li>8× Stadtbezirksrat</li><li>7× Ortsrat</li><li>6× Ortsbeirat</li><li>3× Gemeindevertretung</li><li>3× Samtgemeinderat</li><li>2× Ratsversammlung</li><li>2× Stadtvertretung</li><li>2× Bezirksversammlung</li><li>2× Bezirksausschuss</li><li>2× Ortschaftsrat</li><li>2× Ortsteilrat</li><li>1× Bürgerschaft</li><li>1× Regionsversammlung</li><li>1× Beirat</li><li>1× Bezirksvertretung</li><li>1× Verbandsgemeinderat</li></ul>.
+  
+
+  <h1>Fraktionen</h1><div class="row-fluid statistikRow"><div class="span5 statistik"><div id="frkmitgl" class="jqplotContainer"> </div></div><div class="span7"><h2>Fraktionsmitgliedschaft</h2><p>Fraktionen sind Zusammenschlüsse von Vertretern in einer Versammlung, die für ihre politische Arbeit besondere Mittel zur Verfügung haben. Dazu zählt z.B. die Benennung von Bürgern als Ausschussmitglieder sowie Fraktionsmittel für Öffentlichkeitsarbeit, Fraktionsbüros oder das Beschäftigen von Mitarbeitern. Fraktionslose Vertreter haben viele dieser Mittel nicht und sind in ihrer Arbeit stark eingeschränkt.</p><p>„Keine Fraktionen“ bezeichnet Mandate in Versammlungen, in denen es keine Fraktionen gibt. Meist sind solche Versammlung mit 5 bis 15 Mandaten eher klein. Die politische Arbeit wird dort aber oft von den Fraktionen einer übergeordneten Vertretung getragen (z.B. im Ortsrat durch Stadtratsfraktionen).</p></div></div><script type="text/javascript">
+    var thisName = 'frkmitgl';
+    graphData[thisName] = [];
+    graphColors[thisName] = [];
+  graphData[thisName].push(['Fraktionsmitglieder',128]);graphColors[thisName].push('#f80');graphData[thisName].push(['Fraktionslose',49]);graphColors[thisName].push('#b40');graphData[thisName].push(['keine Fraktionen',10]);graphColors[thisName].push('#fc5');graphData[thisName].push(['unbekannt',13]);graphColors[thisName].push('#666');
+    var plot = jQuery.jqplot (thisName, [graphData[thisName]],{
+      seriesColors: graphColors[thisName],
+      seriesDefaults: jqPlotDefaults,
+      legend: jqPlotLegendDefaults
+    });
+  </script><div class="row-fluid statistikRow"><div class="span5 statistik"><div id="frktypnum" class="jqplotContainer"> </div></div><div class="span7"><h2>Fraktionsarten</h2><p>Eine Fraktion muss aus mindestens zwei, je nach Versammlung auch mehr Vertretern bestehen.</p><p>In Vertretungen, in denen es dafür nicht genügend Piraten-Vertreter gibt, gehen diese oft Fraktionszusammenschlüsse ein, in denen Piraten mit Vertretern anderer Parteien eine gemeinsame Fraktion bilden. Diese tragen dann meist einen Namen wie „LOL/PIRATEN-Fraktion“ oder „PIRATEN und WTF“.</p><p>In seltenen Fällen sind Piraten-Vertreter auch Mitglied einer fremden Fraktion, die sich nicht mit der Piratenpartei identifiziert, aber einen Piraten aufnimmt.</p></div></div><script type="text/javascript">
+    var thisName = 'frktypnum';
+    graphData[thisName] = [];
+    graphColors[thisName] = [];
+  graphData[thisName].push(['PIRATEN-Fraktion',31]);graphColors[thisName].push('#f80');graphData[thisName].push(['Gemeinsame',31]);graphColors[thisName].push('#f40');graphData[thisName].push(['Fremde',4]);graphColors[thisName].push('#08f');
+    var plot = jQuery.jqplot (thisName, [graphData[thisName]],{
+      seriesColors: graphColors[thisName],
+      seriesDefaults: jqPlotDefaults,
+      legend: jqPlotLegendDefaults
+    });
+  </script><div class="row-fluid statistikRow"><div class="span5 statistik"><div id="frktyp" class="jqplotContainer"> </div></div><div class="span7"><h2>Fraktionsarten (Zahl der Mitglieder)</h2><p>Die stärksten PIRATEN-Fraktionen gibt es in Berlin (49 Piraten-Vertreter in 12 Fraktionen). Ansonsten haben PIRATEN-Fraktionen in der Regel zwei oder drei Mitglieder.</p><p>Die Zahl der Piraten-Vertreter in einer gemeinsamen Fraktionen ist fast immer um eins geringer als die Mindestanzahl für eine eigene Fraktion: meistens einer, manchmal zwei.</p></div></div><script type="text/javascript">
+    var thisName = 'frktyp';
+    graphData[thisName] = [];
+    graphColors[thisName] = [];
+  graphData[thisName].push(['PIRATEN-Fraktion',90]);graphColors[thisName].push('#f80');graphData[thisName].push(['Gemeinsame',34]);graphColors[thisName].push('#f40');graphData[thisName].push(['Fremde',4]);graphColors[thisName].push('#08f');
+    var plot = jQuery.jqplot (thisName, [graphData[thisName]],{
+      seriesColors: graphColors[thisName],
+      seriesDefaults: jqPlotDefaults,
+      legend: jqPlotLegendDefaults
+    });
+  </script><div class="row-fluid statistikRow"><div class="span5 statistik"><div id="frkpartner" class="jqplotContainer"> </div></div><div class="span7"><h2>Fraktionspartner</h2><p>In seltenen Fällen sind mehr als zwei Parteien an einer gemeinsamen Fraktion beteiligt. In dieser Darstellung zählt jede beteiligte Partei als einzelner Fraktionspartner, sodass es mehr Fraktionspartner als gemeinsame Fraktionen gibt (42 Fraktionspartner in 31 gemeinsamen Fraktionen).</p><p>Niedersachsen stellt hier eine Besonderheit dar: Neben gemeinsamen Fraktionen gibt auch Zusammenschlüsse von Fraktionen und/oder Vertretern verschiendener Parteien. Diese Zusammenschlüsse heißen <em>Gruppen</em>. Formal sind Gruppen also keine gemeinsamen Fraktionen; sie treten aber faktisch so auf. Daher werden niedersächsische Gruppen hier als gemeinsame Gruppen geführt.</p></div></div><script type="text/javascript">
+    var thisName = 'frkpartner';
+    graphData[thisName] = [];
+    graphColors[thisName] = [];
+  graphData[thisName].push(['LINKE',10]);
+graphColors[thisName].push(Pc['LINKE']);
+graphData[thisName].push(['GRÜNE',9]);
+graphColors[thisName].push(Pc['GRÜNE']);
+graphData[thisName].push(['Wählergemeinschaft',7]);
+graphColors[thisName].push(Pc['Wählergemeinschaft']);
+graphData[thisName].push(['SPD',6]);
+graphColors[thisName].push(Pc['SPD']);
+graphData[thisName].push(['FDP',4]);
+graphColors[thisName].push(Pc['FDP']);
+graphData[thisName].push(['Einzelbewerber',2]);
+graphColors[thisName].push(Pc['Einzelbewerber']);
+graphData[thisName].push(['Bündnis 21/RRP',2]);
+graphColors[thisName].push(Pc['Bündnis 21/RRP']);
+graphData[thisName].push(['Die PARTEI',1]);
+graphColors[thisName].push(Pc['Die PARTEI']);
+graphData[thisName].push(['Europaliste Frankfurt',1]);
+graphColors[thisName].push(Pc['Europaliste Frankfurt']);
+
+    var plot = jQuery.jqplot (thisName, [graphData[thisName]],{
+      seriesColors: graphColors[thisName],
+      seriesDefaults: jqPlotDefaults,
+      legend: jqPlotLegendDefaults
+    });
+  </script>
