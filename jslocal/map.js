@@ -66,8 +66,8 @@ function engageLayer(set, id) {
   cL = set.layers[id];
 	if (cL.depth == 2) {
 		$('#contentbox').load('data/'+id+'.html',accordeonInit)
-	} else {
-		$('#contentbox').load('data/'+id+'.html')
+	} else if (set == Bund) {
+		$('#contentbox').load('data/0.html')
 	}
   printNav(set,id);
 // 	expandButtonOpt.text ="Ganz "+cL.name+" anzeigen";
