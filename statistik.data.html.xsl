@@ -82,7 +82,7 @@
   </script>
 
   <h1>Vertretungen</h1>
-  <div class="divider"></div>
+  
   <p>Grundsätzlich ist die kommunale Verwaltungsstruktur in (Land)kreise, Städte und Gemeinden aufgeteilt. Es gibt jedoch zahlreihe regionale Unterschiede und Besonderheiten. Entsprechend vielfältig sind die Gebiete, in denen es Vertretungen mit Piraten-Vertretern gibt:</p>
   <ul class="prose">
     <xsl:for-each select="//gebiet[generate-id() = generate-id(key('gebiete', @type)[1])]">
@@ -103,7 +103,7 @@
       </li>
     </xsl:for-each>
   </ul>.
-  <div class="divider"></div>
+  
 
   <h1>Fraktionen</h1>
 
