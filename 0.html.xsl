@@ -8,9 +8,8 @@
 	<h1>Deutschland
 		<span class="info"><xsl:apply-templates select="/" mode="mcountshort" /></span>
 	</h1>
-	<p>Die Piratenpartei Deutschland hält zur Zeit <xsl:value-of select="count(//mandat[@type='pirat'])" />&#160;kommunale Mandate in <xsl:value-of select="count(//bundesland[descendant::mandat[@type='pirat']])" />&#160;Bundesländern, die bei Wahlen gewonnen wurden.</p>
-	<p>Dazu kommen <xsl:value-of select="count(//mandat[@type='transfer'])" />&#160;Mandate von übergetretenen Mandatsträgern, die auf anderen Listen gewählt wurden.</p>
-	<p>Manche Mandatsträger üben mehrere Mandate aus. Die Piratenpartei hat <xsl:value-of select="count(//mandat[@type='pirat' and not(@multi)])" />&#160;gewählte und <xsl:value-of select="count(//mandat[@type='transfer' and not(@multi)])" />&#160;übergetretene Mandatsträger.</p>
+	<p>Die Piratenpartei Deutschland hält zur Zeit <xsl:value-of select="count(//mandat[@type='pirat'])" />&#160;kommunale Mandate in <xsl:value-of select="count(//bundesland[descendant::mandat[@type='pirat']])" />&#160;Bundesländern, die bei Wahlen gewonnen wurden. Diese werden von <xsl:value-of select="count(//mandat[@type='pirat' and not(@multi)])" />&#160;Mandatsträgern ausgeübt, von denen manche mehrere Mandate gleichzeitig innehaben.</p>
+	<p>Dazu kommen <xsl:value-of select="count(//mandat[@type='transfer'])" />&#160;Mandate von <xsl:value-of select="count(//mandat[@type='transfer' and not(@multi)])" />&#160;übergetretenen Mandatsträgern, die auf anderen Listen gewählt wurden.</p>
 	<xsl:apply-templates select="//bundesland" />
 	<script type="text/javascript">landblockInit();</script>
 </xsl:template>

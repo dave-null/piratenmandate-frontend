@@ -152,6 +152,9 @@ h1 .info {
 	font-weight:normal;
 	padding:0.25em 0.5em 0 0;
 }
+h2 {
+	font-size:1.2em;
+}
 h4 {
   display:inline;
   font-size:1em;

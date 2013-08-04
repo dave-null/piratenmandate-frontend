@@ -1,1 +1,0 @@
-$('#moddate').html(mDate);
