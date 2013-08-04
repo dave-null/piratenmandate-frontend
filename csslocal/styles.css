@@ -110,7 +110,7 @@ a {
 }
 #menu ul li {
 	display:inline;
-	margin:0 20px;
+	margin:0 40px;
 	padding-left:30px;
 }
 #menu ul li a {
@@ -419,6 +419,9 @@ ul.prose li:only-child:before { content:""; }
  
 /* Landscape phones and down */
 @media (max-width: 768px) { 
+	#menu ul li {
+		margin:0 10px;
+	}
 	#leafletContainer {
 		width:100% !important;
 	}
