@@ -18,7 +18,7 @@
 
   <div class="row-fluid statistikRow">
     <div class="span5 statistik">
-      <div id="transferovw" class="jqplotContainer"></div>
+      <div id="transferovw" class="jqplotContainer">&#160;</div>
     </div>
     <div class="span7">
     <h2>Gewählte und Übergetretene</h2>
@@ -49,7 +49,7 @@
 
   <div class="row-fluid statistikRow">
     <div class="span5 statistik">
-      <div id="transfers" class="jqplotContainer"></div>
+      <div id="transfers" class="jqplotContainer">&#160;</div>
     </div>
     <div class="span7">
     <h2>Übertritte nach Parteien</h2>
@@ -109,7 +109,7 @@
 
   <div class="row-fluid statistikRow">
     <div class="span5 statistik">
-      <div id="frkmitgl" class="jqplotContainer"></div>
+      <div id="frkmitgl" class="jqplotContainer">&#160;</div>
     </div>
     <div class="span7">
       <h2>Fraktionsmitgliedschaft</h2>
@@ -146,7 +146,7 @@
 
   <div class="row-fluid statistikRow">
     <div class="span5 statistik">
-      <div id="frktypnum" class="jqplotContainer"></div>
+      <div id="frktypnum" class="jqplotContainer">&#160;</div>
     </div>
     <div class="span7">
       <h2>Fraktionsarten</h2>
@@ -181,7 +181,7 @@
 
   <div class="row-fluid statistikRow">
     <div class="span5 statistik">
-      <div id="frktyp" class="jqplotContainer"></div>
+      <div id="frktyp" class="jqplotContainer">&#160;</div>
     </div>
     <div class="span7">
       <h2>Fraktionsarten (Zahl der Mitglieder)</h2>
@@ -215,7 +215,7 @@
 
   <div class="row-fluid statistikRow">
     <div class="span5 statistik">
-      <div id="frkpartner" class="jqplotContainer"></div>
+      <div id="frkpartner" class="jqplotContainer">&#160;</div>
     </div>
     <div class="span7">
       <h2>Fraktionspartner</h2>
