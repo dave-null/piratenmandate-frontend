@@ -419,9 +419,16 @@ ul.prose li:only-child:before { content:""; }
  
 /* Landscape phones and down */
 @media (max-width: 768px) { 
+	#leafletContainer {
+		width:100% !important;
+	}
+	#wrapper > :nth-child(3) {
+		margin-top: 60px;
+	}
 	#menu {
 		font-size: 1em;
 		margin-left:-10px;
+		width:calc(100% + 20px);
 	}
 	#mapMenu {
 		margin-left:4px;
@@ -431,9 +438,12 @@ ul.prose li:only-child:before { content:""; }
 		margin:20px 0;
 	}
 	.landblock, #L14, #L13 {
-		width:46%;
+		width:45%;
 	}
-	.left_cor {
+	.left_cor, .well {
 		display:none;
+	}
+	#graphchapters h1 {
+		border:none;
 	}
  }
