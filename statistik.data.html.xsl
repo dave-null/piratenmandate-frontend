@@ -113,7 +113,7 @@
     </div>
     <div class="span7">
       <h2>Fraktionsmitgliedschaft</h2>
-      <p>Fraktionen sind Zusammenschlüsse von Abgeordneten, die für ihre politische Arbeit besondere Mittel zur Verfügung haben. Dazu zählt z.B. die Benennung von Bürgern als Ausschussmitglieder sowie Fraktionsmittel für Öffentlichkeitsarbeit, Fraktionsbüros oder das Beschäftigen von Mitarbeitern. Fraktionslose Abgeordnete haben viele dieser Mittel nicht und sind in ihrer Arbeit stark eingeschränkt.</p>
+      <p>Fraktionen sind Zusammenschlüsse von Vertretern in einer Versammlung, die für ihre politische Arbeit besondere Mittel zur Verfügung haben. Dazu zählt z.B. die Benennung von Bürgern als Ausschussmitglieder sowie Fraktionsmittel für Öffentlichkeitsarbeit, Fraktionsbüros oder das Beschäftigen von Mitarbeitern. Fraktionslose Vertreter haben viele dieser Mittel nicht und sind in ihrer Arbeit stark eingeschränkt.</p>
       <p>„Keine Fraktionen“ bezeichnet Mandate in Versammlungen, in denen es keine Fraktionen gibt. Meist sind solche Versammlung mit 5 bis 15 Mandaten eher klein. Die politische Arbeit wird dort aber oft von den Fraktionen einer übergeordneten Vertretung getragen (z.B. im Ortsrat durch Stadtratsfraktionen).</p>
     </div>
   </div>
@@ -150,9 +150,9 @@
     </div>
     <div class="span7">
       <h2>Fraktionsarten</h2>
-      <p>Eine Fraktion muss aus mindestens zwei, je nach Versammlung auch mehr Abgeordneten bestehen.</p>
-      <p>In Vertretungen, in denen es dafür nicht genügend Piraten-Abgeordnete gibt, gehen diese oft Fraktionszusammenschlüsse ein, in denen Piraten mit Abgeordneten anderer Parteien eine gemeinsame Fraktion bilden. Diese tragen dann meist einen Namen wie „LOL/PIRATEN-Fraktion“ oder „PIRATEN und WTF“.</p>
-      <p>In seltenen Fällen sind Piraten-Abgeordnete auch Mitglied einer fremden Fraktion, die sich nicht mit der Piratenpartei identifiziert, aber den Abgeordneten aufnimmt.</p>
+      <p>Eine Fraktion muss aus mindestens zwei, je nach Versammlung auch mehr Vertretern bestehen.</p>
+      <p>In Vertretungen, in denen es dafür nicht genügend Piraten-Vertreter gibt, gehen diese oft Fraktionszusammenschlüsse ein, in denen Piraten mit Vertretern anderer Parteien eine gemeinsame Fraktion bilden. Diese tragen dann meist einen Namen wie „LOL/PIRATEN-Fraktion“ oder „PIRATEN und WTF“.</p>
+      <p>In seltenen Fällen sind Piraten-Vertreter auch Mitglied einer fremden Fraktion, die sich nicht mit der Piratenpartei identifiziert, aber einen Piraten aufnimmt.</p>
     </div>
   </div>
   <script type="text/javascript">
@@ -185,8 +185,8 @@
     </div>
     <div class="span7">
       <h2>Fraktionsarten (Zahl der Mitglieder)</h2>
-      <p>Die stärksten PIRATEN-Fraktionen gibt es in Berlin (<xsl:value-of select="count(//bundesland[@gs='11000000']//mandat)" />&#160;Piraten-Abgeordnete in <xsl:value-of select="count(//bundesland[@gs='11000000']//fraktion[@type='piraten'])" />&#160;Fraktionen). Ansonsten haben PIRATEN-Fraktionen in der Regel zwei oder drei Mitglieder.</p>
-      <p>Die Zahl der Piraten-Abgeordneten in einer gemeinsamen Fraktionen ist fast immer um eins geringer als die Mindestanzahl für eine eigene Fraktion: meistens einer, manchmal zwei.</p>
+      <p>Die stärksten PIRATEN-Fraktionen gibt es in Berlin (<xsl:value-of select="count(//bundesland[@gs='11000000']//mandat)" />&#160;Piraten-Vertreter in <xsl:value-of select="count(//bundesland[@gs='11000000']//fraktion[@type='piraten'])" />&#160;Fraktionen). Ansonsten haben PIRATEN-Fraktionen in der Regel zwei oder drei Mitglieder.</p>
+      <p>Die Zahl der Piraten-Vertreter in einer gemeinsamen Fraktionen ist fast immer um eins geringer als die Mindestanzahl für eine eigene Fraktion: meistens einer, manchmal zwei.</p>
     </div>
   </div>
   <script type="text/javascript">
@@ -220,7 +220,7 @@
     <div class="span7">
       <h2>Fraktionspartner</h2>
       <p>In seltenen Fällen sind mehr als zwei Parteien an einer gemeinsamen Fraktion beteiligt. In dieser Darstellung zählt jede beteiligte Partei als einzelner Fraktionspartner, sodass es mehr Fraktionspartner als gemeinsame Fraktionen gibt (<xsl:value-of select="count(//fraktion[@type='gemeinsam']/partner)"/>&#160;Fraktionspartner in <xsl:value-of select="count(//fraktion[@type='gemeinsam'])"/>&#160;gemeinsamen Fraktionen).</p>
-      <p>Niedersachsen stellt hier eine Besonderheit dar: Neben gemeinsamen Fraktionen gibt auch Zusammenschlüsse von Fraktionen und/oder Abgeordneten verschiendener Parteien. Diese Zusammenschlüsse heißen <em>Gruppen</em>. Formal sind Gruppen also keine gemeinsamen Fraktionen; sie treten aber faktisch so auf. Daher werden niedersächsische Gruppen hier als gemeinsame Gruppen geführt.</p>
+      <p>Niedersachsen stellt hier eine Besonderheit dar: Neben gemeinsamen Fraktionen gibt auch Zusammenschlüsse von Fraktionen und/oder Vertretern verschiendener Parteien. Diese Zusammenschlüsse heißen <em>Gruppen</em>. Formal sind Gruppen also keine gemeinsamen Fraktionen; sie treten aber faktisch so auf. Daher werden niedersächsische Gruppen hier als gemeinsame Gruppen geführt.</p>
     </div>
   </div>
   <script type="text/javascript">
