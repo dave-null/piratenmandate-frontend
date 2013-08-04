@@ -123,7 +123,7 @@ a {
 #menu ul #karte a:before { content: '\00f0ac\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
 #menu ul #stats a:before { content: '\00f080\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
 #menu ul #about a:before { content: '\00f059\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
-#menu ul #contact a:before { content: '\00f0e0\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
+#imprint a:before { content: '\00f0e0\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
 
 h1 {
 	border-bottom:1px solid #ff8800;

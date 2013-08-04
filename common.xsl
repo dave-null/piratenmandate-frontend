@@ -25,7 +25,7 @@
 <xsl:template match="piratenmandate|bundesland|gebiet" mode="mcountshort">
 	<xsl:choose><xsl:when test="count(.//mandat) = count(.//mandat[@type='transfer'])">
 		<xsl:value-of select="count(.//mandat[@type='transfer'])" />
-		<xsl:text> Übertritt</xsl:text>
+		<xsl:text>&#160;Übertritt</xsl:text>
 		<xsl:if test="count(.//mandat[@type='transfer']) > 1"><xsl:text>e</xsl:text></xsl:if>
 	</xsl:when><xsl:otherwise>
 		<xsl:value-of select="count(.//mandat[@type='pirat'])" />
@@ -34,7 +34,7 @@
 		<xsl:if test=".//mandat[@type='transfer']">
 			<xsl:text> (+</xsl:text>
 			<xsl:value-of select="count(.//mandat[@type='transfer'])"/>
-			<xsl:text> Übertritt</xsl:text>
+			<xsl:text>&#160;Übertritt</xsl:text>
 			<xsl:if test="count(.//mandat[@type='transfer']) > 1"><xsl:text>e</xsl:text></xsl:if>
 			<xsl:text>)</xsl:text>
 		</xsl:if>
