@@ -232,6 +232,7 @@ h4 {
 }
 #contentbox .level1 {
 	margin-bottom:1.5em;
+	padding-left:0.8em;
 }
 #contentbox .level0 > h3 {
 	border:0;
@@ -240,6 +241,7 @@ h4 {
 #contentbox .level1 > h3 {
 	border-top:0.3em solid #666;
 	padding-top:0.3em;
+	margin-left:-0.6em;
 }
 #contentbox h4:after {
 	content: ': ';
@@ -360,16 +362,28 @@ ul.prose li:only-child:before { content:""; }
 	margin:20px 20px;
 }
 
-@media (min-width: 768px) and (max-width: 1199px) { 
+@media (min-width: 980px) and (max-width: 1199px) { 
 	.rectangle {
 		padding: 0 20px;
 	}
 	.left_cor {
 		left:-50px;
 	}
+	#leafletContainer {
+		width:535px !important;
+	}
+	.landblock {
+		width:95%;
+	}
 }
  
 @media (min-width: 768px) and (max-width: 979px) { 
+	.rectangle {
+		padding: 0 20px;
+	}
+	.left_cor {
+		left:-50px;
+	}
 	#menu {
 		font-size: 1.2em;
 	}
@@ -385,4 +399,18 @@ ul.prose li:only-child:before { content:""; }
 }
  
 /* Landscape phones and down */
-@media (max-width: 480px) {  }
+@media (max-width: 768px) { 
+	#menu {
+		font-size: 1em;
+	}
+	#mapMenu {
+		margin-left:4px;
+		margin-top:60px;
+	}
+	#contentbox {
+		margin:20px 0;
+	}
+	.landblock, #L14, #L13 {
+		width:46%;
+	}
+ }
