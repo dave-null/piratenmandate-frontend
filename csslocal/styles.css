@@ -122,7 +122,7 @@ a:visited {
 }
 #menu ul li {
 	display:inline;
-	margin:0 70px;
+	margin:0 60px;
 }
 #menu ul li a {
 	font-family: 'Convergence', sans-serif;
@@ -435,7 +435,7 @@ ul.prose li:only-child:before { content:""; }
 /* Landscape phones and down */
 @media (max-width: 768px) { 
 	#menu ul li {
-		margin:0 10px;
+		margin:0 15px;
 	}
 	#leafletContainer {
 		width:100% !important;
@@ -445,8 +445,8 @@ ul.prose li:only-child:before { content:""; }
 	}
 	#menu {
 		font-size: 1em;
-		margin-left:-10px;
-		width:calc(100% + 20px);
+		/* margin-left:-10px;
+		width:calc(100% + 20px); */
 	}
 	#mapMenu {
 		margin:60px 0 0 4px;
@@ -462,5 +462,8 @@ ul.prose li:only-child:before { content:""; }
 	}
 	#graphchapters h1 {
 		border:none;
+	}
+	#menu ul #karte a:before, #menu ul #stats a:before, #menu ul #about a:before {
+		content:"";
 	}
  }
