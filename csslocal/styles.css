@@ -28,6 +28,18 @@ body {
 }
 a {
 	text-decoration:none;
+	color:#F80;
+}
+a:hover {
+	text-decoration:underline;
+	color:#999;
+}
+a:visited {
+	text-decoration:underline;
+	color:#555;
+}
+#menu a:hover {
+	text-decoration: none;
 }
 .leaflet-label {
 	font-family:"faunaOne", sans-serif !important;
@@ -45,8 +57,8 @@ a {
 	padding:0 0 10px 0;
 }
 #header {
-	height:150px;
-	background:url("../img/logo.png") no-repeat scroll left center transparent; 
+	height:140px;
+	padding-top: 20px;
 }
 .rectangle {
 	background:#ff8800;
@@ -110,8 +122,7 @@ a {
 }
 #menu ul li {
 	display:inline;
-	margin:0 40px;
-	padding-left:30px;
+	margin:0 70px;
 }
 #menu ul li a {
 	font-family: 'Convergence', sans-serif;
@@ -353,13 +364,14 @@ ul.prose li:only-child:before { content:""; }
 
 .well {
 	min-height: 20px;
-	padding: 19px;
+	padding: 14px;
 	background-color: rgb(245, 245, 245);
 	border: 1px solid rgb(227, 227, 227);
 	border-radius: 4px 4px 4px 4px;
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
 	float:right;
-	margin:20px 20px;
+	margin:0 20px;
+	text-align:center;
 }
 
 #graphchapters > h1 {
@@ -415,6 +427,9 @@ ul.prose li:only-child:before { content:""; }
 	#graphchapters .row-fluid .span7 {
 		width:95%;
 	}
+	#menu ul li {
+		margin:0 40px;
+	}
 }
  
 /* Landscape phones and down */
@@ -434,8 +449,7 @@ ul.prose li:only-child:before { content:""; }
 		width:calc(100% + 20px);
 	}
 	#mapMenu {
-		margin-left:4px;
-		margin-top:60px;
+		margin:60px 0 0 4px;
 	}
 	#contentbox {
 		margin:20px 0;
