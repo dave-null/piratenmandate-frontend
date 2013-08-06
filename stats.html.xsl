@@ -84,7 +84,7 @@
   <h1>Vertretungen</h1>
   
   <p>Grundsätzlich ist die kommunale Verwaltungsstruktur in (Land)kreise, Städte und Gemeinden aufgeteilt. Es gibt jedoch zahlreihe regionale Unterschiede und Besonderheiten. Entsprechend vielfältig sind die Gebiete, in denen es Vertretungen mit Piraten-Vertretern gibt:</p>
-  <ul class="prose">
+  <ul class="cols">
     <xsl:for-each select="//gebiet[generate-id() = generate-id(key('gebiete', @type)[1])]">
     <xsl:sort select="count(key('gebiete', @type))" data-type="number" order="descending" />
       <li>
@@ -92,9 +92,9 @@
         <xsl:value-of select="@type" />
       </li>
     </xsl:for-each>
-  </ul>.
+  </ul>
   <p>Aus den gleichen Gründen haben auch die Vertretungen selbst viele verschiedene Namen:</p>
-  <ul class="prose">
+  <ul class="cols">
     <xsl:for-each select="//parlament[generate-id() = generate-id(key('vertretungen', @name)[1])]">
     <xsl:sort select="count(key('vertretungen', @name))" data-type="number" order="descending" />
       <li>
@@ -102,7 +102,7 @@
         <xsl:value-of select="@name" />
       </li>
     </xsl:for-each>
-  </ul>.
+  </ul>
   
 
   <h1>Fraktionen</h1>
