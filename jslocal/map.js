@@ -12,7 +12,8 @@ topButtonOpt = {'text':"Ganz Deutschland anzeigen",'class':'up',"onClick":topBut
 var topButtonCtl = new L.Control.Button(topButtonOpt).addTo(map);
 
 function landButtonFct() {
-	map.fitBounds(cL.getBounds()); }
+	if ($('.gebiet.open>h2').length > 0) { $('.gebiet.open>h2').trigger('click') }
+	else { map.fitBounds(cL.getBounds()); }}
 landButtonOpt = {'text':"",'class':'expand',"onClick":landButtonFct,'display':true};
 var landButtonCtl = new L.Control.Button(landButtonOpt).addTo(map);
 
