@@ -27,9 +27,9 @@ datadir:
 	cp -r $(datadir) $(outdir)
 
 assemble:
-	mv $(datadir)/0.html karte.center.html
-	mv $(datadir)/stats.html statistik.center.html
-	$(foreach file,$(piecesections), cat header.html $(file).top.html $(file).center.html $(file).bottom.html footer.html > $(outdir)/$(file).html;)
+	mv $(datadir)/0.html $(datadir)/karte.center.html
+	mv $(datadir)/stats.html $(datadir)/statistik.center.html
+	$(foreach file,$(piecesections), cat header.html $(file).top.html $(datadir)/$(file).center.html $(file).bottom.html footer.html > $(outdir)/$(file).html;)
 	mv $(outdir)/karte.html $(outdir)/index.html
 	$(foreach file,$(sections), cat header.html $(file).part.html footer.html > $(outdir)/$(file).html;)
 
