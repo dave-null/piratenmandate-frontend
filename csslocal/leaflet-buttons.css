@@ -5,7 +5,6 @@
 	padding: 3px 6px 3px 32px;
 	border-radius: 4px;
 	box-shadow: 0 1px 7px rgba(0, 0, 0, 0.65);
-	background-image: url(../img/expand.png);
 	background-color: #fff;
 	cursor:pointer;
 }
@@ -15,4 +14,11 @@
 .leaflet-buttons-control-text {
 	font-family:"Convergence", sans-serif;
 	font-size:1.2em;
+}
+
+.leaflet-buttons-control-button.up {
+	background-image: url(../img/lup.png);
+}
+.leaflet-buttons-control-button.expand {
+	background-image: url(../img/expand.png);
 }

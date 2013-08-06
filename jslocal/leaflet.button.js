@@ -21,9 +21,9 @@ L.Control.Button = L.Control.extend({
   onAdd: function (map) {
     this._map = map;
     var container = L.DomUtil.create('div', 'leaflet-control-button');
-	
+
     this._container = container;
-    
+
     this._update();
     return this._container;
   },
@@ -33,35 +33,37 @@ L.Control.Button = L.Control.extend({
 
   setButton: function (options) {
     var button = {
-      'text': options.text,                 //string
-      'onClick': options.onClick,           //callback function
-      'doToggle': options.toggle,			//bool
-      'toggleStatus': false					//bool
+       'text': options.text //string
+      ,'class': options.class //string
+      ,'onClick': options.onClick //callback function
+      ,'doToggle': options.toggle //bool
+      ,'toggleStatus': false //bool
+      ,'display': options.display //bool
     };
 
     this._button = button;
     this._update();
   },
-  
+
   getText: function () {
-  	return this._button.text;
+    return this._button.text;
   },
-  
+
   destroy: function () {
-  	this._button = {};
-  	this._update();
+    this._button = {};
+    this._update();
   },
-  
+
   toggle: function (e) {
-  	if(typeof e === 'boolean'){
-  		this._button.toggleStatus = e;
-  	}
-  	else{
-  		this._button.toggleStatus = !this._button.toggleStatus;
-  	}
-  	this._update();
+    if(typeof e === 'boolean'){
+      this._button.toggleStatus = e;
+    }
+    else{
+      this._button.toggleStatus = !this._button.toggleStatus;
+    }
+    this._update();
   },
-  
+
   _update: function () {
     if (!this._map) {
       return;
@@ -69,17 +71,17 @@ L.Control.Button = L.Control.extend({
 
     this._container.innerHTML = '';
     this._makeButton(this._button);
- 
   },
 
   _makeButton: function (button) {
-    var newButton = L.DomUtil.create('div', 'leaflet-buttons-control-button', this._container);
-    if(button.toggleStatus)
-    	L.DomUtil.addClass(newButton,'leaflet-buttons-control-toggleon');
-        
-    if(button.text !== ''){
+    var newButton = L.DomUtil.create('div', 'leaflet-buttons-control-button '+button.class, this._container);
+    if (button.display == false) { L.DomUtil.addClass(this._container, 'hidden'); }
+    else { L.DomUtil.removeClass(this._container, 'hidden'); }
 
-//       L.DomUtil.create('br','',newButton);  //there must be a better way
+    if(button.toggleStatus)
+      L.DomUtil.addClass(newButton,'leaflet-buttons-control-toggleon');
+
+    if(button.text !== ''){
 
       var span = L.DomUtil.create('span', 'leaflet-buttons-control-text', newButton);
       var text = document.createTextNode(button.text);  //is there an L.DomUtil for this?
@@ -94,18 +96,18 @@ L.Control.Button = L.Control.extend({
     return newButton;
 
   },
-  
+
   _clicked: function () {  //'this' refers to button
-  	if(this._button.doToggle){
-  		if(this._button.toggleStatus) {	//currently true, remove class
-  			L.DomUtil.removeClass(this._container.childNodes[0],'leaflet-buttons-control-toggleon');
-  		}
-  		else{
-  			L.DomUtil.addClass(this._container.childNodes[0],'leaflet-buttons-control-toggleon');
-  		}
-  		this.toggle();
-  	}
-  	return;
+    if(this._button.doToggle){
+      if(this._button.toggleStatus) {	//currently true, remove class
+        L.DomUtil.removeClass(this._container.childNodes[0],'leaflet-buttons-control-toggleon');
+      }
+      else{
+        L.DomUtil.addClass(this._container.childNodes[0],'leaflet-buttons-control-toggleon');
+      }
+      this.toggle();
+    }
+    return;
   }
 
 });

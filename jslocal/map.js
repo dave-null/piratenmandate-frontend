@@ -5,16 +5,16 @@ map.addControl(L.control.zoom({position:mapSettings.zoomPosition}));
 map.attributionControl.setPrefix(mapSettings.credits);
 tileLayer = map.addLayer(new L.TileLayer(mapSettings.tiles, mapSettings.zoomLimits));
 
-function expandButtonFct() {
-	if (cL.depth == 0) {
-		map.fitBounds(cL.getBounds());
-		$('.open h2').trigger('click');
-	} else {
-		engageLayer(Bund,0);
-	}
-}
-expandButtonOpt = {'text':"Ganz Deutschland anzeigen","onClick":expandButtonFct};
-var expandButtonCtl = new L.Control.Button(expandButtonOpt).addTo(map);
+function topButtonFct() {
+	if (cL.depth == 0) { map.fitBounds(cL.getBounds());}
+	else { engageLayer(Bund,0); }}
+topButtonOpt = {'text':"Ganz Deutschland anzeigen",'class':'up',"onClick":topButtonFct,'display':true};
+var topButtonCtl = new L.Control.Button(topButtonOpt).addTo(map);
+
+function landButtonFct() {
+	map.fitBounds(cL.getBounds()); }
+landButtonOpt = {'text':"",'class':'expand',"onClick":landButtonFct,'display':true};
+var landButtonCtl = new L.Control.Button(landButtonOpt).addTo(map);
 
 var Bund = {'data':{}, 'layers':{}};
 var Laender = {'data':{}, 'layers':{}};
@@ -70,9 +70,21 @@ function engageLayer(set, id) {
 		$('#contentbox').load('data/0.html')
 	}
   printNav(set,id);
-// 	expandButtonOpt.text ="Ganz "+cL.name+" anzeigen";
-// 	expandButtonCtl.setButton(expandButtonOpt);
-  map.fitBounds(cL.getBounds());
+	if (cL.depth == 0) {
+		landButtonOpt.display = false;
+		landButtonCtl.setButton(landButtonOpt);
+		topButtonOpt.class = 'expand';
+		topButtonCtl.setButton(topButtonOpt);
+	}
+	else if (cL.depth == 2) {
+		topButtonOpt.display = true;
+		topButtonOpt.class = 'up';
+		topButtonCtl.setButton(topButtonOpt);
+		landButtonOpt.display = true;
+		landButtonOpt.text = "Ganz "+cL.name+" anzeigen";
+		landButtonCtl.setButton(landButtonOpt);
+	}
+	map.fitBounds(cL.getBounds());
 }
 
 function printNav(set,id) {
