@@ -14,7 +14,7 @@ var topButtonCtl = new L.Control.Button(topButtonOpt).addTo(map);
 function landButtonFct() {
 	if ($('.gebiet.open>h2').length > 0) { $('.gebiet.open>h2').trigger('click') }
 	else { map.fitBounds(cL.getBounds()); }}
-landButtonOpt = {'text':"",'class':'expand',"onClick":landButtonFct,'display':true};
+landButtonOpt = {'text':"0xdeadbeef",'class':'expand',"onClick":landButtonFct,'display':false};
 var landButtonCtl = new L.Control.Button(landButtonOpt).addTo(map);
 
 var Bund = {'data':{}, 'layers':{}};
@@ -83,6 +83,7 @@ function engageLayer(set, id) {
 		topButtonCtl.setButton(topButtonOpt);
 		landButtonOpt.display = true;
 		landButtonOpt.text = "Ganz "+cL.name+" anzeigen";
+		if (cL.name=="Saarland") {landButtonOpt.text = "Ganzes Saarland anzeigen";}
 		landButtonCtl.setButton(landButtonOpt);
 	}
 	map.fitBounds(cL.getBounds());
