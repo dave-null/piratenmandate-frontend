@@ -14,7 +14,8 @@
 	</h1>
 	<div id="abstract">
 		<h2>Hintergrund<span class="opennote"></span></h2>
-			<p>mia san mia</p>
+			<p>Bayern ist das einzige Flächenland mit einer kommunalen Verwaltungsebene oberhalb der Landkreise, für die es direkt gewählte Vertretung gibt: Die Bezirke mit den Bezirkstagen. Unterhalb dieser Ebene entsprechen die Landkreise und gemeinden der üblichen Struktur (<a href="http://de.wikipedia.org/wiki/Bayern#Verwaltungsgliederung">Wikipedia</a>).</p>
+			<p><strong>Am 15. September 2013 werden die Bezirkstage gewählt. Eine Auflistung und Vorstellung der PIRATEN-Kandidaten ist <a href="http://www.kandidaten2013.de/#!Bayern">hier</a> zu finden.</strong></p>
 	</div>
 	<div id="accordeon">
 		<xsl:apply-templates select="gebiet[./parlament]" mode="bayernbezirke" />

@@ -9,7 +9,9 @@
 </xsl:template>
 
 <xsl:template match="bundesland" mode="abstract">
-	<p>!prominente</p>
+	<p>Das Land Thüringen gliedert sich klassisch in kreisfreie Städte und Landkreise (<a href="http://de.wikipedia.org/wiki/Th%C3%BCringen#Verwaltungsgliederung">Wikipedia</a>).</p>
+	<p>An allgemeinen Kommunalwahlen hat die Piratenpartei in Thüringen noch nicht teilgenommen.</p>
+	<p>Bei Nachwahlen zu den Ortsteilräten in Jena, die im August 2010 nach einer Umgliederung der Stadt durchgeführt wurden, hatten die PIRATEN zwei Mandate in zwei Ortsteilräten gewonnen (<a href="http://www.jena.de/statistik/wahl/wahl2010/ot/orat.php">Wikipedia</a>). Da das Wahlrecht aber keine Nachrücker zulässt, sind inzwischen beide Mandate wegen Umzugs der Mandatsträger verfallen.</p>
 </xsl:template>
 
 </xsl:transform>

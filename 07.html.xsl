@@ -9,7 +9,8 @@
 </xsl:template>
 
 <xsl:template match="bundesland" mode="abstract">
-	<p>RLP</p>
+	<p>Das Land Rheinland-Pfalz gliedert sich klassisch in kreisfreie Städte und Landkreise (<a href="http://de.wikipedia.org/wiki/Rheinland-Pfalz#Verwaltungsgliederung">Wikipedia</a>).</p>
+	<p>An allgemeinen Kommunalwahlen hat die Piratenpartei in Rheinland-Pfalz noch nicht teilgenommen.</p>
 </xsl:template>
 
 </xsl:transform>

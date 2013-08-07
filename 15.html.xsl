@@ -9,7 +9,8 @@
 </xsl:template>
 
 <xsl:template match="bundesland" mode="abstract">
-	<p>y u no get up early</p>
+	<p>Das Land Sachsen-Anhalt gliedert sich klassisch in kreisfreie Städte und Landkreise (<a href="http://de.wikipedia.org/wiki/Sachsen-Anhalt#Verwaltungsgliederung">Wikipedia</a>).</p>
+	<p>An allgemeinen Kommunalwahlen hat die Piratenpartei in Sachsen-Anhalt noch nicht teilgenommen.</p>
 </xsl:template>
 
 </xsl:transform>

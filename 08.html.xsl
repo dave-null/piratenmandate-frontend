@@ -9,7 +9,8 @@
 </xsl:template>
 
 <xsl:template match="bundesland" mode="abstract">
-	<p>SEITENBACHER</p>
+	<p>Das Land Baden-Württemberg gliedert sich in kreisfreie Städte und Landkreise, die zu vier Regierungsbezirken gehören. Die Regierungsbezirke haben allerdings keine direkt gewählten Vertretungen. (<a href="http://de.wikipedia.org/wiki/Baden-W%C3%BCrttemberg#Verwaltungsgliederung">Wikipedia</a>).</p>
+	<p>An allgemeinen Kommunalwahlen hat die Piratenpartei in Baden-Württemberg noch nicht teilgenommen.</p>
 </xsl:template>
 
 </xsl:transform>

@@ -9,7 +9,8 @@
 </xsl:template>
 
 <xsl:template match="bundesland" mode="abstract">
-	<p>saariously!?</p>
+	<p>Das Saarland hat als kleinstes Flächenland und zweitkleinstes Bundesland nach Einwohnern keine kreisfreien Städte, sondern nur Landkreise. Eine Ausnahme stellt der Regionalverband Saarbrücken als „Kommunalverband besonderer Art“ dar, einer von dreien bundesweit. (<a href="http://de.wikipedia.org/wiki/Saarland#Verwaltungsgliederung">Wikipedia</a>).</p>
+	<p>An allgemeinen Kommunalwahlen hat die Piratenpartei im Saarland noch nicht teilgenommen.</p>
 </xsl:template>
 
 </xsl:transform>

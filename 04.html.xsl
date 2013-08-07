@@ -14,7 +14,9 @@
 	</h1>
 	<div id="abstract">
 		<h2>Hintergrund<span class="opennote"></span></h2>
-			<p>Bremen, yo.</p>
+			<p>Das Land Bremen besteht aus den Städten Bremen und Bremerhaven.</p>
+			<p>Die Bremer Stadtbürgerschaft setzt sich allerdings fast ausschließlich aus einem Teil der Abgeordneten der Bremischen (Landes-)Bürgerschaft zusammen. Zudem gibt es in der Stadt Bremen 22 direkt gewählte Orts- und Stadtteilbeiräte. Bei den gemeinsamen Bürgerschafts- und Kommunalwahlen am 22. Mai 2011 konnten die PIRATEN in vier Bremer Stadtteilbeiräten mit Ergebnissen zwischen 3,1% und 3,9% jeweils als fünftstarkste Liste ein Mandat gewinnen (<a href="http://www.statistik.bremen.de/sixcms/media.php/13/Stat%20Mitt114_KW2011.pdf">Wahlergebnis</a>). Ein Teil dieser Mandate ist inzwischen aus verschienen Gründen wieder verloren gegangen.</p>
+			<p>Die gewählte Bürgervertretung der Stadt Bremerhaven ist ihre Stadtverordnetenversammlung (<a href="http://de.wikipedia.org/wiki/Freie_Hansestadt_Bremen#Verwaltungsgliederung">Wikipedia</a>). Dort konnten die PIRATEN mit 2,2% ein Mandat in der Stadtverordnetenversammlung gewinnen (<a href="http://www.bremerhaven.de/meer-erleben/stadt-haus/wahlen-zur-bremischen-buergerschaft-und-zur-stadtverordnetenversammlung.23527.html">Wahlergebnis</a>).</p>
 	</div>
 	<div id="accordeon">
 		<xsl:apply-templates select="gebiet[@name='Bremerhaven']" mode="flaechetop" />
