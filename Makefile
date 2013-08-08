@@ -9,6 +9,8 @@ piecesections=statistik karte
 datadir=data
 datenfiles=stats.html gebietsdata.js 0.html 01.html 02.html 03.html 04.html 05.html 06.html 07.html 08.html 09.html 10.html 11.html 12.html 13.html 14.html 15.html 16.html
 
+include Makefile.local
+
 #ausgruenden darf ein target nicht wie ein existierendes verzeichnis heissen!
 all: javascript styles datadir assemble json
 
