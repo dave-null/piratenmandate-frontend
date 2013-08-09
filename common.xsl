@@ -30,7 +30,7 @@
 	</xsl:when><xsl:otherwise>
 		<xsl:value-of select="count(.//mandat[@type='pirat'])" />
 		<xsl:text> Mandat</xsl:text>
-		<xsl:if test="count(.//mandat) > 1"><xsl:text>e</xsl:text></xsl:if>
+		<xsl:if test="count(.//mandat[@type='pirat']) > 1"><xsl:text>e</xsl:text></xsl:if>
 		<xsl:if test=".//mandat[@type='transfer']">
 			<xsl:text> (+</xsl:text>
 			<xsl:value-of select="count(.//mandat[@type='transfer'])"/>
