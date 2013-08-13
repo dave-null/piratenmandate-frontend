@@ -43,7 +43,7 @@
 
 <xsl:template match="parlament" mode="mandatstraeger">
 	<div>
-		<h4>Mandatsträger</h4>
+		<h5>Mandatsträger</h5>
 		<ul class="prose">
 			<xsl:for-each select="mandat">
 				<li><xsl:value-of select="." /></li>
@@ -57,7 +57,7 @@
 
 <xsl:template match="fraktion">
 	<div>
-		<h4>Fraktion</h4>
+		<h5>Fraktion</h5>
 		<xsl:choose>
 			<xsl:when test="@type = 'piraten'"><strong>PIRATEN-Fraktion</strong></xsl:when>
 			<xsl:when test="@type = 'gemeinsam'">
@@ -186,7 +186,6 @@
 			<xsl:if test="count(ancestor::gebiet) > 0">
 				<xsl:text> (</xsl:text><xsl:value-of select="@type"/><xsl:text>)</xsl:text>
 			</xsl:if>
-			<xsl:if test="parlament"><br /><xsl:value-of select="parlament/@name" /></xsl:if>
 		</h3>
 		<xsl:apply-templates select="parlament" mode="flaecheparl" />
 		<xsl:apply-templates select="gebiet" mode="flaechegebiet" /> <!-- HOLY COW, HE'S RECURSING! -->
@@ -194,11 +193,12 @@
 </xsl:template>
 
 <xsl:template match="parlament" mode="flaecheparl">
+  <h4><xsl:value-of select="@name" /></h4>
 	<xsl:apply-templates select="." mode="mandatstraeger" />
 	<xsl:apply-templates select="fraktion" />
 	<xsl:apply-templates select="story" />
 	<div class="smalllinks">
-		<h4>Links</h4>
+		<h5>Links</h5>
 			<xsl:apply-templates select="fraktion" mode="fraktionslink" />
 			<xsl:apply-templates select="." mode="rislink" />
 			<xsl:apply-templates select=".." mode="localpirates" />

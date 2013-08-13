@@ -159,7 +159,7 @@ h1 .info {
 h2 {
 	font-size:1.2em;
 }
-h4 {
+h5 {
   display:inline;
   font-size:1em;
 }
@@ -248,6 +248,19 @@ h4 {
 	border-left:4px solid #666;
 	padding-left:0.3em;
 }
+#contentbox h4 {
+  margin:-1em 0 0 0;
+  font-size:1.2em;
+  border:0;
+  padding:1em 0 0.5em 0;
+}
+#contentbox h3+h4 {
+  padding-top:0;
+}
+#contentbox .level2 > h3+h4 {
+  border-left:4px solid #fff;
+  padding-left:0.3em;
+}
 #contentbox .level1 {
 	margin-bottom:1.5em;
 	padding-left:0.8em;
@@ -261,7 +274,7 @@ h4 {
 	padding-top:0.3em;
 	margin-left:-0.6em;
 }
-#contentbox h4:after {
+#contentbox h5:after {
 	content: ': ';
 }
 .contentstore {
