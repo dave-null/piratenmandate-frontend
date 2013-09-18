@@ -193,7 +193,9 @@
 </xsl:template>
 
 <xsl:template match="parlament" mode="flaecheparl">
-  <h4><xsl:value-of select="@name" /></h4>
+  <xsl:if test="count(ancestor::gebiet) > 1">
+    <h4><xsl:value-of select="@name" /></h4>
+  </xsl:if>
 	<xsl:apply-templates select="." mode="mandatstraeger" />
 	<xsl:apply-templates select="fraktion" />
 	<xsl:apply-templates select="story" />
