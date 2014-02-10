@@ -112,7 +112,7 @@ a:visited {
 #menu {
 	text-align: center;
 	color:#333;
-	font-size:1.5em;
+	font-size:1.2em;
 	line-height: 40px;
 	font-weight:bold;
 	text-shadow: 0 -1px 1px #999, 0 1px 1px #FFFFFF;
@@ -126,7 +126,7 @@ a:visited {
 }
 #menu ul li {
 	display:inline;
-	margin:0 60px;
+	margin:0 20px;
 }
 #menu ul li a {
 	font-family: 'Convergence', sans-serif;
@@ -138,6 +138,7 @@ a:visited {
 #menu ul #karte a:before { content: '\00f0ac\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
 #menu ul #stats a:before { content: '\00f080\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
 #menu ul #about a:before { content: '\00f059\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
+#menu ul #docs a:before { content: '\00f0c5\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
 #imprint a:before { content: '\00f0e0\0000a0\0000a0';font-family: 'AwesomeWebfont'; }
 
 h1 {
