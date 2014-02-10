@@ -110,6 +110,15 @@
 	</a></p>
 </xsl:template>
 
+<xsl:template match="feed" mode="feedlink">
+	<p><a>
+		<xsl:attribute name="href"><xsl:value-of select="@url" /></xsl:attribute>
+		<xsl:attribute name="title">Zum Feed mit Neuigkeiten</xsl:attribute>
+		<xsl:text>Feed</xsl:text>
+	</a></p>
+</xsl:template>
+
+
 
 <xsl:template match="bundesland" mode="stadtstaat">
 	<h1><xsl:value-of select="@name" />
@@ -144,6 +153,7 @@
 				<xsl:apply-templates select="parlament/fraktion" mode="fraktionslink" />
 				<xsl:apply-templates select="parlament" mode="rislink" />
 				<xsl:apply-templates select="." mode="localpirates" />
+				<xsl:apply-templates select="feed" mode="feedlink" />
 		</div>
 	</div>
 </xsl:template>
@@ -204,6 +214,7 @@
 			<xsl:apply-templates select="fraktion" mode="fraktionslink" />
 			<xsl:apply-templates select="." mode="rislink" />
 			<xsl:apply-templates select=".." mode="localpirates" />
+			<xsl:apply-templates select="feed" mode="feedlink" />
 	</div>
 </xsl:template>
 
