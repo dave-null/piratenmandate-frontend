@@ -11,8 +11,7 @@
 <xsl:template match="bundesland" mode="abstract">
 	<p>Das Land Hamburg ist eine sogenannte Einheitsgemeinde. Das bedeutet, dass alle Aufgaben, die in anderen Ländern von Landkreisen und Gemeinden wahrgenommen werden, in der Zuständigkeit der Hamburger Landesregierung liegen.</p>
 	<p>Einen Teil dieser Aufgaben überlässt die Landesregierung den Bezirken. Sie werden von den direkt gewählten Bezirksversammlungen kontrolliert. Sie wählen den Bezirksamtsleiter und können für das Bezirksamt bindende Beschlüsse fassen. (<a href="http://de.wikipedia.org/wiki/Bezirksversammlung">Wikipedia</a>).</p>
-	<p>Die Bezirksversammlungen wurden zuletzt am 20. Februar 2011 gemeinsam mit der Hamburgischen Bürgerschaft gewählt. Dabei konnten die PIRATEN im Bezirk Hamburg-Mitte mit 4,7% die 3-Prozent-Hürde überspringen und zwei Mandate gewinnen. Im Bezirk Bergedorf gewannen die PIRATEN ein Direktmandat (<a href="http://www.statistik-nord.de/wahlen/wahlen-in-hamburg/bezirksversammlungswahlen/2011/">Wahlergebnis</a>).</p>
-	<p>Inzwischen wurde die 3-Prozent-Hürde vom Hamburgischen Verfassungsgericht für unwirksam erklärt. Um eine Fraktion zu gründen, die aus mindestens drei Abgeordneten bestehen muss, ist aber weiterhin ein Wahlergebnis von rund 5% erforderlich.</p>
+	<p>Die Bezirksversammlungen wurden zuletzt am 25. Mai 2014 gewählt, erstmals zusammen mit dem Europaparlament (vorher, zuletzt 2011, zusammen mit der Hamburgischen Bürgerschaft). Dabei konnten die PIRATEN im Bezirk Hamburg-Mitte mit 4,4% zum zweiten Mal in Folge die 3-Prozent-Hürde überspringen und zwei Mandate gewinnen. Im Bezirk Hamburg-Nord sind die PIRATEN mit 3,5% erstmals in die Bezirksversammlung eingezogen.</p>
 </xsl:template>
 
 </xsl:transform>
