@@ -10,8 +10,7 @@
 
 <xsl:template match="bundesland" mode="abstract">
 	<p>Das Land Mecklenburg-Vorpommern gliedert sich klassisch in kreisfreie Städte und Landkreise (<a href="http://de.wikipedia.org/wiki/Mecklenburg-Vorpommern#Verwaltungsgliederung">Wikipedia</a>).</p>
-	<p>An allgemeinen Kommunalwahlen hat die Piratenpartei in Mecklenburg-Vorpommern noch nicht teilgenommen.</p>
-	<p>Bei Nachwahlen der Kreistage, die im September 2011 nach einer Umgliederung Landkreise durchgeführt wurden, hatten die PIRATEN ein Mandat in einem Kreistag gewonnen (<a href="http://service.mvnet.de/cgi-bin/wahlen/2011_kom_land/wahl2011_anz.pl?K_Sonstige.htm">Wahlergebnis</a>). Das Mandat ging allerdings mit dem Parteiausschluss des Mandatsträgers verloren.</p>
+	<p>Die ersten allgemeinen Kommunalwahlen mit Teilnahme der Piratenpartei fanden in Mecklenburg-Vorpommern am 25. Mai 2014 statt.</p>
 </xsl:template>
 
 </xsl:transform>
