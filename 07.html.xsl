@@ -10,7 +10,7 @@
 
 <xsl:template match="bundesland" mode="abstract">
 	<p>Das Land Rheinland-Pfalz gliedert sich klassisch in kreisfreie Städte und Landkreise (<a href="http://de.wikipedia.org/wiki/Rheinland-Pfalz#Verwaltungsgliederung">Wikipedia</a>).</p>
-	<p>An allgemeinen Kommunalwahlen hat die Piratenpartei in Rheinland-Pfalz noch nicht teilgenommen.</p>
+	<p>Die ersten allgemeinen Kommunalwahlen mit Teilnahme der Piratenpartei fanden in Rheinland-Pfalz am 25. Mai 2014 statt.</p>
 </xsl:template>
 
 </xsl:transform>
