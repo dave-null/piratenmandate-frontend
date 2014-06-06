@@ -66,7 +66,6 @@ a:visited {
 }
 .rectangle {
 	background:#ff8800;
-	float:left;
 	box-shadow:0px 0px 4px rgba(0, 0, 0, 0.55);
 	z-index:100;
 	margin:0 0 20px 0px;
@@ -179,7 +178,6 @@ h5 {
 	background:url("../img/toggles-plus.png") no-repeat scroll 0 0 #EEE;
 	line-height: 30px;
 	color:#666;
-	font-size:1.2em;
 	font-weight:bold;
 }
 .divider {
@@ -407,7 +405,7 @@ ul.cols { list-style: none; margin: 0; padding: 0;
 #graphchapters > h1 {
 	margin: 20px 0 10px 0;
 }
-@media (min-width: 980px) and (max-width: 1199px) { 
+@media (min-width: 980px) and (max-width: 1199px) {
 	.rectangle {
 		padding: 0 20px;
 	}
@@ -422,12 +420,15 @@ ul.cols { list-style: none; margin: 0; padding: 0;
 		text-align: right;
 	}
 	.landblock > h3 {
-		float:left;
-		width:70%;
+		float: left;
 		text-align: left;
 	}
 	#mapMenu {
-		margin-left:3px;
+		margin-left: 3px;
+    font-size: 0.8em;
+	}
+	#contentbox h2, #contentbox h3, #contentbox h4 {
+    font-size: 1em;
 	}
 	#graphchapters .row-fluid .span7 {
 		margin-left:10%;
@@ -441,7 +442,7 @@ ul.cols { list-style: none; margin: 0; padding: 0;
 	}
 }
  
-@media (min-width: 768px) and (max-width: 979px) { 
+@media (min-width: 768px) and (max-width: 979px) {
 	.rectangle {
 		padding: 0 20px;
 	}
@@ -466,6 +467,9 @@ ul.cols { list-style: none; margin: 0; padding: 0;
 	#menu ul li {
 		margin:0 15px;
 	}
+  #menu ul #karte a:before, #menu ul #stats a:before, #menu ul #about a:before, #menu ul #docs a:before {
+    content:"";
+  }
 	ul.cols {
 	column-count: 2;
 	-moz-column-count: 2;
@@ -474,7 +478,7 @@ ul.cols { list-style: none; margin: 0; padding: 0;
 }
  
 /* Landscape phones and down */
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
 	#menu ul li {
 		margin:0 15px;
 	}
@@ -488,26 +492,42 @@ ul.cols { list-style: none; margin: 0; padding: 0;
 		font-size: 1em;
 	}
 	#mapMenu {
-		margin:60px 0 0 4px;
+		margin-left: 4px;
+    font-size: 0.8em;
 	}
 	#contentbox {
 		margin:20px 0;
 	}
-	.landblock, #L14, #L13 {
-		width:45%;
-	}
+  .landblock, #L13, #L14 {
+    width:95%;
+    text-align: right;
+  }
+  .landblock > h3 {
+    float: left;
+    text-align: left;
+  }
 	.left_cor, .well {
 		display:none;
 	}
 	#graphchapters h1 {
 		border:none;
 	}
-	#menu ul #karte a:before, #menu ul #stats a:before, #menu ul #about a:before {
+	#menu ul #karte a:before, #menu ul #stats a:before, #menu ul #about a:before, #menu ul #docs a:before {
 		content:"";
+	}
+	#header {
+    height: 100%;
+    padding: 10px 0 10px;
+	}
+	.rectangle {
+    height: 100% !important;
 	}
 	ul.cols {
 	column-count: 1;
 	-moz-column-count: 1;
 	-webkit-column-count: 1;
 	}
- }
+	#footer {
+    font-size: 0.8em;
+	}
+}
