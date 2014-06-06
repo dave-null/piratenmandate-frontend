@@ -17,7 +17,7 @@
 			<p>Bayern ist das einzige Flächenland mit einer kommunalen Verwaltungsebene oberhalb der Landkreise, für die es direkt gewählte Vertretung gibt: Die Bezirke mit den Bezirkstagen. Unterhalb dieser Ebene entsprechen die Landkreise und gemeinden der üblichen Struktur (<a href="http://de.wikipedia.org/wiki/Bayern#Verwaltungsgliederung">Wikipedia</a>).</p>
 	</div>
 	<div id="accordeon">
-		<xsl:apply-templates select="gebiet[./parlament]" mode="bayernbezirke" />
+		<xsl:apply-templates select="gebiet[parlament]" mode="bayernbezirke" />
 		<xsl:apply-templates select="//gebiet[@type='Bezirk']/gebiet" mode="flaechetop" />
 	</div>
 	<div id="mapInfo"></div>
@@ -30,12 +30,12 @@
 			<xsl:text>Bezirk </xsl:text><xsl:value-of select="@name" />
 		</h2>
 		<div class="contentstore">
-			<h3>
-				Bezirk <xsl:value-of select="@name"/>
-				<br />
-				<xsl:value-of select="./parlament/@name" />
-			</h3>
-			<xsl:apply-templates select="./parlament" mode="flaecheparl" />
+      <div class="level0">
+        <h3>
+          Bezirk <xsl:value-of select="@name"/>
+        </h3>
+        <xsl:apply-templates select="parlament" mode="flaecheparl" />
+			</div>
 		</div>
 	</div>
 	<xsl:if test="position()=last()">

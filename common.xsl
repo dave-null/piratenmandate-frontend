@@ -187,13 +187,13 @@
 
 <xsl:template match="gebiet" mode="flaechegebiet">
 	<div>
-		<xsl:attribute name="class">level<xsl:value-of select="count(ancestor::gebiet)" /></xsl:attribute>
+		<xsl:attribute name="class">level<xsl:value-of select="count(ancestor::gebiet[@type != 'Bezirk'])" /></xsl:attribute>
 		<h3>
 			<xsl:value-of select="@name"/>
-			<xsl:if test="count(ancestor::gebiet) = 0">
+			<xsl:if test="count(ancestor::gebiet[@type != 'Bezirk']) = 0">
 				<span class="pull-right"> (<xsl:apply-templates select="." mode="mcountshort" />)</span>
 			</xsl:if>
-			<xsl:if test="count(ancestor::gebiet) > 0">
+			<xsl:if test="count(ancestor::gebiet[@type != 'Bezirk']) > 0">
 				<xsl:text> (</xsl:text><xsl:value-of select="@type"/><xsl:text>)</xsl:text>
 			</xsl:if>
 		</h3>
@@ -203,9 +203,7 @@
 </xsl:template>
 
 <xsl:template match="parlament" mode="flaecheparl">
-  <xsl:if test="count(ancestor::gebiet) > 1">
-    <h4><xsl:value-of select="@name" /></h4>
-  </xsl:if>
+  <h4><xsl:value-of select="@name" /></h4>
 	<xsl:apply-templates select="." mode="mandatstraeger" />
 	<xsl:apply-templates select="fraktion" />
 	<xsl:apply-templates select="story" />
