@@ -10,7 +10,8 @@
 
 <xsl:template match="bundesland" mode="abstract">
 	<p>Das Land Sachsen-Anhalt gliedert sich klassisch in kreisfreie Städte und Landkreise (<a href="http://de.wikipedia.org/wiki/Sachsen-Anhalt#Verwaltungsgliederung">Wikipedia</a>).</p>
-	<p>An allgemeinen Kommunalwahlen hat die Piratenpartei in Sachsen-Anhalt noch nicht teilgenommen.</p>
+	<p>Eine Besonderheit der Kommunalgliederung stellen die Verbandsgemeinden dar, zu denen Gemeinden zusammengeschlossen werden können, um Verwaltungsaufgaben zentral wahrzunehmen. Verbandsgemeinden haben einen direkt gewählten Verbandsgemeinderat, die Mitgliedsgemeinden aber auch Gemeinderäte. Diese Einrichtung ist analog zur Kommunalgliederung von Rheinland-Pfalz und ähnlich den Samtgemeinden in Niedersachsen.</p>
+	<p>Die ersten allgemeinen Kommunalwahlen mit Teilnahme der Piratenpartei fanden in Sachsen-Anhalt am 25. Mai 2014 statt.</p>
 </xsl:template>
 
 </xsl:transform>
