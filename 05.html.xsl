@@ -28,8 +28,8 @@
 <xsl:template match="gebiet" mode="flaechenomap">
   <div class="gebiet nomap" ><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
     <h2>
-      <div class="leaflet-label">Regierungsbezirk <xsl:value-of select="@name" /></div>
-      Regierungsbezirk <xsl:value-of select="@name" />
+      <div class="leaflet-label"><xsl:value-of select="@name" /></div>
+      <xsl:value-of select="@name" />
     </h2>
     <div class="contentstore">
       <div class="level0">
