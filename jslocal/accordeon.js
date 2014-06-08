@@ -33,13 +33,15 @@ function accordeonInit() {
 			block = true
 			var self = $(this)
 			if(!$(this).parent().hasClass("open")) {
-				if ($(this).parent().hasClass("middle")) {
-					map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
-				} else {
-					map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
-					highlight = $(this).parent().attr('id');
-					cL.setStyle(gebietStyle);
-				}
+        if (!$(this).parent().hasClass("nomap")) {
+          if ($(this).parent().hasClass("middle")) {
+            map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
+          } else {
+            map.fitBounds(L.geoJson(Features[$(this).parent().attr('id')]).getBounds());
+            highlight = $(this).parent().attr('id');
+            cL.setStyle(gebietStyle);
+          }
+        }
 				abstractCtl(0);
 				$('.open').removeClass("open");
 				$("#accordeon").animate({
@@ -52,7 +54,7 @@ function accordeonInit() {
 					});
 				});
 			} else {
-				map.fitBounds(cL.getBounds());
+				if (!$(this).parent().hasClass("nomap")) { map.fitBounds(cL.getBounds()); }
 				highlight = null;
 				cL.setStyle(gebietStyle);
 				abstractCtl(1);
