@@ -11,8 +11,10 @@ var mapSettings = {
 
 var Gc = { // Styles for gebiete
    "D":{fillColor:'#444', fillOpacity:0.15} // Default
-  ,"P":{fillColor:'#f80', fillOpacity:0.6}  // Piraten
-  ,"Ü":{fillColor:'#fb5', fillOpacity:0.5}  // Übertritte
+  ,"F":{fillColor:'#e80', fillOpacity:0.85} // Piraten-Fraktion
+  ,"G":{fillColor:'#f80', fillOpacity:0.7}  // Gemeinsame Fraktion
+  ,"P":{fillColor:'#f80', fillOpacity:0.55} // Piraten
+  ,"Ü":{fillColor:'#fb5', fillOpacity:0.5}  // Übertritte/Fremdlisten
 };
 var highlightStyle = {weight:5, opacity:1}
 var middleStyle = { fillOpacity:0, weight:2.6, opacity:1 }
@@ -40,6 +42,6 @@ var Pc = {
   ,'FDP':'#ee0'
   ,'Bündnis 21/RRP':'#d62'
   ,'Die PARTEI':'#b5152b'
-  ,'Offene/Bunte/Lokale Liste':'#ae1af7'
+  ,'Offene/Bunte/Lokal':'#ae1af7'
   ,'ÖDP':'#ed7505'
 };

@@ -11,11 +11,20 @@
   <xsl:text>gc["</xsl:text>
     <xsl:apply-templates mode="key" select="." />
   <xsl:text>"] = </xsl:text>
-    <xsl:choose><xsl:when test=".//mandat[@type='pirat']">
-      <xsl:text>"P"</xsl:text>
-    </xsl:when><xsl:otherwise>
-      <xsl:text>"Ü"</xsl:text>
-    </xsl:otherwise></xsl:choose>
+    <xsl:choose>
+      <xsl:when test=".//fraktion[@type='piraten']">
+        <xsl:text>"F"</xsl:text>
+      </xsl:when>
+      <xsl:when test=".//fraktion[@type='gemeinsam']">
+        <xsl:text>"G"</xsl:text>
+      </xsl:when>
+      <xsl:when test=".//mandat[@type='pirat' and not(@fremdliste)]">
+        <xsl:text>"P"</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>"Ü"</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   <xsl:text>;&#10;</xsl:text>
 </xsl:template>
 

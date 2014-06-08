@@ -43,15 +43,15 @@
 
 <xsl:template match="parlament" mode="mandatstraeger">
 	<div>
-		<h5>Mandatsträger</h5>
+		<h5>Mandatsträger (<xsl:value-of select="count(./mandat)"/><xsl:text> von </xsl:text><xsl:value-of select="@seats" /> Sitzen)</h5>
 		<ul class="prose">
 			<xsl:for-each select="mandat">
-				<li><xsl:value-of select="." /></li>
+				<li>
+          <xsl:value-of select="." />
+          <xsl:if test="@fremdliste"> (gewählt über die Liste &#8222;<xsl:value-of select="@fremdliste" />&#8220;)</xsl:if>
+				</li>
 			</xsl:for-each>
 		</ul>
-		<xsl:text> (</xsl:text>
-			<xsl:value-of select="count(./mandat)"/><xsl:text> von </xsl:text><xsl:value-of select="@seats" />
-		<xsl:text> Sitzen)</xsl:text>
 	</div>
 </xsl:template>
 

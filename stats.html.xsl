@@ -2,7 +2,7 @@
 <xsl:transform version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:output encoding="UTF-8" omit-xml-declaration="yes"/>
 
-<xsl:key name="exparteien" match="mandat[@type='transfer' and not(@multi)]" use="@from" />
+<xsl:key name="exparteien" match="mandat[@from and not(@multi)]" use="@from" />
 <xsl:key name="fraktionspartner" match="partner" use="@partei" />
 <xsl:key name="vertretungen" match="parlament" use="@name" />
 <xsl:key name="gebiete" match="gebiet[./parlament]" use="@type" />
@@ -21,9 +21,10 @@
       <div id="transferovw" class="jqplotContainer">&#160;</div>
     </div>
     <div class="span7">
-    <h2>Gewählte und Übergetretene</h2>
-      <p>Im Moment werden <strong><xsl:value-of select="count(//mandat)" />&#160;Mandate</strong> in direkt gewählten kommunalen Vertretungen von Mitgliedern der Piratenpartei ausgeübt. Da manche Mandatsträger mehr als ein Mandat gleichzeitig innehaben, werden diese von insgesamt <strong><xsl:value-of select="count(//mandat[not(@multi)])" />&#160;Mandatsträgern</strong> ausgeübt.</p>
-      <p>Von den <xsl:value-of select="count(//mandat)" />&#160;Mandaten wurden <xsl:value-of select="count(//mandat[@type='pirat'])" /> bei Wahlen gewonnen (<xsl:value-of select="count(//mandat[@type='pirat' and not(@multi)])" />&#160;gewählte Mandatsträger). Weitere <xsl:value-of select="count(//mandat[@type='transfer'])" />&#160;Mandate sind durch Übertritte von <xsl:value-of select="count(//mandat[@type='transfer' and not(@multi)])" />&#160;Mandatsträgern hinzugekommen, die auf anderen Listen gewählt wurden.</p>
+    <h2>Mandatsträger nach Art der Wahl</h2>
+      <p>Im Moment werden <strong><xsl:value-of select="count(//mandat)" />&#160;Mandate</strong> in kommunalen Vertretungen von Mitgliedern der Piratenpartei ausgeübt. Manche von ihnen üben mehrere Mandate in verschiedenen Vertretungen gleichzeitig aus. Insgesamt gibt es <strong><xsl:value-of select="count(//mandat[not(@multi)])" />&#160;kommunale&#160;Mandatsträger</strong> in der Piratenpartei.</p>
+      <p>Von diesen wurden <xsl:value-of select="count(//mandat[@type='pirat' and not(@fremdliste)])" />&#160;Mandate bei Wahlen auf PIRATEN-Listen gewonnen (<xsl:value-of select="count(//mandat[@type='pirat' and not(@fremdliste) and not(@multi)])" />&#160;Mandatsträger).</p>
+      <p>Weitere <xsl:value-of select="count(//mandat[@fremdliste])" /> Mandate kommen von <xsl:value-of select="count(//mandat[@fremdliste and not(@multi)])" />&#160;Mandatsträgern, die als Mitglieder der Piratenpartei auf anderen Listen gewählt wurden. Zudem sind <xsl:value-of select="count(//mandat[@type='transfer'])" />&#160;Mandate sind durch nachträgliche Parteiübertritte von <xsl:value-of select="count(//mandat[@type='transfer' and not(@multi)])" />&#160;Mandatsträgern hinzugekommen.</p>
     </div>
   </div>
   <script type="text/javascript">
@@ -35,6 +36,9 @@
     <xsl:text>graphData[thisName].push(['Gewählte Piraten',</xsl:text>
     <xsl:value-of select="count(//mandat[@type='pirat' and not(@multi)])" /><xsl:text>]);</xsl:text>
     <xsl:text>graphColors[thisName].push('#f80');</xsl:text>
+    <xsl:text>graphData[thisName].push(['Fremdlisten',</xsl:text>
+    <xsl:value-of select="count(//mandat[@fremdliste and not(@multi)])" /><xsl:text>]);</xsl:text>
+    <xsl:text>graphColors[thisName].push('#08f');</xsl:text>
     <xsl:text>graphData[thisName].push(['Übergetretene',</xsl:text>
     <xsl:value-of select="count(//mandat[@type='transfer' and not(@multi)])" /><xsl:text>]);</xsl:text>
     <xsl:text>graphColors[thisName].push('#f40');</xsl:text>
@@ -52,10 +56,10 @@
       <div id="transfers" class="jqplotContainer">&#160;</div>
     </div>
     <div class="span7">
-    <h2>Übertritte nach Parteien</h2>
-      <p>Die <xsl:value-of select="count(//mandat[@type='transfer' and not(@multi)])" />&#160;übergetretenen Mandatsträger teilen sich wie hier gezeigt auf die Parteien auf, auf deren Listen sie gewählt wurden.</p>
-      <p>Unter „FW/UWG/etc.“ sind Gruppen der Freien Wähler, Unabhängigen Wählergemeinschaften und ähnlicher kommunalpolitischer Vereinigungen zusammengefasst, die nicht als Partei auftreten (z.B. „Bürger für Entenhausen“).</p>
-      <p>„Einzelbewerber“ sind Personen, die ohne Wahlliste angetreten sind, also direkt und für keine Vereinigung gewählt wurden.</p>
+    <h2>Übertritte und Fremdlisten nach Parteien</h2>
+      <p>Die <xsl:value-of select="count(//mandat[@from and not(@multi)])" />&#160;übergetretenen oder auf Fremdlisten gewählten Mandatsträger teilen sich wie hier gezeigt auf die Listen auf, auf denen sie gewählt wurden.</p>
+      <p>Unter „Offene/Bunte/Lokal“ sind zumeist alternative, junge und offene Listen zusammengefasst. Zu „FW/UWG/etc.“ zählen hingegen eher Gruppen, die sich Freie Wähler (FW) oder Unabhängige Wählergemeinschaft (UWG) nennen, oder ähnlich wie diese auftreten (z.B. auch „Bürger für Entenhausen“ oder „Wir für Gotham City“).</p>
+<!--       <p>„Einzelbewerber“ sind Personen, die ohne Wahlliste angetreten sind, also direkt, persönlich und für keine Vereinigung gewählt wurden.</p> -->
     </div>
   </div>
   <script type="text/javascript">
@@ -64,7 +68,7 @@
     graphData[thisName] = [];
     graphColors[thisName] = [];
   </xsl:text>
-  <xsl:for-each select="//mandat[@type='transfer'][generate-id() = generate-id(key('exparteien', @from)[1])]">
+  <xsl:for-each select="//mandat[@from][generate-id() = generate-id(key('exparteien', @from)[1])]">
     <xsl:sort select="count(key('exparteien', @from))" data-type="number" order="descending" />
       <xsl:text>graphData[thisName].push([</xsl:text>
       <xsl:text>'</xsl:text><xsl:value-of select="@from" /><xsl:text>',</xsl:text>
@@ -82,7 +86,6 @@
   </script>
 
   <h1>Vertretungen</h1>
-  
   <p>Grundsätzlich ist die kommunale Verwaltungsstruktur in (Land)kreise, Städte und Gemeinden aufgeteilt. Es gibt jedoch zahlreihe regionale Unterschiede und Besonderheiten. Entsprechend vielfältig sind die Gebiete, in denen es Vertretungen mit Piraten-Vertretern gibt:</p>
   <ul class="cols">
     <xsl:for-each select="//gebiet[generate-id() = generate-id(key('gebiete', @type)[1])]">
@@ -219,7 +222,7 @@
     </div>
     <div class="span7">
       <h2>Fraktionspartner</h2>
-      <p>In seltenen Fällen sind mehr als zwei Parteien an einer gemeinsamen Fraktion beteiligt. In dieser Darstellung zählt jede beteiligte Partei als einzelner Fraktionspartner, sodass es mehr Fraktionspartner als gemeinsame Fraktionen gibt (<xsl:value-of select="count(//fraktion[@type='gemeinsam']/partner)"/>&#160;Fraktionspartner in <xsl:value-of select="count(//fraktion[@type='gemeinsam'])"/>&#160;gemeinsamen Fraktionen).</p>
+      <p>In manchen Fällen sind mehr als zwei Parteien an einer gemeinsamen Fraktion beteiligt. In dieser Darstellung zählt jede beteiligte Partei als einzelner Fraktionspartner, sodass es mehr Fraktionspartner als gemeinsame Fraktionen gibt (<xsl:value-of select="count(//fraktion[@type='gemeinsam']/partner)"/>&#160;Fraktionspartner in <xsl:value-of select="count(//fraktion[@type='gemeinsam'])"/>&#160;gemeinsamen Fraktionen).</p>
       <p>Niedersachsen stellt hier eine Besonderheit dar: Neben gemeinsamen Fraktionen gibt auch Zusammenschlüsse von Fraktionen und/oder Vertretern verschiendener Parteien. Diese Zusammenschlüsse heißen <em>Gruppen</em>. Formal sind Gruppen also keine gemeinsamen Fraktionen; sie treten aber faktisch so auf. Daher werden niedersächsische Gruppen hier als gemeinsame Fraktionen im gewöhnlichen Sinne geführt.</p>
     </div>
   </div>
