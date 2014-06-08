@@ -64,7 +64,14 @@
 				<xsl:text>Gemeinsame Fraktion </xsl:text><strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong><xsl:text>, mit </xsl:text>
 					<ul class="prose">
 					<xsl:for-each select="partner">
-						<li><xsl:value-of select="@partei" /> (<xsl:value-of select="@num" />)</li>
+            <xsl:choose>
+              <xsl:when test="@name">
+                <li><xsl:value-of select="@num" /> von <xsl:value-of select="@name" /></li>
+              </xsl:when>
+              <xsl:otherwise>
+                <li><xsl:value-of select="@num" /> von <xsl:value-of select="@partei" /></li>
+              </xsl:otherwise>
+            </xsl:choose>
 					</xsl:for-each>
 					</ul>
 			</xsl:when>
