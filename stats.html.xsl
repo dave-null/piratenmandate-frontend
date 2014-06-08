@@ -215,7 +215,7 @@
 
   <div class="row-fluid statistikRow">
     <div class="span5 statistik">
-      <div id="frkpartner" class="jqplotContainer">&#160;</div>
+      <div id="frkpartner" class="jqplotLargeContainer">&#160;</div>
     </div>
     <div class="span7">
       <h2>Fraktionspartner</h2>

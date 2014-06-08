@@ -41,4 +41,5 @@ var Pc = {
   ,'Bündnis 21/RRP':'#d62'
   ,'Die PARTEI':'#b5152b'
   ,'Offene/Bunte/Lokale Liste':'#ae1af7'
+  ,'ÖDP':'#ed7505'
 };
