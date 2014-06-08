@@ -54,7 +54,7 @@
     <div class="span7">
     <h2>Übertritte nach Parteien</h2>
       <p>Die <xsl:value-of select="count(//mandat[@type='transfer' and not(@multi)])" />&#160;übergetretenen Mandatsträger teilen sich wie hier gezeigt auf die Parteien auf, auf deren Listen sie gewählt wurden.</p>
-      <p>Unter „Wählergemeinschaft“ sind sowohl Gruppen der Freien Wähler als auch andere kommunalpolitische Vereinigungen zusammengefasst, die nicht als Partei auftreten (z.B. „Bürger für Entenhausen“).</p>
+      <p>Unter „FW/UWG/etc.“ sind Gruppen der Freien Wähler, Unabhängigen Wählergemeinschaften und ähnlicher kommunalpolitischer Vereinigungen zusammengefasst, die nicht als Partei auftreten (z.B. „Bürger für Entenhausen“).</p>
       <p>„Einzelbewerber“ sind Personen, die ohne Wahlliste angetreten sind, also direkt und für keine Vereinigung gewählt wurden.</p>
     </div>
   </div>

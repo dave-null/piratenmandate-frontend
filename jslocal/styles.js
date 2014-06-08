@@ -33,12 +33,12 @@ jqPlotLegendDefaults = { show:true, location: 'e' }
 var Pc = {
    'LINKE':'#a00'
   ,'CDU/CSU':'#000'
-  ,'Wählergemeinschaft':'#09f'
+  ,'FW/UWG/etc.':'#09f'
   ,'GRÜNE':'#0c0'
   ,'Einzelbewerber':'#aaa'
   ,'SPD':'#e20019'
   ,'FDP':'#ee0'
   ,'Bündnis 21/RRP':'#d62'
   ,'Die PARTEI':'#b5152b'
-  ,'Europaliste Frankfurt':'#036'
+  ,'Offene/Bunte/Lokale Liste':'#ae1af7'
 };
