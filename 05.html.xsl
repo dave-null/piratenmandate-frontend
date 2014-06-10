@@ -14,12 +14,12 @@
   </h1>
   <div id="abstract">
     <h2>Hintergrund<span class="opennote"></span></h2>
-      <p>Die kommunale Selbstverwaltung in Nordrhein-Westfalen ist deutlich vielschichtiger als in anderen Flächenländern, und besteht zum Teil aus historisch gewachsenen, parallelen Strukturen mit vielfältigen räumlichen und administrativen Zuständigkeiten (u.a. Landschaftsverbände, Regierungsbezirke, Regionalverband, Landesverband).</p>
-      <p>Darunter existiert die typische Struktur von kreisfreien Städten und Kreisen, die in Städte und Gemeinden unterteilt sind (<a href="http://de.wikipedia.org/wiki/Politisches_System_Nordrhein-Westfalens#Kommunale_Selbstverwaltung">Wikipedia</a>). Ausnahme ist die Städteregion Aachen als „Kommunalverband besonderer Art“ (<a href="http://de.wikipedia.org/wiki/St%C3%A4dteregion_Aachen">Wikipedia</a>).</p>
-      <p>Bei den Kommunalwahlen 2009 konnten die PIRATEN in Münster und Aachen mit jeweils einem Sitz im Stadtrat ihre ersten kommunalen Mandate gewinnen. Zu den Kommunalwahlen am 25. Mai 2014 sind die PIRATEN erstmals flächendeckend angetreten.</p>
+      <p>Die kommunale Selbstverwaltung in Nordrhein-Westfalen (<a href="http://de.wikipedia.org/wiki/Politisches_System_Nordrhein-Westfalens#Kommunale_Selbstverwaltung">Wikipedia</a>) ist deutlich vielschichtiger als in anderen Flächenländern, und besteht zum Teil aus historisch gewachsenen, parallelen Strukturen mit vielfältigen verwaltungstechnischen Zuständigkeiten und sich zum Teil überschneidenden geographischen Abgrenzungen. Relevant sind hier die fünf „Regierungsbezirke“ (<a href="http://de.wikipedia.org/wiki/Regierungsbezirke_in_Nordrhein-Westfalen">Wikipedia</a>), zwei „Landschaftsverbände“ (<a href="http://de.wikipedia.org/wiki/Landschaftsverb%C3%A4nde_in_Nordrhein-Westfalen">Wikipedia</a>), und ein „Regionalverband“ (<a href="http://de.wikipedia.org/wiki/Regionalverband_Ruhr">Wikipedia</a>).</p>
+      <p>Darunter existiert die typische Struktur von kreisfreien Städten und Kreisen, die in Städte und Gemeinden unterteilt sind. Ausnahme ist die Städteregion Aachen als „Kommunalverband besonderer Art“ (<a href="http://de.wikipedia.org/wiki/St%C3%A4dteregion_Aachen">Wikipedia</a>).</p>
+      <p>Bei den Kommunalwahlen 2009 konnten die PIRATEN in Münster und Aachen mit jeweils einem Sitz im Stadtrat ihre ersten kommunalen Mandate gewinnen. Zu den Kommunalwahlen am 25. Mai 2014 sind die PIRATEN erstmals flächendeckend angetreten und konnten zahlreiche Mandate dazugewinnen.</p>
   </div>
   <div id="accordeon">
-    <xsl:apply-templates select="gebiet[@type='Bezirk'][parlament]" mode="flaechenomap" />
+    <xsl:apply-templates select="gebiet[@type='Bezirk' or @type='Landschaftsverband' or @type='Regionalverband'][parlament]" mode="flaechenomap" />
     <xsl:apply-templates select="gebiet[@type='Bezirk']/gebiet" mode="flaechetop" />
   </div>
   <div id="mapInfo"></div>
