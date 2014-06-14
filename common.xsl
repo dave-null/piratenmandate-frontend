@@ -194,7 +194,7 @@
 				<span class="pull-right"><xsl:apply-templates select="." mode="mcountshort" /></span>
 			</xsl:if>
 			<xsl:if test="count(ancestor::gebiet[@type != 'Bezirk']) > 0">
-				<xsl:value-of select="@type"/>
+				<xsl:text> (</xsl:text><xsl:value-of select="@type"/><xsl:text>)</xsl:text>
 			</xsl:if>
 		</h3>
 		<xsl:apply-templates select="parlament" mode="flaecheparl" />
