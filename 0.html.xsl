@@ -5,11 +5,9 @@
 <xsl:include href="common.xsl" />
 
 <xsl:template match="/">
-	<h1>Deutschland
-		<span class="info"><xsl:apply-templates select="/" mode="mcountshort" /></span>
-	</h1>
-	<p>Die Piratenpartei Deutschland hält zur Zeit <xsl:value-of select="count(//mandat)" />&#160;kommunale Mandate, die von <xsl:value-of select="count(//mandat[not(@multi)])" />&#160;Mandatsträgern ausgeübt werden.</p>
-	<p>Davon wurden <xsl:value-of select="count(//mandat[@fremdliste])" />&#160;Mandate von Piraten auf anderen Wahllisten gewonnen. Weitere <xsl:value-of select="count(//mandat[@type='transfer'])" />&#160;Mandate sind durch nachträgliche Parteiübertritte von Mandatsträgern dazugekommen.</p>
+	<h1>Deutschland</h1>
+	<p>Zur Zeit werden <strong><xsl:value-of select="count(//mandat)" />&#160;kommunale&#160;Mandate</strong> von <strong><xsl:value-of select="count(//mandat[not(@multi)])" />&#160;Mitgliedern&#160;der&#160;Piratenpartei</strong> ausgeübt.</p>
+	<p>Davon wurden <xsl:value-of select="count(//mandat[@type='fremdliste'])" />&#160;Mandate von Piraten auf anderen Wahllisten gewonnen. Weitere <xsl:value-of select="count(//mandat[@type='transfer'])" />&#160;Mandate sind durch nachträgliche Parteiübertritte von Mandatsträgern dazugekommen.</p>
 	<xsl:apply-templates select="//bundesland" />
 	<script type="text/javascript">landblockInit();</script>
 </xsl:template>

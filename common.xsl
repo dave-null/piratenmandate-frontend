@@ -9,34 +9,18 @@
   </xsl:otherwise></xsl:choose>
 </xsl:template>
 
-<xsl:template match="piratenmandate|bundesland|gebiet" mode="mcountlong">
-	<xsl:value-of select="count(.//mandat)" /><xsl:text> Mandat</xsl:text>
-	<xsl:if test="count(.//mandat) > 1"><xsl:text>e</xsl:text></xsl:if>
-
-	<xsl:if test=".//mandat[@type='transfer']">
-		<xsl:choose><xsl:when test="count(.//mandat) = count(.//mandat[@type='transfer'])">
-			<xsl:text> durch Übertritt</xsl:text>
-		</xsl:when><xsl:otherwise>
-			<xsl:text> (</xsl:text><xsl:value-of select="count(.//mandat[@type='transfer'])"/><xsl:text> durch Übertritt)</xsl:text>
-		</xsl:otherwise></xsl:choose>
-	</xsl:if>
-</xsl:template>
-
 <xsl:template match="piratenmandate|bundesland|gebiet" mode="mcountshort">
-	<xsl:choose><xsl:when test="count(.//mandat) = count(.//mandat[@type='transfer'])">
-		<xsl:value-of select="count(.//mandat[@type='transfer'])" />
-		<xsl:text>&#160;Übertritt</xsl:text>
-		<xsl:if test="count(.//mandat[@type='transfer']) > 1"><xsl:text>e</xsl:text></xsl:if>
+	<xsl:choose><xsl:when test="count(.//mandat) = count(.//mandat[@type!='pirat'])">
+		<xsl:value-of select="count(.//mandat[@type!='pirat'])" />
+		<xsl:text>&#160;Fremdliste</xsl:text>
 	</xsl:when><xsl:otherwise>
 		<xsl:value-of select="count(.//mandat[@type='pirat'])" />
 		<xsl:text> Mandat</xsl:text>
 		<xsl:if test="count(.//mandat[@type='pirat']) > 1"><xsl:text>e</xsl:text></xsl:if>
-		<xsl:if test=".//mandat[@type='transfer']">
+		<xsl:if test=".//mandat[@type!='pirat']">
 			<xsl:text> (+</xsl:text>
-			<xsl:value-of select="count(.//mandat[@type='transfer'])"/>
-			<xsl:text>&#160;Übertritt</xsl:text>
-			<xsl:if test="count(.//mandat[@type='transfer']) > 1"><xsl:text>e</xsl:text></xsl:if>
-			<xsl:text>)</xsl:text>
+			<xsl:value-of select="count(.//mandat[@type!='pirat'])"/>
+			<xsl:text>&#160;Fremdliste)</xsl:text>
 		</xsl:if>
 	</xsl:otherwise></xsl:choose>
 </xsl:template>
@@ -48,7 +32,16 @@
 			<xsl:for-each select="mandat">
 				<li>
           <xsl:value-of select="." />
-          <xsl:if test="@fremdliste"> (gewählt über die Liste &#8222;<xsl:value-of select="@fremdliste" />&#8220;)</xsl:if>
+          <xsl:if test="@type='fremdliste'"><xsl:text> (gewählt über die Liste </xsl:text>
+            <xsl:choose>
+              <xsl:when test="@name">
+                <xsl:text>&#8222;</xsl:text><xsl:value-of select="@name" /><xsl:text>&#8220;)</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>der </xsl:text><xsl:value-of select="@from" /><xsl:text>)</xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:if>
 				</li>
 			</xsl:for-each>
 		</ul>
@@ -59,8 +52,8 @@
 	<div>
 		<h5>Fraktion</h5>
 		<xsl:choose>
-			<xsl:when test="@type = 'piraten'"><strong>PIRATEN-Fraktion</strong></xsl:when>
-			<xsl:when test="@type = 'gemeinsam'">
+			<xsl:when test="@type='piraten'"><strong>PIRATEN-Fraktion</strong></xsl:when>
+			<xsl:when test="@type='gemeinsam'">
 				<xsl:text>Gemeinsame Fraktion </xsl:text><strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong><xsl:text>, mit </xsl:text>
 					<ul class="prose">
 					<xsl:for-each select="partner">
@@ -75,11 +68,11 @@
 					</xsl:for-each>
 					</ul>
 			</xsl:when>
-			<xsl:when test="@type = 'fremd'">
+			<xsl:when test="@type='fremd'">
 				Mitglied der Fraktion <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>
 			</xsl:when>
-			<xsl:when test="@type = 'none'">keine (fraktionslos)</xsl:when>
-			<xsl:when test="@type = 'unknown'"><em>unbekannt</em></xsl:when>
+			<xsl:when test="@type='none'">keine (fraktionslos)</xsl:when>
+			<xsl:when test="@type='unknown'"><em>unbekannt</em></xsl:when>
 		</xsl:choose>
 	</div>
 </xsl:template>
@@ -129,7 +122,7 @@
 
 <xsl:template match="bundesland" mode="stadtstaat">
 	<h1><xsl:value-of select="@name" />
-		<span class="info"><xsl:apply-templates select="." mode="mcountlong" /></span>
+		<span class="info"><xsl:apply-templates select="." mode="mcountshort" /></span>
 	</h1>
 	<div id="abstract">
 		<h2>Hintergrund<span class="opennote"></span></h2>
@@ -168,7 +161,7 @@
 
 <xsl:template match="bundesland" mode="flaeche">
 	<h1><xsl:value-of select="@name" />
-		<span class="info"><xsl:apply-templates select="." mode="mcountlong" /></span>
+		<span class="info"><xsl:apply-templates select="." mode="mcountshort" /></span>
 	</h1>
 	<div id="abstract">
 		<h2>Hintergrund<span class="opennote"></span></h2>
@@ -198,10 +191,10 @@
 		<h3>
 			<xsl:value-of select="@name"/>
 			<xsl:if test="count(ancestor::gebiet[@type != 'Bezirk']) = 0">
-				<span class="pull-right"> (<xsl:apply-templates select="." mode="mcountshort" />)</span>
+				<span class="pull-right"><xsl:apply-templates select="." mode="mcountshort" /></span>
 			</xsl:if>
 			<xsl:if test="count(ancestor::gebiet[@type != 'Bezirk']) > 0">
-				<xsl:text> (</xsl:text><xsl:value-of select="@type"/><xsl:text>)</xsl:text>
+				<xsl:value-of select="@type"/>
 			</xsl:if>
 		</h3>
 		<xsl:apply-templates select="parlament" mode="flaecheparl" />

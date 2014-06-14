@@ -10,7 +10,7 @@
 
 <xsl:template match="bundesland[@gs='09000000']">
 	<h1><xsl:value-of select="@name" />
-		<span class="info"><xsl:apply-templates select="." mode="mcountlong" /></span>
+		<span class="info"><xsl:apply-templates select="." mode="mcountshort" /></span>
 	</h1>
 	<div id="abstract">
 		<h2>Hintergrund<span class="opennote"></span></h2>
