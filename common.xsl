@@ -118,6 +118,16 @@
 	</a></p>
 </xsl:template>
 
+<xsl:template match="oa">
+  <a class="pull-right">
+    <xsl:attribute name="href"><xsl:value-of select="@url" /></xsl:attribute>
+    <xsl:attribute name="title">Zu OpenAntrag</xsl:attribute>
+    <img src="img/openantrag.png" alt="OpenAntrag-Logo"></img>
+    <br />
+    <xsl:text>Antrag vorschlagen</xsl:text>
+  </a>
+</xsl:template>
+
 
 
 <xsl:template match="bundesland" mode="stadtstaat">
@@ -146,6 +156,7 @@
 				<br />
 				<xsl:value-of select="@name"/>
 			</h3>
+			<xsl:apply-templates select="parlament/oa" />
 			<xsl:apply-templates select="parlament" mode="mandatstraeger" />
 			<xsl:apply-templates select="parlament/fraktion" />
 			<xsl:apply-templates select="parlament/story" />
@@ -204,6 +215,7 @@
 
 <xsl:template match="parlament" mode="flaecheparl">
   <h4><xsl:value-of select="@name" /></h4>
+  <xsl:apply-templates select="oa" />
 	<xsl:apply-templates select="." mode="mandatstraeger" />
 	<xsl:apply-templates select="fraktion" />
 	<xsl:apply-templates select="story" />
