@@ -18,7 +18,7 @@
 	</div>
 	<div id="accordeon">
 		<xsl:apply-templates select="gebiet[parlament]" mode="bayernbezirke" />
-		<xsl:apply-templates select="gebiet[@type='Bezirk']//gebiet" mode="flaechetop" />
+		<xsl:apply-templates select="gebiet[@type='Bezirk']/gebiet" mode="flaechetop" />
 	</div>
 	<div id="mapInfo"></div>
 </xsl:template>
