@@ -22,9 +22,9 @@
     </div>
     <div class="span7">
     <h2>Mandatsträger nach Art der Wahl</h2>
-      <p>Derzeit haben <strong><xsl:value-of select="count(//mandat[not(@multi)])" />&#160;Mitglieder&#160;der&#160;Piratenpartei</strong> Mandate in kommunal Vertretungen inne. (Da manche mehrere Mandate in verschiedenen Vertretungen gleichzeitig ausüben, halten sie insgesamt <xsl:value-of select="count(//mandat)" />&#160;kommunale&#160;Mandate.)</p>
+      <p>Derzeit haben <strong><xsl:value-of select="count(//mandat[not(@multi)])" />&#160;Mitglieder&#160;der&#160;Piratenpartei</strong> Mandate in kommunalen Vertretungen inne. (Da manche mehrere Mandate in verschiedenen Vertretungen gleichzeitig ausüben, halten sie insgesamt <xsl:value-of select="count(//mandat)" />&#160;kommunale&#160;Mandate.)</p>
       <p>Auf Wahllisten der PIRATEN wurden <strong><xsl:value-of select="count(//mandat[@type='pirat' and not(@multi)])" />&#160;Mandatsträger</strong> gewählt.</p>
-      <p>Weitere <xsl:value-of select="count(//mandat[@type='fremdliste' and not(@multi)])" />&#160;Mandate kommen von Mandatsträgern, die als Mitglieder der Piratenpartei auf anderen Listen gewählt wurden. Zudem sind <xsl:value-of select="count(//mandat[@type='transfer' and not(@multi)])" />&#160;Mandatsträger durch nachträgliche Parteiübertritte von Mandatsträgern hinzugekommen.</p>
+      <p>Weitere <strong><xsl:value-of select="count(//mandat[@type='fremdliste' and not(@multi)])" />&#160;Mandatsträger</strong> sind als Mitglieder der Piratenpartei auf anderen Listen gewählt worden. Zudem sind <strong><xsl:value-of select="count(//mandat[@type='transfer' and not(@multi)])" />&#160;Mandatsträger</strong> durch nachträgliche Parteiübertritte hinzugekommen.</p>
     </div>
   </div>
   <script type="text/javascript">

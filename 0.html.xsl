@@ -7,7 +7,7 @@
 <xsl:template match="/">
 	<h1>Deutschland</h1>
 	<p>Zur Zeit werden <strong><xsl:value-of select="count(//mandat)" />&#160;kommunale&#160;Mandate</strong> von <strong><xsl:value-of select="count(//mandat[not(@multi)])" />&#160;Mitgliedern&#160;der&#160;Piratenpartei</strong> ausgeübt.</p>
-	<p>Davon wurden <xsl:value-of select="count(//mandat[@type='fremdliste'])" />&#160;Mandate von Piraten auf anderen Wahllisten gewonnen. Weitere <xsl:value-of select="count(//mandat[@type='transfer'])" />&#160;Mandate sind durch nachträgliche Parteiübertritte von Mandatsträgern dazugekommen.</p>
+	<p>Davon wurden <xsl:value-of select="count(//mandat[@type='fremdliste'])" />&#160;Mandate von Piraten auf anderen Wahllisten gewonnen und <xsl:value-of select="count(//mandat[@type='transfer'])" />&#160;Mandate durch nachträgliche Parteiübertritte von Mandatsträgern erlangt.</p>
 	<xsl:apply-templates select="//bundesland" />
 	<script type="text/javascript">landblockInit();</script>
 </xsl:template>
