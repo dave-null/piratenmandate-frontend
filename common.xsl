@@ -144,6 +144,26 @@
 	<div id="mapInfo"></div>
 </xsl:template>
 
+<xsl:template match="gebiet" mode="flaechenomap">
+  <div class="gebiet nomap" ><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
+    <h2>
+      <div class="leaflet-label"><xsl:value-of select="@name" /></div>
+      <xsl:value-of select="@name" />
+    </h2>
+    <div class="contentstore">
+      <div class="level0">
+        <h3>
+          <xsl:value-of select="@name"/>
+        </h3>
+        <xsl:apply-templates select="parlament" mode="flaecheparl" />
+      </div>
+    </div>
+  </div>
+  <xsl:if test="position()=last()">
+    <div class="divider" />
+  </xsl:if>
+</xsl:template>
+
 <xsl:template match="gebiet" mode="stadtstaat" >
 	<div class="gebiet"><xsl:attribute name="id"><xsl:apply-templates select="." mode="key" /></xsl:attribute>
 		<h2>
