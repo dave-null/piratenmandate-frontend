@@ -14,8 +14,8 @@
 	</h1>
 	<div id="abstract">
 		<h2>Hintergrund<span class="opennote"></span></h2>
-  <p>Das Land Baden-Württemberg gliedert sich in kreisfreie Städte und Landkreise, die jeweils zu einem von vier Regierungsbezirken gehören. Die Regierungsbezirke haben allerdings keine direkt gewählten Vertretungen (<a href="http://de.wikipedia.org/wiki/Baden-W%C3%BCrttemberg#Verwaltungsgliederung">Wikipedia</a>).</p>
-  <p>Zusätzlich zu den Regierungsbezirken gibt es die sogenannten Regionalverbände, denen jeweils mehrere Land- und Stadtkreise angehören, und die für Aufgaben der Regionalplanung zuständig sind. Von den 12 Regionalverbänden hat allerdings einzig die Region Stuttgart eine direkt gewählte Vertretung, nämlich die „Regionalversammlung des Verbands Region Stuttgart“ (<a href="http://de.wikipedia.org/wiki/Regionalverb%C3%A4nde_in_Baden-W%C3%BCrttemberg">Wikipedia</a>).</p>
+  <p>Das Land Baden-Württemberg gliedert sich in kreisfreie Städte und Landkreise, die jeweils zu einem von vier Regierungsbezirken gehören. Die Regierungsbezirke haben allerdings keine politischen Vertretungen (<a href="http://de.wikipedia.org/wiki/Baden-W%C3%BCrttemberg#Verwaltungsgliederung">Wikipedia</a>).</p>
+  <p>Zusätzlich zu diesen Regierungsbezirken gibt es 12 sogenannte Regionalverbände, denen jeweils mehrere Land- und Stadtkreise angehören, und die für Aufgaben der Regionalplanung zuständig sind. Allerdings hat einzig die Region Stuttgart eine direkt gewählte Vertretung, nämlich die „Regionalversammlung des Verbands Region Stuttgart“ (<a href="http://de.wikipedia.org/wiki/Regionalverb%C3%A4nde_in_Baden-W%C3%BCrttemberg">Wikipedia</a>).</p>
   <p>Die ersten allgemeinen Kommunalwahlen mit Teilnahme der Piratenpartei fanden in Baden-Württemberg am 25. Mai 2014 statt.</p>
 	</div>
 	<div id="accordeon">
