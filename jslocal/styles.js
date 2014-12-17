@@ -44,4 +44,5 @@ var Pc = {
   ,'Die PARTEI':'#b5152b'
   ,'Offene/Bunte/Lokal':'#ae1af7'
   ,'ÖDP':'#ed7505'
+  ,'Neue Liberale':'#0c728c'
 };
