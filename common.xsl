@@ -32,6 +32,7 @@
 			<xsl:for-each select="mandat">
 				<li>
           <xsl:value-of select="." />
+          <xsl:apply-templates select="@email" />
           <xsl:if test="@type='fremdliste'"><xsl:text> (gewählt über die Liste </xsl:text>
             <xsl:choose>
               <xsl:when test="@name">
@@ -73,6 +74,7 @@
 			</xsl:when>
 			<xsl:when test="@type='none'">keine (fraktionslos)</xsl:when>
 			<xsl:when test="@type='unknown'"><em>unbekannt</em></xsl:when>
+			<xsl:apply-templates select="@email" />
 		</xsl:choose>
 	</div>
 </xsl:template>
@@ -84,6 +86,15 @@
 			<xsl:text> </xsl:text><a class="small"><xsl:attribute name="href"><xsl:value-of select="@source"/></xsl:attribute>Quelle</a>
 		</xsl:if>
 	</div>
+</xsl:template>
+
+<xsl:template match="@email">
+	<xsl:text>&#160;</xsl:text>
+	<a>
+		<xsl:attribute name="class">small</xsl:attribute>
+		<xsl:attribute name="href"><xsl:text>mailto:</xsl:text><xsl:value-of select="."/></xsl:attribute>
+		<xsl:text>(Mail)</xsl:text>
+	</a>
 </xsl:template>
 
 <xsl:template match="gebiet" mode="localpirates">
