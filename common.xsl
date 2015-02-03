@@ -74,8 +74,8 @@
 			</xsl:when>
 			<xsl:when test="@type='none'">keine (fraktionslos)</xsl:when>
 			<xsl:when test="@type='unknown'"><em>unbekannt</em></xsl:when>
-			<xsl:apply-templates select="@email" />
 		</xsl:choose>
+		<xsl:apply-templates select="./@email" />
 	</div>
 </xsl:template>
 
@@ -90,10 +90,10 @@
 
 <xsl:template match="@email">
 	<xsl:text>&#160;</xsl:text>
-	<a>
+	<a class="small">
 		<xsl:attribute name="class">small</xsl:attribute>
 		<xsl:attribute name="href"><xsl:text>mailto:</xsl:text><xsl:value-of select="."/></xsl:attribute>
-		<xsl:text>(Mail)</xsl:text>
+		<xsl:text>Mail</xsl:text>
 	</a>
 </xsl:template>
 
