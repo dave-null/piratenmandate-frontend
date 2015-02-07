@@ -75,8 +75,27 @@
 			<xsl:when test="@type='none'">keine (fraktionslos)</xsl:when>
 			<xsl:when test="@type='unknown'"><em>unbekannt</em></xsl:when>
 		</xsl:choose>
+		<xsl:apply-templates select="./@url" />
 		<xsl:apply-templates select="./@email" />
 	</div>
+</xsl:template>
+
+<xsl:template match="fraktion/@url">
+	<xsl:text>&#160;</xsl:text>
+	<a class="small">
+		<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
+		<xsl:attribute name="title">Zur Homepage der Fraktion</xsl:attribute>
+		<xsl:text>Homepage</xsl:text>
+	</a>
+</xsl:template>
+
+<xsl:template match="@email">
+	<xsl:text>&#160;</xsl:text>
+	<a class="small">
+		<xsl:attribute name="href"><xsl:text>mailto:</xsl:text><xsl:value-of select="."/></xsl:attribute>
+		<xsl:attribute name="title">Kontakt per E-Mail</xsl:attribute>
+		<xsl:text>Mail</xsl:text>
+	</a>
 </xsl:template>
 
 <xsl:template match="story">
@@ -86,15 +105,6 @@
 			<xsl:text> </xsl:text><a class="small"><xsl:attribute name="href"><xsl:value-of select="@source"/></xsl:attribute>Quelle</a>
 		</xsl:if>
 	</div>
-</xsl:template>
-
-<xsl:template match="@email">
-	<xsl:text>&#160;</xsl:text>
-	<a class="small">
-		<xsl:attribute name="class">small</xsl:attribute>
-		<xsl:attribute name="href"><xsl:text>mailto:</xsl:text><xsl:value-of select="."/></xsl:attribute>
-		<xsl:text>Mail</xsl:text>
-	</a>
 </xsl:template>
 
 <xsl:template match="gebiet" mode="localpirates">
@@ -113,14 +123,6 @@
 	</a></p>
 </xsl:template>
 
-<xsl:template match="fraktion[@url]" mode="fraktionslink">
-	<p><a>
-		<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
-		<xsl:attribute name="title">Zur Homepage der Fraktion</xsl:attribute>
-		<xsl:text>Fraktionshomepage</xsl:text>
-	</a></p>
-</xsl:template>
-
 <xsl:template match="feed" mode="feedlink">
 	<p><a>
 		<xsl:attribute name="href"><xsl:value-of select="@url" /></xsl:attribute>
@@ -130,13 +132,12 @@
 </xsl:template>
 
 <xsl:template match="oa">
-  <a class="pull-right">
+  <p><a>
     <xsl:attribute name="href"><xsl:value-of select="@url" /></xsl:attribute>
-    <xsl:attribute name="title">Zu OpenAntrag</xsl:attribute>
+    <xsl:text>Eigenen Antrag bei </xsl:text>
     <img src="img/openantrag.png" alt="OpenAntrag-Logo"></img>
-    <br />
-    <xsl:text>Antrag vorschlagen</xsl:text>
-  </a>
+    <xsl:text> vorschlagen</xsl:text>
+  </a></p>
 </xsl:template>
 
 
@@ -192,7 +193,6 @@
 			<xsl:apply-templates select="parlament/fraktion" />
 			<xsl:apply-templates select="parlament/story" />
 			<h3>Links</h3>
-				<xsl:apply-templates select="parlament/fraktion" mode="fraktionslink" />
 				<xsl:apply-templates select="parlament" mode="rislink" />
 				<xsl:apply-templates select="." mode="localpirates" />
 				<xsl:apply-templates select="feed" mode="feedlink" />
@@ -252,7 +252,6 @@
 	<xsl:apply-templates select="story" />
 	<div class="smalllinks">
 		<h5>Links</h5>
-			<xsl:apply-templates select="fraktion" mode="fraktionslink" />
 			<xsl:apply-templates select="." mode="rislink" />
 			<xsl:apply-templates select=".." mode="localpirates" />
 			<xsl:apply-templates select="feed" mode="feedlink" />
