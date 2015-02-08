@@ -53,7 +53,7 @@
 	<div>
 		<h5>Fraktion</h5>
 		<xsl:choose>
-			<xsl:when test="@type='piraten'"><strong>PIRATEN-Fraktion</strong></xsl:when>
+			<xsl:when test="@type='piraten'"><strong>PIRATEN</strong></xsl:when>
 			<xsl:when test="@type='gemeinsam'">
 				<xsl:text>Gemeinsame Fraktion </xsl:text><strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong><xsl:text>, mit </xsl:text>
 				<ul class="prose">
