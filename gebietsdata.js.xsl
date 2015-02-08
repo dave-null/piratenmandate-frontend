@@ -15,7 +15,7 @@
       <xsl:when test=".//fraktion[@type='piraten']">
         <xsl:text>"F"</xsl:text>
       </xsl:when>
-      <xsl:when test=".//fraktion[@type='gemeinsam']">
+      <xsl:when test=".//fraktion[@type='gemeinsam'] or .//fraktion[@type='gruppe']">
         <xsl:text>"G"</xsl:text>
       </xsl:when>
       <xsl:when test=".//mandat[@type='pirat' and not(@fremdliste)]">

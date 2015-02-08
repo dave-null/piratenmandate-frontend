@@ -56,23 +56,24 @@
 			<xsl:when test="@type='piraten'"><strong>PIRATEN-Fraktion</strong></xsl:when>
 			<xsl:when test="@type='gemeinsam'">
 				<xsl:text>Gemeinsame Fraktion </xsl:text><strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong><xsl:text>, mit </xsl:text>
-					<ul class="prose">
-					<xsl:for-each select="partner">
-            <xsl:choose>
-              <xsl:when test="@name">
-                <li><xsl:value-of select="@num" /> von <xsl:value-of select="@name" /></li>
-              </xsl:when>
-              <xsl:otherwise>
-                <li><xsl:value-of select="@num" /> von <xsl:value-of select="@partei" /></li>
-              </xsl:otherwise>
-            </xsl:choose>
-					</xsl:for-each>
-					</ul>
+				<ul class="prose">
+				<xsl:for-each select="partner">
+					<li><xsl:value-of select="@num" /> von 
+					<xsl:choose>
+						<xsl:when test="@name"><xsl:value-of select="@name" /></xsl:when>
+						<xsl:otherwise><xsl:value-of select="@partei" /></xsl:otherwise>
+					</xsl:choose>
+					</li>
+				</xsl:for-each>
+				</ul>
+			</xsl:when>
+			<xsl:when test="@type='gruppe'">
+				Keine, aber zusammengeschlossen in der Gruppe <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>
 			</xsl:when>
 			<xsl:when test="@type='fremd'">
 				Mitglied der Fraktion <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>
 			</xsl:when>
-			<xsl:when test="@type='none'">keine (fraktionslos)</xsl:when>
+			<xsl:when test="@type='none'">Keine (fraktionslos)</xsl:when>
 			<xsl:when test="@type='unknown'"><em>unbekannt</em></xsl:when>
 		</xsl:choose>
 		<xsl:apply-templates select="./@url" />
@@ -83,7 +84,7 @@
 <xsl:template match="fraktion/@url">
 	<xsl:text>&#160;</xsl:text>
 	<a class="small">
-		<xsl:attribute name="href"><xsl:value-of select="@url"/></xsl:attribute>
+		<xsl:attribute name="href"><xsl:value-of select="."/></xsl:attribute>
 		<xsl:attribute name="title">Zur Homepage der Fraktion</xsl:attribute>
 		<xsl:text>Homepage</xsl:text>
 	</a>

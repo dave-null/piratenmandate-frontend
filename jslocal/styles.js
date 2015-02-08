@@ -12,7 +12,7 @@ var mapSettings = {
 var Gc = { // Styles for gebiete
    "D":{fillColor:'#444', fillOpacity:0.15} // Default
   ,"F":{fillColor:'#e80', fillOpacity:0.85} // Piraten-Fraktion
-  ,"G":{fillColor:'#f80', fillOpacity:0.7}  // Gemeinsame Fraktion
+  ,"G":{fillColor:'#f80', fillOpacity:0.7}  // Gemeinsame Fraktion/Gruppe
   ,"P":{fillColor:'#f80', fillOpacity:0.55} // Piraten
   ,"Ü":{fillColor:'#fb5', fillOpacity:0.5}  // Übertritte/Fremdlisten
 };

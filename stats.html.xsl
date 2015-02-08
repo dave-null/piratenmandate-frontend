@@ -117,7 +117,8 @@
     <div class="span7">
       <h2>Fraktionsmitgliedschaft</h2>
       <p>Fraktionen sind Zusammenschlüsse von Vertretern in einer Versammlung, die für ihre politische Arbeit besondere Mittel zur Verfügung haben. Dazu zählt z.B. die Benennung von Bürgern als Ausschussmitglieder sowie Fraktionsmittel für Öffentlichkeitsarbeit, Fraktionsbüros oder das Beschäftigen von Mitarbeitern. Fraktionslose Vertreter haben viele dieser Mittel nicht und sind in ihrer Arbeit stark eingeschränkt.</p>
-      <p>„Keine Fraktionen“ bezeichnet Mandate in Versammlungen, in denen es keine Fraktionen gibt. Meist sind solche Versammlung mit 5 bis 15 Mandaten eher klein. Die politische Arbeit wird dort aber oft von den Fraktionen einer übergeordneten Vertretung getragen (z.B. im Ortsrat durch Stadtratsfraktionen).</p>
+      <p>Gruppen sind in vielen Versammlungen ein kleinerer Zusammenschluss mit weniger Rechten und Mitteln als eine Fraktion, aber mehr als einzelne, fraktionslose Abgeordnete. Wenn zur Gründung einer Fraktion mehr als zwei Vertreter nötig sind können zwei Vertreter i.d.R. eine Gruppe gründen. Achtung: In Niedersachsen hat „Gruppe“ eine andere Bedeutung, und bezeichnet einen Zusammenschluss mehrerer Fraktionen.</p>
+      <p>„Keine Fraktionen“ steht für Mandate in Versammlungen, die grundsätzlich keine Fraktionen haben. Meist sind solche Versammlung mit 5 bis 15 Mandaten eher klein. Die politische Arbeit wird dort aber oft von den Fraktionen einer übergeordneten Vertretung getragen (z.B. im Fall eines Ortsrats durch Stadtratsfraktionen).</p>
     </div>
   </div>
   <script type="text/javascript">
@@ -127,17 +128,20 @@
     graphColors[thisName] = [];
   </xsl:text>
   <xsl:text>graphData[thisName].push(['Fraktionsmitglieder',</xsl:text>
-  <xsl:value-of select="count(//parlament[fraktion[@type!='none' and @type!='unknown']]/mandat)" /><xsl:text>]);</xsl:text>
+  <xsl:value-of select="count(//parlament[fraktion[@type!='none' and @type!='gruppe' and @type!='unknown']]/mandat)" /><xsl:text>]);</xsl:text>
   <xsl:text>graphColors[thisName].push('#f80');</xsl:text>
+  <xsl:text>graphData[thisName].push(['Gruppenmitglieder',</xsl:text>
+  <xsl:value-of select="count(//parlament[fraktion[@type='gruppe']]/mandat)" /><xsl:text>]);</xsl:text>
+  <xsl:text>graphColors[thisName].push('#fc5');</xsl:text>
   <xsl:text>graphData[thisName].push(['Fraktionslose',</xsl:text>
   <xsl:value-of select="count(//parlament[fraktion[@type='none']]/mandat)" /><xsl:text>]);</xsl:text>
   <xsl:text>graphColors[thisName].push('#b40');</xsl:text>
   <xsl:text>graphData[thisName].push(['keine Fraktionen',</xsl:text>
   <xsl:value-of select="count(//parlament[not(fraktion)]/mandat)" /><xsl:text>]);</xsl:text>
-  <xsl:text>graphColors[thisName].push('#fc5');</xsl:text>
+  <xsl:text>graphColors[thisName].push('#666');</xsl:text>
   <xsl:text>graphData[thisName].push(['unbekannt',</xsl:text>
   <xsl:value-of select="count(//parlament[fraktion[@type='unknown']]/mandat)" /><xsl:text>]);</xsl:text>
-  <xsl:text>graphColors[thisName].push('#666');</xsl:text>
+  <xsl:text>graphColors[thisName].push('#333');</xsl:text>
   <xsl:text>
     var plot = jQuery.jqplot (thisName, [graphData[thisName]],{
       seriesColors: graphColors[thisName],
