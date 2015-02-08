@@ -139,9 +139,9 @@
   <xsl:text>graphData[thisName].push(['keine Fraktionen',</xsl:text>
   <xsl:value-of select="count(//parlament[not(fraktion)]/mandat)" /><xsl:text>]);</xsl:text>
   <xsl:text>graphColors[thisName].push('#666');</xsl:text>
-  <xsl:text>graphData[thisName].push(['unbekannt',</xsl:text>
-  <xsl:value-of select="count(//parlament[fraktion[@type='unknown']]/mandat)" /><xsl:text>]);</xsl:text>
-  <xsl:text>graphColors[thisName].push('#333');</xsl:text>
+<!--   <xsl:text>graphData[thisName].push(['unbekannt',</xsl:text> -->
+<!--   <xsl:value-of select="count(//parlament[fraktion[@type='unknown']]/mandat)" /><xsl:text>]);</xsl:text> -->
+<!--   <xsl:text>graphColors[thisName].push('#333');</xsl:text> -->
   <xsl:text>
     var plot = jQuery.jqplot (thisName, [graphData[thisName]],{
       seriesColors: graphColors[thisName],
