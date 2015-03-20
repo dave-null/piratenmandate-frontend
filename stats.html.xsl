@@ -227,7 +227,7 @@
     <div class="span7">
       <h2>Fraktionspartner</h2>
       <p>In manchen Fällen sind mehr als zwei Parteien an einer gemeinsamen Fraktion beteiligt. In dieser Darstellung zählt jede beteiligte Partei als einzelner Fraktionspartner, sodass es mehr Fraktionspartner als gemeinsame Fraktionen gibt (<xsl:value-of select="count(//fraktion[@type='gemeinsam']/partner)"/>&#160;Fraktionspartner in <xsl:value-of select="count(//fraktion[@type='gemeinsam'])"/>&#160;gemeinsamen Fraktionen).</p>
-      <p>Niedersachsen stellt hier eine Besonderheit dar: Neben gemeinsamen Fraktionen gibt auch Zusammenschlüsse von Fraktionen und/oder Vertretern verschiendener Parteien. Diese Zusammenschlüsse heißen <em>Gruppen</em>. Formal sind Gruppen also keine gemeinsamen Fraktionen; sie treten aber faktisch so auf. Daher werden niedersächsische Gruppen hier als gemeinsame Fraktionen im gewöhnlichen Sinne geführt.</p>
+      <p>Niedersachsen stellt hier eine Besonderheit dar: Neben gemeinsamen Fraktionen gibt auch Zusammenschlüsse von Fraktionen und/oder Vertretern verschiedener Parteien. Diese Zusammenschlüsse heißen <em>Gruppen</em>. Formal sind Gruppen also keine gemeinsamen Fraktionen; sie treten aber faktisch so auf. Daher werden niedersächsische Gruppen hier als gemeinsame Fraktionen im gewöhnlichen Sinne geführt.</p>
     </div>
   </div>
   <script type="text/javascript">
