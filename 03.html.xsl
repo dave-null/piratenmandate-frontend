@@ -11,7 +11,6 @@
 <xsl:template match="bundesland" mode="abstract">
 	<p>Die Gliederung Niedersachsens ist durch die Niedersächsische Kommunalverfassung geregelt (<a href="http://de.wikipedia.org/wiki/Nieders%C3%A4chsisches_Kommunalverfassungsgesetz">Wikipedia</a>). Neben dem sonderfall der Region Hannover gibt es hier wie üblich kreisfreie Städte und Landkreise.</p>
 	<p>Die Landkreise gliedern sich wiederum in Gemeinden, die selbst Städte, Einheits- oder Samtgemeinden sein können – wobei Städte und Einheitsgemeinden in Ortsteile, Samtgemeinden aber nur in („Mitglieds-“)Gemeinden aufgeteilt sein können. Großen Städte haben Stadtbezirke statt Ortschaften. Die gewählten Vertretungen sind jeweils der Stadtrat, der Kreistag, der (Samt-)Gemeinderat und der Ortsrat bzw. Stadtbezirksrat. (<a href="http://de.wikipedia.org/wiki/Nieders%C3%A4chsische_Gemeindeordnung">Wikipedia</a>)</p>
-	<p>Auf all diesen Ebenen konnte die Piratenpartei bei den Kommunalwahlen am 11. September 2011 Mandate gewinnen, wobei sie durchschnittlich über 3% Prozent der Stimmen bekam, wo sie antrat. In manchen Kommunalparlamenten genügten zwei Sitze zur Bildung einer Fraktion, in anderen nicht. Gemeinsame Fraktionen von Abgeordneten mehrerer Parteien heißen in Niedersachen „Gruppe“.</p>
 </xsl:template>
 
 </xsl:transform>
