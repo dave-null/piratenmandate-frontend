@@ -11,6 +11,7 @@
 <xsl:template match="bundesland" mode="abstract">
 	<p>Das Land Berlin ist eine sogenannte Einheitsgemeinde. Das bedeutet, dass alle Aufgaben, die in anderen Ländern von Landkreisen und Gemeinden wahrgenommen werden, in der Zuständigkeit der Berliner Landesregierung liegen.</p>
 	<p>Einen Teil dieser Aufgaben überlässt die Landesregierung den Bezirken. Dort werden die Bezirksverordnetenversammlungen direkt gewählt. Sie wählen den Bezirksbürgermeister und die vier Bezirksstadträte, die das Bezirksamt leiten. Darüber hinaus ist ihr Einfluss auf das Bezirksamt sehr begrenzt (<a href="http://de.wikipedia.org/wiki/Bezirksverordnetenversammlung">Wikipedia</a>).</p>
+	<p>Die letzte Wahl zu den Bezirksverordnetenversammlungen fand zusammen mit der Wahl zum Abgeordnetenhaus am 18. September 2016 statt. Die Piratenpartei gewann dabei in zwei Bezirken jeweils zwei Sitze.</p>
 </xsl:template>
 
 </xsl:transform>
