@@ -33,6 +33,7 @@
 				<li>
           <xsl:value-of select="." />
           <xsl:apply-templates select="@email" />
+          <xsl:apply-templates select="@profil" />
           <xsl:if test="@type='fremdliste'"><xsl:text> (gewählt über die Liste </xsl:text>
             <xsl:choose>
               <xsl:when test="@name">
@@ -92,6 +93,15 @@
 		<xsl:attribute name="title">Zur Homepage der Fraktion</xsl:attribute>
 		<xsl:text>Homepage</xsl:text>
 	</a>
+</xsl:template>
+
+<xsl:template match="@profil">
+  <xsl:text>&#160;</xsl:text>
+  <a class="small">
+    <xsl:attribute name="href"><xsl:value-of select="."/></xsl:attribute>
+    <xsl:attribute name="title">Zum Profil</xsl:attribute>
+    <xsl:text>Profil</xsl:text>
+  </a>
 </xsl:template>
 
 <xsl:template match="@email">
