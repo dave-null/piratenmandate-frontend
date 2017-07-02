@@ -56,7 +56,7 @@
 		<xsl:choose>
 			<xsl:when test="@type='piraten'"><strong>PIRATEN</strong></xsl:when>
 			<xsl:when test="@type='gemeinsam'">
-				<xsl:text>Gemeinsame Fraktion </xsl:text>
+				<xsl:text>gemeinsame Fraktion </xsl:text>
 				<xsl:if test="@name">
           <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong><xsl:text>, </xsl:text>
         </xsl:if>
@@ -73,12 +73,12 @@
 				</ul>
 			</xsl:when>
 			<xsl:when test="@type='gruppe'">
-				Keine, aber zusammengeschlossen in der Gruppe <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>
+				keine, aber zusammengeschlossen in der Gruppe <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>
 			</xsl:when>
 			<xsl:when test="@type='fremd'">
 				Mitglied der Fraktion <strong>&#8222;<xsl:value-of select="@name" />&#8220;</strong>
 			</xsl:when>
-			<xsl:when test="@type='none'">Keine (fraktionslos)</xsl:when>
+			<xsl:when test="@type='none'">keine (fraktionslos)</xsl:when>
 			<xsl:when test="@type='unknown'"><em>unbekannt</em></xsl:when>
 		</xsl:choose>
 		<xsl:apply-templates select="./@url" />
