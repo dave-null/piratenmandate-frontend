@@ -10,7 +10,7 @@
 
 <xsl:template match="bundesland" mode="abstract">
 	<p>Das Land Schleswig-Holstein gliedert sich klassisch in kreisfreie Städte und Landkreise (<a href="http://de.wikipedia.org/wiki/Schleswig-Holstein#Verwaltungsgliederung">Wikipedia</a>).</p>
-	<p>Am 26. Mai 2013 fanden in Schleswig-Holstein allgemeine Kommunalwahlen statt. Die PIRATEN konnten dabei insgesamt vierzehn Mandate gewinnen (<a href="http://www.statistik-nord.de/wahlen/wahlen-in-schleswig-holstein/kommunalwahlen/2013/">Wahlergebnisse</a>).</p>
+	<p>Am 6. Mai 2018 fanden in Schleswig-Holstein allgemeine Kommunalwahlen statt. Den PIRATEN gelang dabei der Wiedereinzug in die Ratsversammlung der Landeshauptstadt Kiel. (<a href="https://www.statistik-nord.de/wahlen/wahlen-in-schleswig-holstein/kommunalwahlen/">Wahlergebnisse</a>).</p>
 </xsl:template>
 
 </xsl:transform>
