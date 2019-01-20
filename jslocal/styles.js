@@ -34,10 +34,11 @@ jqPlotLegendDefaults = { show:true, location: 'e' }
 
 var Pc = {
    'LINKE':'#a00'
-  ,'CDU/CSU':'#000'
+  ,'CDU':'#000'
   ,'FW/UWG/etc.':'#09f'
   ,'GRÜNE':'#0c0'
   ,'Einzelbewerber':'#aaa'
+  ,'parteilos':'#888'
   ,'SPD':'#e20019'
   ,'FDP':'#ee0'
   ,'Bündnis 21/RRP':'#d62'
